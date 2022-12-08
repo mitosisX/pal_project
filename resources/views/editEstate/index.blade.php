@@ -4,11 +4,11 @@
 <div class="row g-3 my-2">
     <div class="col-md-6">
         <div class="col-lg-12">
-            <div class="card">
+            <div class="card fw-bold text-muted">
                 <h3 class="card-header d-inline">Fields</h3>
                 <div class="card-body">
-                    <h4 class="card-title border-bottom border-top p-1 font-weight-bold text-justify-center" > </h4>
-                    <table class="table table-striped">
+                    <h4 class="card-title font-weight-bold text-justify-center" > </h4>
+                    <table class="table table-striped text-muted fw-bold">
                         <thead>
                           <tr>
                             <!-- <th scope="col">#</th> -->
@@ -73,12 +73,12 @@
 
     <div class="col-md-6">
         <div class="col-lg-12">
-            <div class="card">
+            <div class="card text-muted fw-bold">
                 <h3 class="card-header">Crops</h3>
                 <div class="card-body">
-                    <h4 class="card-title border-bottom border-top p-1 font-weight-bold text-justify-center" > </h4>
+                    <h4 class="card-title font-weight-bold text-justify-center" > </h4>
                     
-                    <table class="table table-striped">
+                    <table class="table table-striped text-muted fw-bold">
                         <thead>
                           <tr>
                             <!-- <th scope="col">#</th> -->
@@ -141,12 +141,12 @@
 <div class="row g-3 my-2">
     <div class="col-md-12">
         <div class="col-lg-12">
-            <div class="card">
+            <div class="card text-muted fw-bold">
                 <h3 class="card-header">Estate Inventory</h3>
                 <div class="card-body">
                    <div class="tables-responsive">
 
-                    <table id="example" class="table table-borderd data-table" style="width:100%">
+                    <table id="example" class="table table-borderd table-striped data-table text-muted fw-bold" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Item Name</th>

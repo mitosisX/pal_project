@@ -5,11 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> -->
-     
+    
     
      <link rel="stylesheet" href= {{url('css/all.min.css')}}>
      <link rel="stylesheet" href= {{url('css/jquery-ui.css')}}>
@@ -183,12 +179,8 @@
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user-secret me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger second-text active border-bottom"><i
-                        class="fas fa-tachometer-alt me-2"></i>Manage Estate</a>
-                <a href="#" data-toggle="modal" data-target="#stdModal" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom "><i
-                        class="fas fa-project-diagram me-2" ></i>Manage User</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-chart-line me-2"></i>Reports</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active border-bottom"><i
+                        class="fas fa-tachometer-alt me-2"></i>Manage Estate</a>    
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
                         class="fas fa-map-marker-alt me-2"></i>Home</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold border-bottom"><i
@@ -202,7 +194,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4 border-bottom" >
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Manage Estate</h2>
+                    <h2 class="fs-2 m-0 text-muted fw-bold">Manage Estate</h2>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

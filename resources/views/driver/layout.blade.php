@@ -5,10 +5,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> -->
      <link rel="stylesheet" href= {{url('css/jquery-ui.css')}}>
      <link rel="stylesheet" href= {{url('css/all.min.css')}}>
      <link rel="stylesheet" href= {{url('css/bootstrap.min.css')}}>
@@ -24,26 +20,6 @@
 
 <body>
 
-    <div class="modal fade" id="stdModal" tabindex="-1" role="dialog" aria-labelledby="stdModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="#stdModal">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       
 
     <div class="d-flex" id="wrapper">
@@ -52,8 +28,8 @@
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user-secret me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger second-text active border-bottom"><i
-                        class="fas fa-tachometer-alt me-2"></i>My jobs</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active border-bottom"><i
+                        class="fas fa-truck-loading me-2"></i>My jobs</a>
                 
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold border-bottom"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
@@ -66,7 +42,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4 border-bottom" >
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Driver</h2>
+                    <h2 class="fs-2 m-0 fw-bold text-muted">Driver</h2>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

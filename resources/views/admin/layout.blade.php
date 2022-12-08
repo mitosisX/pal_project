@@ -14,7 +14,7 @@
     <link rel="stylesheet" href= {{url('css/bootstrap.css')}}>
     <link rel="stylesheet" href= {{url('css/fontawesome/css/all.min.css')}}>
     <link rel="stylesheet" href= {{url('css/dataTables.bootstrap5.css')}}>
-    <link rel="stylesheet" href={{'css/graph.css'}}>
+    <link rel="stylesheet" href={{url('css/graph.css')}}>
     <link rel="stylesheet" href= {{url('css/styles.css')}}>
 
 
@@ -272,13 +272,15 @@
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user-secret me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active border-bottom"><i
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                         class="fas fa-chart-line me-2"></i>Reports</a>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#addedProduct" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-list-alt me-2"></i>Products</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold border-bottom"><i
+                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
+                          class="fas fa-truck-loading me-2"></i>Delivery Jobs</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#addedProduct" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
+                        class="fas fa-gift me-2"></i>Products</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
@@ -352,12 +354,13 @@
 
 
 
-    <script src={{'js/bootstrap-modal.js'}}></script>
+    
     <script src={{'js/jquery-3.6.1.min.js'}}></script>
     <script src={{'js/jquery.min.js'}}></script>
     <script src={{'js/jquery.js'}}></script>
     <script src={{'js/jquery-ui.js'}}></script>
     <script src={{'js/bootstrap.bundle.js'}}></script>
+    <script src={{'js/bootstrap.bundle.min.js'}}></script>
     <script src={{'js/jquery.dataTables.min.js'}}></script>
     <script src={{'js/dataTables.bootstrap5.js'}}></script>
     <script src={{'js/bootstrap.js'}}></script>
@@ -365,7 +368,7 @@
     <script src={{'js/bootstrap-modal.js'}}></script>
    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js">
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"> --}}
     <script>
         var el = document.getElementById("wrapper");
         var toggleButton = document.getElementById("menu-toggle");

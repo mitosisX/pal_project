@@ -6,51 +6,35 @@
 <div class="col-md-12">
     <div class="col-lg-12">
         <div class="card">
-            <h3 class="card-header">Report</h3>
+            <h3 class="card-header text-muted fw-bold">Requests</h3>
             <div class="card-body">
-                <h4 class="card-title border-bottom border-top p-1 font-weight-bold text-justify-center" > </h4>
-                <table class="table table-striped">
-                    <thead>
+                <h4 class="card-title font-weight-bold text-justify-center" > </h4>
+                <table id="example" class="table table-striped data-table" style="width:100%">
+                  <thead>
                       <tr>
-                        <!-- <th scope="col">#</th> -->
-                        <th scope="col">Number</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Total Acrerage</th>
-                        <th scope="col">Acres in use</th>
+                          <th>Item Name</th>
+                          <th>Request Date</th>
+                          <th>Item Type</th>
+                          <th>Item Unit</th>
+                          <th>Quantity</th>
+                          <th>Crop to be used</th>
+                          <th>Status</th>
                       </tr>
-                    </thead>
-                    <tbody>
+                  </thead>
+                  <tbody>
                       <tr>
-                        <!-- <th scope="row">1</th> -->
-                        <td>1</td>
-                        <td>North-west</td>
-                        <td>70</td>
-                        <td>50</td>
+                          <td>NPK</td>
+                          <td>08-11-2022</td>
+                          <td>Fertilizer</td>
+                          <td>KG</td>
+                          <td>320,800</td>
+                          <td>Maize</td>
+                          <td><button type="button" class="btn btn-warning  ">pending</button></td>
                       </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                        <td>2</td>
-                        <td>South-East</td>
-                        <td>50</td>
-                        <td>30</td>
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">3</th> -->
-                        <td>3</td>
-                        <td>Central</td>
-                        <td>50</td>
-                        <td>20</td>
-                      </tr>
-
-                      <tr >
-                        <!-- <th scope="row">3</th> -->
-                        <td colspan="1" ></td>
-                        <td class="font-weight-bold">TOTAL ACREARAGE</td>
-                        <td>170</td>
-                        <td>100</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                     
+                      
+                  </tbody>
+              </table>
 
               <p class="card-text"></p>
               <!-- <div> <a href="#" class="btn btn-primary">Add Field</a>  <a href="#" class="btn btn-primary">Edit Field</a> </div> -->
@@ -72,7 +56,7 @@
  <div class="col-md-4">
     <div class="col-lg-12">
         <div class="card">
-            <h3 class="card-header fas fa-chart-bar me-2 text-secondary" >Chart CROP</h3>
+            <h3 class="card-header me-2 text-secondary" ><i class ="fas fa-chart-bar"></i> Crops</h3>
             <div class="card-body">
                <div class="tables-responsive">
 
@@ -94,7 +78,7 @@
 <div class="col-md-8">
   <div class="col-lg-12">
       <div class="card">
-          <h3 class="card-header fas fa-chart-bar me-2 text-secondary">Chart</h3>
+          <h3 class="card-header  me-2 text-secondary"><i class ="fas fa-chart-bar"></i> Chart</h3>
           <div class="card-body">
              <div class="tables-responsive">
 

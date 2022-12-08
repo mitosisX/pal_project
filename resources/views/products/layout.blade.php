@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href= {{url('css/styles.css')}}>
+    
     <link rel="stylesheet" href= {{url('css/all.min.css')}}>
     <link rel="stylesheet" href= {{url('css/jquery-ui.css')}}>
     <link rel="stylesheet" href= {{url('css/bootstrap.min.css')}}>
     <link rel="stylesheet" href= {{url('css/bootstrap.css')}}>
     <link rel="stylesheet" href= {{url('css/fontawesome/css/all.min.css')}}>
     <link rel="stylesheet" href= {{url('css/dataTables.bootstrap5.css')}}>
+    <link rel="stylesheet" href= {{url('css/styles.css')}}>
 
         
     
@@ -132,23 +133,11 @@
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user-secret me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active border-bottom"><i
-                        class="fas fa-tachometer-alt me-2"></i>Inventory</a>
-                <!-- <a href="#" data-toggle="modal" data-target="#stdModal" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom "><i
-                        class="fas fa-project-diagram me-2" ></i>Manage User</a> -->
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-chart-line me-2"></i>Reports</a>
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-paperclip me-2"></i>Crops</a> -->
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-shopping-cart me-2"></i>Fields</a> -->
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-gift me-2"></i>Crops</a> -->
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-comment-dots me-2"></i>Chat</a> -->
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active "><i
+                      class=" fas fa-warehouse me-2"></i>Inventory</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                         class="fas fa-map-marker-alt me-2"></i>Home</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold border-bottom"><i
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold "><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
@@ -160,7 +149,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4 border-bottom" >
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Master Inventory</h2>
+                    <h2 class="fs-2 m-0">Inventory</h2>
                 </div>
         
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

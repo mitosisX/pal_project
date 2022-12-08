@@ -6,11 +6,11 @@
     <div class="col-md-12">
         <div class="col-lg-12">
             <div class="card">
-                <h3 class="card-header">MY Jobs</h3>
+                <h3 class="card-header fw-bold text-muted">MY Jobs</h3>
                 <div class="card-body">
                    <div class="tables-responsive">
 
-                    <table id="example" class="table table-striped data-table" style="width:100%">
+                    <table id="example" class="table table-striped data-table fw-bold text-muted" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Description</th>
