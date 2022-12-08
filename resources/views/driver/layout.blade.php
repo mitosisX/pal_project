@@ -10,13 +10,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> -->
      <link rel="stylesheet" href= {{url('css/jquery-ui.css')}}>
-     <link rel="stylesheet" href= {{url('css/styles.css')}}>
      <link rel="stylesheet" href= {{url('css/all.min.css')}}>
      <link rel="stylesheet" href= {{url('css/bootstrap.min.css')}}>
      <link rel="stylesheet" href= {{url('css/bootstrap.css')}}>
      <link rel="stylesheet" href= {{url('css/fontawesome/css/all.min.css')}}>
      <link rel="stylesheet" href= {{url('css/dataTables.bootstrap5.css')}}>
      <link rel="stylesheet" href= {{url('css/tailwind.css')}} >
+     <link rel="stylesheet" href= {{url('css/styles.css')}}>
     
     <title>Press Agriculture Limited</title>
 
