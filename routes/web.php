@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\EstateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', [adminController::class, 'index']);
+Route::get('/admin', [adminController::class, 'adminData']);
+Route::get('/estate', [EstateController::class, 'index']);
+
+// Route::get('/estate', [EstateController::class, 'crop']);
+
+// Route::get('/estate', [EstateController::class, 'field']);
+
+Route::get('/estate', [EstateController::class, 'myreq']);
+
