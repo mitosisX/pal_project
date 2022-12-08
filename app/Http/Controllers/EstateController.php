@@ -33,7 +33,7 @@ class EstateController extends Controller
 
     public function myreq()
     {
-        return view('estate.myrequest');
+        return view('estate.index');
 
     }
 
