@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\EstateController;
+use App\Http\Controllers\productsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,11 @@ Route::get('/estate', [EstateController::class, 'index']);
 Route::get('/estate', [EstateController::class, 'myreq']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'myJobs']);
+
+
+Route::get('/products', [productsController::class, 'index']);
+Route::get('/products', [productsController::class, 'table']);
+Route::post('/products', [productsController::class, 'store']);
+Route::get('fetch-products', [productsController::class, 'fetchproduct']);
 
 
