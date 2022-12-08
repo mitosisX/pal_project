@@ -9,23 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/all.min.css" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" /> 
-    <link rel="stylesheet" href="../css/bootstrap.css" />
-    <script src='../js/jquery/jquery.min.js'></script>
-    <script src='../js/jquery/jquery.js'></script>
-    <script src='../js/jquery/jquery-ui.js'></script>
-    <script src='../js/bootstrap.bundle.js'></script>  
-    <script src='../js/bootstrap.js'></script>
-    <script src='../js/bootstrap.min.js'></script>
-    <script src='../js/jquery.dataTables.min.js'></script>
-    <script src='../js/dataTables.bootstrap5.js'></script>
-    <script src='../js/bootstrap-modal.js'></script>
-    <link href='../js/jquery/jquery-ui.css' rel='stylesheet' type='text/css'>
-    <link href='../css/fontawesome/css/all.min.css' rel='stylesheet' type='text/css'>
-    <link href='../css/dataTables.bootstrap5.css' rel='stylesheet' type='text/css'>
-    
+     <link rel="stylesheet" href= {{url('css/jquery-ui.css')}}>
+     <link rel="stylesheet" href= {{url('css/styles.css')}}>
+     <link rel="stylesheet" href= {{url('css/all.min.css')}}>
+     <link rel="stylesheet" href= {{url('css/bootstrap.min.css')}}>
+     <link rel="stylesheet" href= {{url('css/bootstrap.css')}}>
+     <link rel="stylesheet" href= {{url('css/fontawesome/css/all.min.css')}}>
+     <link rel="stylesheet" href= {{url('css/dataTables.bootstrap5.css')}}>
+     <link rel="stylesheet" href= {{url('css/tailwind.css')}} >
     
     <title>Press Agriculture Limited</title>
 
@@ -102,56 +93,9 @@
             </nav>
 
             <div class="container-fluid px-4 pr-5">
-                <div class="row g-3 my-2">
-                    <div class="col-md-12">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <h3 class="card-header">MY Jobs</h3>
-                                <div class="card-body">
-                                   <div class="tables-responsive">
+              
+                   @yield('content')
 
-                                    <table id="example" class="table table-striped data-table" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Description</th>
-                                                <th>Date</th>
-                                                <th>Destination estate</th>
-                                                <th>Products Type</th>
-                                                <th>Name</th>
-                                                <th>Quantity</th>
-                                                <th>Unit</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Deliver Fertilizers</td>
-                                                <td>12-07-2022</td>
-                                                <td>Estate 43</td>
-                                                <td>Fertlizers</td>
-                                                <td>NPK</td>
-                                                <td>37,000</td>
-                                                <td>KG</td>
-                                                <td><button type="button" class="btn btn-primary">clear</button></td>
-                                            </tr>
-                                              
-                                        </tbody>
-                                    </table>
-
-
-                                   </div>
-                                </div>
-                              </div>
-
-                              
-                        </div>
-
-
-                    </div>
-
-                    
-
-                </div>
             </div>
 
 
@@ -164,6 +108,19 @@
     </div>
     <!-- /#page-content-wrapper -->
     </div>
+
+
+
+
+    <script src={{'js/jquery.min.js'}}></script>
+    <script src={{'js/jquery.js'}}></script>
+    <script src={{'js/jquery-ui.js'}}></script>
+    <script src={{'js/bootstrap.bundle.js'}}></script>
+    <script src={{'js/jquery.dataTables.min.js'}}></script>
+    <script src={{'js/dataTables.bootstrap5.js'}}></script>
+    <script src={{'js/bootstrap.js'}}></script>
+    <script src={{'js/bootstrap.min.js'}}></script>
+    <script src={{'js/bootstrap-modal.js'}}></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\EstateController;
 
 /*
@@ -22,10 +23,8 @@ Route::get('/', function () {
 Route::get('/admin', [adminController::class, 'index']);
 Route::get('/admin', [adminController::class, 'adminData']);
 Route::get('/estate', [EstateController::class, 'index']);
-
-// Route::get('/estate', [EstateController::class, 'crop']);
-
-// Route::get('/estate', [EstateController::class, 'field']);
-
 Route::get('/estate', [EstateController::class, 'myreq']);
+Route::get('/driver', [DriverController::class, 'index']);
+Route::get('/driver', [DriverController::class, 'myJobs']);
+
 
