@@ -5,6 +5,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\EstateController;
 use App\Http\Controllers\productsController;
+use App\Http\Controllers\EditEstateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::get('/estate', [EstateController::class, 'index']);
 Route::get('/estate', [EstateController::class, 'myreq']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'myJobs']);
+Route::get('/editEstate', [EditEstateController::class, 'index']);
+Route::get('/editEstate', [EditEstateController::class, 'editestate']);
 
 
 Route::get('/products', [productsController::class, 'index']);
