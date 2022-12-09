@@ -123,24 +123,12 @@
         <!-- Sidebar -->
         <div class="bg-light py-6" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>PAL</div>
+                    class="fas fa-tractor me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active border-bottom"><i
-                        class="fas fa-tachometer-alt me-2"></i>Profile</a>
-                <a href="#"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom "><i
-                        class="fas fa-project-diagram me-2" ></i>Submit Request</a>
+                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
                         class="fas fa-chart-line me-2"></i>Estate Inventory</a>
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-paperclip me-2"></i>Crops</a> -->
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-shopping-cart me-2"></i>Fields</a> -->
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-gift me-2"></i>Crops</a> -->
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-comment-dots me-2"></i>Chat</a> -->
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
-                        class="fas fa-map-marker-alt me-2"></i>Outlet</a> -->
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold border-bottom"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
@@ -152,7 +140,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4 border-bottom" >
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Estate 10 Dasboard</h2>
+                    <h2 class="fs-2 m-0 fw-bold text-muted">Estate 10 Dasboard</h2>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

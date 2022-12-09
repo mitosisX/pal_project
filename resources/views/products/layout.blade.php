@@ -131,7 +131,7 @@
         <!-- Sidebar -->
         <div class="bg-light py-6" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>PAL</div>
+                    class="fas fa-tractor me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active "><i
                       class=" fas fa-warehouse me-2"></i>Inventory</a>

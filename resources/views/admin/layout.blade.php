@@ -51,26 +51,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Select Esate to Manage</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">SELECT ESTATE</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         
-
-
-        <div class="dropdown">
-          <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            Select Estate
-          </a>
-        
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="C:\wamp64\www\pal_project\UI\admin\index.html">Esate 1</a></li>
-            <li><a class="dropdown-item" href="#">Esate 2</a></li>
-            <li><a class="dropdown-item" href="#">Esate 3</a></li>
-            <li><a class="dropdown-item" href="#"> Esate 4</a></li>
-            <li><a class="dropdown-item" href="#">Esate 5</a></li>
-            <li><a class="dropdown-item" href="#">Esate 6</a></li>
-          </ul>
+        <div class="list-group fw-bold text-muted">
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE 10</a>
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE 21</a>
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE 35</a>
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE 7</a>
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE 19</a>
         </div>
 
 
@@ -187,11 +178,11 @@
   {{-- ADD PRODUCT MODAL --}}
 
 <!-- Modal -->
-<div class="modal fade" id="addProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade fw-bold text-muted" id="addProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel fw-bold">Add Product</h5>
+        <h5 class="modal-title" id="staticBackdropLabel fw-bold">ADD PRODUCT</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -231,27 +222,16 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Available products</h5>
+        <h5 class="modal-title fw-bold text-muted" id="staticBackdropLabel">PRODUCTS</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="list-group">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one</li>
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one</li>
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one</li>
-        </ul>
+        <div class="list-group fw-bold text-muted">
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">FERTILIZER</a>
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">CHEMICALS</a>
+          <a href="#" class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">SEEDS</a>
+          
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -270,7 +250,7 @@
         <!-- Sidebar -->
         <div class="bg-light py-6" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>PAL</div>
+                    class="fas fa-tractor me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -469,10 +449,10 @@ var dChart = new Chart(ctx1, {
   var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: ['WEEK 1', 'WEEK 2', 'WEEK 3', 'WEEK 4', 'WEEK 1', 'WEEK 2'],
           datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              label: '# of Approved Requests',
+              data: [12, 19, 3, 5, 7, 16],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',

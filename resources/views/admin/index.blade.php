@@ -9,15 +9,15 @@
             <h3 class="card-header text-muted fw-bold">Requests</h3>
             <div class="card-body">
                 <h4 class="card-title font-weight-bold text-justify-center" > </h4>
-                <table id="example" class="table table-striped data-table" style="width:100%">
+                <table id="example" class="table table-striped data-table fw-bold text-muted" style="width:100%">
                   <thead>
                       <tr>
                           <th>Item Name</th>
                           <th>Request Date</th>
+                          <th>Estate</th>
                           <th>Item Type</th>
                           <th>Item Unit</th>
                           <th>Quantity</th>
-                          <th>Crop to be used</th>
                           <th>Status</th>
                       </tr>
                   </thead>
@@ -25,10 +25,10 @@
                       <tr>
                           <td>NPK</td>
                           <td>08-11-2022</td>
+                          <td>Estate 47</td>
                           <td>Fertilizer</td>
                           <td>KG</td>
                           <td>320,800</td>
-                          <td>Maize</td>
                           <td><button type="button" class="btn btn-warning  ">pending</button></td>
                       </tr>
                      
@@ -56,7 +56,7 @@
  <div class="col-md-4">
     <div class="col-lg-12">
         <div class="card">
-            <h3 class="card-header me-2 text-secondary" ><i class ="fas fa-chart-bar"></i> Crops</h3>
+            <h3 class="card-header me-2 text-secondary" ><i class ="fas fa-chart-bar"></i> CROPS IN THE FIELD</h3>
             <div class="card-body">
                <div class="tables-responsive">
 
@@ -78,7 +78,7 @@
 <div class="col-md-8">
   <div class="col-lg-12">
       <div class="card">
-          <h3 class="card-header  me-2 text-secondary"><i class ="fas fa-chart-bar"></i> Chart</h3>
+          <h3 class="card-header  me-2 text-secondary"><i class ="fas fa-chart-bar"></i> REQUESTS APPROVED MONTHLY</h3>
           <div class="card-body">
              <div class="tables-responsive">
 

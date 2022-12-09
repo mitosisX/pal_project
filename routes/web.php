@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\dJobController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\EstateController;
@@ -30,6 +31,7 @@ Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'myJobs']);
 Route::get('/editEstate', [EditEstateController::class, 'index']);
 Route::get('/editEstate', [EditEstateController::class, 'editestate']);
+Route::get('/viewjob', [dJobController::class, 'viewDeliveryJob']);
 
 
 Route::get('/products', [productsController::class, 'index']);
