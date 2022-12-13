@@ -40,3 +40,13 @@ Route::post('/products', [productsController::class, 'store']);
 Route::get('fetch-products', [productsController::class, 'fetchproduct']);
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

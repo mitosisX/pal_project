@@ -14,8 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('crops', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->unsignedInteger('fields_id');
+            $table->mediumText('name');
+            $table->mediumText('description');
             $table->timestamps();
+
+            $table->foreign('fields_id')
+                ->references('id')
+                ->on('fields')
+                ->onDelete('cascade');
         });
     }
 

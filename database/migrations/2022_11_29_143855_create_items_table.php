@@ -14,8 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->mediumText('name');
+            $table->integer('package_size');
+            $table->integer('unit');
+            $table->integer('quantity');
+            $table->unsignedInteger('crops_id');
             $table->timestamps();
+
+            $table->foreign('crops_id')
+                ->references('id')
+                ->on('crops')
+                ->onDelete('cascade');
         });
     }
 
