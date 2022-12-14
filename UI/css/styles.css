@@ -97,3 +97,22 @@
     margin-left: -15rem;
   }
 }
+
+
+.form-control{
+  border-radius: 0 !important;
+  border-width: medium !important;
+}
+
+.form-select{
+  border-radius: 0 !important;
+  border-width: medium !important;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: inherit;
+  outline: 0;
+  box-shadow: none;
+}

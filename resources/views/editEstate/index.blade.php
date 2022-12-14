@@ -16,6 +16,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Total Acrerage</th>
                             <th scope="col">Acres in use</th>
+                            <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -25,42 +26,27 @@
                             <td>North-west</td>
                             <td>70</td>
                             <td>50</td>
+                            <td>
+                              <a href="#" type="button" class="btn btn-success" >Edit</a>
+                              <a href="#" type="button" class="btn btn-danger" >Delete</a>
+                            </td>
+                            
                           </tr>
-                          <tr>
-                            <!-- <th scope="row">2</th> -->
-                            <td>2</td>
-                            <td>South-East</td>
-                            <td>50</td>
-                            <td>30</td>
-                          </tr>
-                          <tr>
-                            <!-- <th scope="row">3</th> -->
-                            <td>3</td>
-                            <td>Central</td>
-                            <td>50</td>
-                            <td>20</td>
-                          </tr>
-
+                          
                           <tr >
                             <!-- <th scope="row">3</th> -->
                             <td colspan="1" ></td>
                             <td class="font-weight-bold">TOTAL ACREARAGE</td>
                             <td>170</td>
                             <td>100</td>
+                            <td></td>
                           </tr>
                         </tbody>
                       </table>
 
               
                 <div> <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Field</a> 
-                  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Action
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1" href="#">Edit Field</a></li>
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="#">Add Crop</a></li>
-                    <li><a class="dropdown-item" href="#"></a></li>
-                  </ul>
+                  
                  </div>
                 </div>
               </div>
@@ -86,6 +72,7 @@
                             <th scope="col">Field Name</th>
                             <th scope="col">Crop</th>
                             <th scope="col">Total acrerage</th>
+                            <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -95,21 +82,12 @@
                             <td>North-west</td>
                             <td>Maize</td>
                             <td>50</td>
+                            <td>
+                              <a href="#" type="button" class="btn btn-success" >Edit</a>
+                              <a href="#" type="button" class="btn btn-danger" >Delete</a>
+                            </td>
                           </tr>
-                          <tr>
-                            <!-- <th scope="row">2</th> -->
-                            <td>2</td>
-                            <td>South-East</td>
-                            <td>Ground Nuts</td>
-                            <td>30</td>
-                          </tr>
-                          <tr>
-                            <!-- <th scope="row">3</th> -->
-                            <td>3</td>
-                            <td>Central</td>
-                            <td>Pigeon peas</td>
-                            <td>20</td>
-                          </tr>
+                          
 
                           <tr >
                             <!-- <th scope="row">3</th> -->
@@ -117,6 +95,7 @@
                             <td class="font-weight-bold">TOTAL ACREARAGE</td>
                             <td></td>
                             <td>100</td>
+                            <td></td>
                           </tr>
                         </tbody>
                       </table>  
