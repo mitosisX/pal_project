@@ -5,6 +5,7 @@ use App\Http\Controllers\dJobController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\EstateController;
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\editCropController;
 use App\Http\Controllers\productsController;
 use App\Http\Controllers\editFieldController;
@@ -36,6 +37,7 @@ Route::get('/editEstate', [EditEstateController::class, 'editestate']);
 Route::get('/viewjob', [dJobController::class, 'viewDeliveryJob']);
 Route::get('/editField', [editFieldController::class, 'index']);
 Route::get('/editField', [editFieldController::class, 'editfield']);
+Route::get('/adminReport', [ReportsController::class, 'index']);
 
 Route::get('/editCrop', [editCropController::class, 'index']);
 Route::get('/editCrop', [editCropController::class, 'editCrop']);

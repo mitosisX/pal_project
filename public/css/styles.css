@@ -101,12 +101,12 @@
 
 .form-control{
   border-radius: 0 !important;
-  border-width: medium !important;
+  border-width: thin !important;
 }
 
 .form-select{
   border-radius: 0 !important;
-  border-width: medium !important;
+  border-width: thin !important;
 }
 
 .form-control:focus {
