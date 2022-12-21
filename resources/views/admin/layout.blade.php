@@ -110,70 +110,6 @@
   </div>
 
 
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel2">Add Manager to Estate</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          
-          <!-- modal 2 form -->
-
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-6">
-              <label for="validationCustom01" class="form-label">First name</label>
-              <input type="text" class="form-control" id="validationCustom01" value="" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom02" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="validationCustom02" value="" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-            </div>
-            
-            <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">Phone Number</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
-              <div class="invalid-feedback">
-                Please User Phone Number
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom04" class="form-label">Estate</label>
-              <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">Select</option>
-                <option>...</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <label for="validationCustom03" class="form-label">Password</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
-              <div class="invalid-feedback">
-                Enter user Password
-              </div>
-            </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
-          <button class="btn btn-primary" type="submit" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Submit</button>
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 
   {{-- ADD PRODUCT MODAL --}}
 
@@ -254,9 +190,9 @@
             <div class="list-group list-group-flush my-3 ">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
+                <a href="/adminReport" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                         class="fas fa-chart-line me-2"></i>Reports</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
+                        <a href="/viewjob" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                           class="fas fa-truck-loading me-2"></i>Delivery Jobs</a>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#addedProduct" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                         class="fas fa-gift me-2"></i>Products</a>

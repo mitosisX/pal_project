@@ -27,7 +27,7 @@
                             <td>70</td>
                             <td>50</td>
                             <td>
-                              <a href="#" type="button" class="btn btn-success" >Edit</a>
+                              <a href="/editField" type="button" class="btn btn-success" >Edit</a>
                               <a href="#" type="button" class="btn btn-danger" >Delete</a>
                             </td>
                             
@@ -83,7 +83,7 @@
                             <td>Maize</td>
                             <td>50</td>
                             <td>
-                              <a href="#" type="button" class="btn btn-success" >Edit</a>
+                              <a href="/editCrop" type="button" class="btn btn-success" >Edit</a>
                               <a href="#" type="button" class="btn btn-danger" >Delete</a>
                             </td>
                           </tr>
