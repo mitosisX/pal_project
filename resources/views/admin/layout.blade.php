@@ -123,9 +123,10 @@
             </div>
         </div>
     </div>
+    </div>
 
 
-    <div class="modal fade" id="add_field_modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -138,36 +139,56 @@
                     <!-- modal 2 form -->
 
                     <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" value=""
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="validationCustom02" value=""
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
 
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please User Phone Number
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <label for="validationCustom04" class="form-label">Estate</label>
                             <select class="form-select" id="validationCustom04" required>
-                                @foreach ($estates as $estate)
-                                    <option value="{{ $estate->id }}">{{ $estate->name }}</option>
-                                @endforeach
+                                <option selected disabled value="">Select</option>
+                                <option>...</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid state.
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom04" class="form-label">Managers</label>
-                            <select class="form-select" id="validationCustom04" required>
-                                @foreach ($managers as $manager)
-                                    <option value="{{ $manager->id }}">{{ $manager->name }}</option>
-                                @endforeach
-                            </select>
+
+                        <div class="col-md-12">
+                            <label for="validationCustom03" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
                             <div class="invalid-feedback">
-                                Please select a valid state.
+                                Enter user Password
                             </div>
                         </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Back to first</button>
                     <button class="btn btn-primary" type="submit" data-bs-target="#exampleModalToggle2"
                         data-bs-toggle="modal">Submit</button>
-
                     </form>
                 </div>
             </div>
