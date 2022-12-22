@@ -44,10 +44,10 @@
         <!-- Sidebar -->
         <div class="bg-light py-6" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-tractor me-2"></i>PALl</div>
+                    class="fas fa-tractor me-2"></i>PAL</div>
             <div class="list-group list-group-flush my-3 ">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-success second-text active border-bottom"><i
-                        class="fas fa-tachometer-alt me-2"></i>Manage Estate</a>    
+                        class="fas fa-tachometer-alt me-2"></i>Manage User</a>    
                 <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold border-bottom"><i
                         class="fas fa-map-marker-alt me-2"></i>Home</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold border-bottom"><i
@@ -61,7 +61,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4 border-bottom" >
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0 text-muted fw-bold">Edit Crop</h2>
+                    <h2 class="fs-2 m-0 text-muted fw-bold">Add User</h2>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
