@@ -322,7 +322,7 @@
                                 Estate</a></li>
                         <li><a class="dropdown-item fw-bold" href="#" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">Manage Estate</a></li>
-                        <li><a class="dropdown-item fw-bold" href="#">Manage User</a></li>
+                        <li><a class="dropdown-item fw-bold" href="/createUser">Add User</a></li>
                         <li><a class="dropdown-item fw-bold" href="#" data-bs-toggle="modal"
                                 data-bs-target="#addProduct">Add Product</a></li>
                         {{-- <li><hr class="dropdown-divider"> </li>
