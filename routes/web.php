@@ -23,13 +23,19 @@ use App\Http\Controllers\EditEstateController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
-Route::get('/admin', [adminController::class, 'index']);
-Route::get('/admin', [adminController::class, 'adminData']);
+Route::controller(adminController::class)->group(function () {
+    Route::get('admin', 'index')->name('admin.index');
+});
+
+Route::controller(EstateController::class)->group(function () {
+    Route::post('admin/estate/store', 'store')->name('admin.estate.store');
+    Route::get('estate', 'myreq');
+});
+Route::get('/admin/s', [adminController::class, 'adminData']);
 Route::get('/estate', [EstateController::class, 'index']);
-Route::get('/estate', [EstateController::class, 'myreq']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'myJobs']);
 Route::get('/editEstate', [EditEstateController::class, 'index']);

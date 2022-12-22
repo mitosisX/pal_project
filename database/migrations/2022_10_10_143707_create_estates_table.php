@@ -16,14 +16,9 @@ return new class extends Migration
         Schema::create('estates', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('managers_id');
-            $table->unsignedInteger('fields_id');
-            $table->mediumText('namd');
+            $table->mediumText('name');
+            $table->mediumText('location');
             $table->timestamps();
-
-            $table->foreign('fields_id')
-                ->references('id')
-                ->on('fields')
-                ->onDelete('cascade');
 
             $table->foreign('managers_id')
                 ->references('id')

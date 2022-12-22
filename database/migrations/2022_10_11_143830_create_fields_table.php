@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('fields', function (Blueprint $table) {
             $table->increments('id');
             $table->mediumText('area');
-            // $table->unsignedInteger('crops_id');
+            $table->unsignedInteger('estates_id');
             $table->timestamps();
 
-            // $table->foreign('crops_id')
-            //     ->references('id')
-            //     ->on('crops')
-            //     ->onDelete('cascade');
+            $table->foreign('estates_id')
+                ->references('id')
+                ->on('estates')
+                ->onDelete('cascade');
         });
     }
 

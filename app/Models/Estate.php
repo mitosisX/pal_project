@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Estate extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'id';
+    protected $fillable = ['managers_id', 'name', 'location'];
 }

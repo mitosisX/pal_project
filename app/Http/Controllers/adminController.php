@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Estate;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -13,7 +15,13 @@ class adminController extends Controller
      */
     public function index()
     {
-        return view('admin.layout');
+        $estates = Estate::all();
+        $managers = User::where('role', 'manager')->get();
+
+        return view(
+            'admin.index',
+            compact('estates', 'managers')
+        );
     }
 
     public function adminData()

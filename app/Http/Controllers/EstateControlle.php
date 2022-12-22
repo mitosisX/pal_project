@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Estate;
 use Illuminate\Http\Request;
-use App\Http\Requests\EstateRequest;
 
 class EstateController extends Controller
 {
@@ -17,7 +14,34 @@ class EstateController extends Controller
     public function index()
     {
         return view('estate.layout');
+
     }
+
+
+    // public function crop()
+    // {
+    //     return view('estate.crop');
+
+    // }
+
+    // public function field()
+    // {
+    //     return view('estate.field');
+
+    // }
+
+
+    public function myreq()
+    {
+        return view('estate.index');
+
+    }
+
+    
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,14 +59,9 @@ class EstateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EstateRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
-        $data['managers_id'] = 1;
-
-        Estate::create($data);
-
-        return redirect()->route('admin.index');
+        //
     }
 
     /**
@@ -88,10 +107,5 @@ class EstateController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function myreq()
-    {
-        return view('estate.index');
     }
 }
