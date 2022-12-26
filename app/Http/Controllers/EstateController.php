@@ -16,7 +16,7 @@ class EstateController extends Controller
      */
     public function index()
     {
-        return view('estate.layout');
+        return view('admin.estate.edit');
     }
 
     /**

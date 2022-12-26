@@ -11,6 +11,7 @@ use App\Http\Controllers\editCropController;
 use App\Http\Controllers\productsController;
 use App\Http\Controllers\editFieldController;
 use App\Http\Controllers\EditEstateController;
+use App\Http\Controllers\Admin\FieldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,17 @@ Route::controller(adminController::class)->group(function () {
 });
 
 Route::controller(EstateController::class)->group(function () {
+    Route::get('admin/estate/view', 'index')->name('admin.estate.index');
     Route::post('admin/estate/store', 'store')->name('admin.estate.store');
-    Route::get('estate', 'myreq');
 });
+
+Route::controller(FieldController::class)->group(function () {
+    Route::post('admin/field/store', 'store')->name('admin.field.store');
+    Route::get('admin/field/edit/{field}', 'edit')->name('admin.field.edit');
+    Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
+    // Route::post('admin/field/update', 'update')->name('admin.field.update');
+});
+
 Route::get('/admin/s', [adminController::class, 'adminData']);
 Route::get('/estate', [EstateController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
@@ -42,7 +51,9 @@ Route::get('/driver', [DriverController::class, 'myJobs']);
 Route::get('/editEstate', [EditEstateController::class, 'index']);
 Route::get('/editEstate', [EditEstateController::class, 'editestate']);
 Route::get('/viewjob', [dJobController::class, 'viewDeliveryJob']);
+
 Route::get('/editField', [editFieldController::class, 'index']);
+
 Route::get('/editField', [editFieldController::class, 'editfield']);
 Route::get('/adminReport', [ReportsController::class, 'index']);
 Route::get('/createUser', [addUserController::class, 'index']);

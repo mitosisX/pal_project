@@ -1,10 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Models\User;
+use App\Models\Field;
+use App\Models\Estate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class EstateController extends Controller
+class FieldController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,35 +17,8 @@ class EstateController extends Controller
      */
     public function index()
     {
-        return view('estate.layout');
-
+        //
     }
-
-
-    // public function crop()
-    // {
-    //     return view('estate.crop');
-
-    // }
-
-    // public function field()
-    // {
-    //     return view('estate.field');
-
-    // }
-
-
-    public function myreq()
-    {
-        return view('estate.index');
-
-    }
-
-    
-
-
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -61,7 +38,8 @@ class EstateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Field::create($request->all());
+        return back();
     }
 
     /**
@@ -81,9 +59,15 @@ class EstateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Field $field)
     {
-        //
+        $estates = Estate::all();
+        $managers = User::where('role', 'manager')->get();
+
+        return view(
+            'admin.field.edit',
+            compact('field', 'estates', 'managers')
+        );
     }
 
     /**
@@ -93,9 +77,12 @@ class EstateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Field $field, Request $request)
     {
-        //
+        $field->update($request->all());
+
+        return redirect()
+            ->route('admin.index');
     }
 
     /**
