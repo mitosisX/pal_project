@@ -80,7 +80,6 @@
                                     @endforeach
 
                                     <tr>
-                                        <!-- <th scope="row">3</th> -->
                                         <td colspan="1"></td>
                                         <td class="font-weight-bold">TOTAL ACREARAGE</td>
                                         <td></td>
