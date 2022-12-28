@@ -18,11 +18,29 @@ class EstateController extends Controller
      */
     public function index()
     {
-        $fields = Field::all();
-        $crops = Crop::all();
+        $estates = Estate::all();
 
         return view(
             'admin.estate.index',
+            compact('estates')
+        );
+    }
+
+    public function manage(Estate $estate)
+    {
+        $fields = Field::where('estates_id', $estate->id)
+            ->get();
+
+        $crops = $fields->map(function ($value, $key) {
+            if ($value->crops()->count() > 1) return $value;
+        });
+
+        // $id = $fields->id;
+
+        // $crops = Crop::where('fields_id', $id);
+
+        return view(
+            'admin.estate.manage',
             compact('fields', 'crops')
         );
     }
@@ -34,7 +52,10 @@ class EstateController extends Controller
      */
     public function create()
     {
-        //
+        $managers = User::where('role', 'manager')
+            ->get();
+
+        return view('admin.estate.create', compact('managers'));
     }
 
     /**

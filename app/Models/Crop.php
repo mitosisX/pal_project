@@ -12,6 +12,6 @@ class Crop extends Model
 
     public function field()
     {
-        return $this->belongsTo(Field::class, 'id');
+        return $this->belongsTo(Field::class, 'fields_id', 'id');
     }
 }

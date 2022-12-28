@@ -4,307 +4,205 @@
     <title>Press Agriculture Limited</title>
 @endsection
 
+@section('breadcrumb')
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+@endsection
+
 @section('content')
-    <div class="row g-3 my-2">
-        <div class="col-md-12">
-            <div class="col-lg-12">
-                <div class="card">
-                    <h3 class="card-header text-muted fw-bold">Requests</h3>
-                    <div class="card-body">
-                        <h4 class="card-title font-weight-bold text-justify-center"> </h4>
-                        <table id="example" class="table table-striped data-table fw-bold text-muted" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Item Name</th>
-                                    <th>Request Date</th>
-                                    <th>Estate</th>
-                                    <th>Item Type</th>
-                                    <th>Item Unit</th>
-                                    <th>Quantity</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>NPK</td>
-                                    <td>08-11-2022</td>
-                                    <td>Estate 47</td>
-                                    <td>Fertilizer</td>
-                                    <td>KG</td>
-                                    <td>320,800</td>
-                                    <td><button type="button" class="btn btn-warning  ">pending</button></td>
-                                </tr>
-
-
-                            </tbody>
-                        </table>
-
-                        <p class="card-text"></p>
-                        <!-- <div> <a href="#" class="btn btn-primary">Add Field</a>  <a href="#" class="btn btn-primary">Edit Field</a> </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row g-3 my-2">
-        <div class="col-md-4">
-            <div class="col-lg-12">
-                <div class="card">
-                    <h3 class="card-header me-2 text-secondary"><i class="fas fa-chart-bar"></i> CROPS IN THE FIELD</h3>
-                    <div class="card-body">
-                        <div class="tables-responsive">
-
-                            <!-- table here -->
-                            <canvas id="dChart" width="40" height="40"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-8">
-            <div class="col-lg-12">
-                <div class="card">
-                    <h3 class="card-header  me-2 text-secondary"><i class="fas fa-chart-bar"></i> REQUESTS APPROVED MONTHLY
-                    </h3>
-                    <div class="card-body">
-                        <div class="tables-responsive">
-
-                            <!-- graph here -->
-                            <canvas id="myChart" width="400" height="200"></canvas>
-
-                            <!-- <canvas id="bar" class="chart chart-bar"
-                                                                                      chart-data="data" chart-labels="labels"> chart-series="series"
-                                                                                     </canvas> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">SELECT ESTATE</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="list-group fw-bold text-muted">
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE
-                            10</a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE
-                            21</a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE
-                            35</a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE
-                            7</a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">ESTATE
-                            19</a>
-                    </div>
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="modal fade" id="create_estate_modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-        tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel">CREATE ESTATE</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <!-- Modal 1 form -->
-
-                    <form class="row g-3 needs-validation" action="{{ route('admin.estate.store') }}" method="POST">
-                        @csrf
-                        <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label">Estate Name</label>
-                            <input type="text" class="form-control" name='name' id="validationCustom01"
-                                value="" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom02" class="form-label">Location</label>
-                            <input type="text" class="form-control" name='location' id="validationCustom02"
-                                value="" required>
-                        </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    {{-- <button class="btn btn-primary" type="submit" data-bs-target="#exampleModalToggle2"
-                        data-bs-toggle="modal" data-bs-dismiss="modal">Submit</button> --}}
-
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-
-    <div class="modal fade" id="create_field_modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
-        tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel2">Add Manager to Estate</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <!-- modal 2 form -->
-
-                    <form class="row g-3 needs-validation" action="{{ route('admin.field.store') }}" method="POST">
-                        @csrf
-                        <div class="col-md-6">
-                            <label for="validationCustom04" class="form-label">Name</label>
-                            <input type="text" class="form-control" name='name' id="validationCustom02"
-                                value="" required>
-                            <div class="invalid-feedback">
-                                Please select a valid state.
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Requests
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                50
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom04" class="form-label">Area</label>
-                            <input type="text" class="form-control" name='area' id="validationCustom02"
-                                value="" required>
-                            <div class="invalid-feedback">
-                                Please select a valid state.
-                            </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
                         </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom04" class="form-label">Estates</label>
-                            <select class="form-select" name="estates_id" required>
-                                @foreach ($estates as $estate)
-                                    <option value="{{ $estate->id }}">{{ $estate->name }}</option>
-                                @endforeach
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid state.
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="validationCustom04" class="form-label">Managers</label>
-                            <select class="form-select" name='managers_id'>
-                                @foreach ($managers as $manager)
-                                    <option value="{{ $manager->id }}">{{ $manager->name }}</option>
-                                @endforeach
-                                <input type="text" name="managers_id" value="1" hidden>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid state.
-                            </div>
-                        </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" type="submit" data-bs-target="#exampleModalToggle2"
-                        data-bs-toggle="modal">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    {{-- ADD PRODUCT MODAL --}}
-
-    <!-- Modal -->
-    <div class="modal fade fw-bold text-muted" id="addProduct" data-bs-backdrop="static" data-bs-keyboard="false"
-        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel fw-bold">ADD PRODUCT</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <form class="row g-3 needs-validation" novalidate>
-                        <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label fw-bold">Name</label>
-                            <input type="text" class="form-control" id="validationCustom01" value="" required>
-
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="validationCustom02" class="form-label fw-bold">Type</label>
-                            <input type="text" class="form-control" id="validationCustom02" value="" required>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="validationCustom03" class="form-label fw-bold">Unit Price</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                        </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    {{-- PRODUCT LIST MODAL --}}
-
-    <div class="modal fade" id="addedProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold text-muted" id="staticBackdropLabel">PRODUCTS</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="list-group fw-bold text-muted">
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">FERTILIZER</a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">CHEMICALS</a>
-                        <a href="#"
-                            class="list-group-item list-group-item-action  border-bottom fw-bold text-muted">SEEDS</a>
-
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Approved Requests
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                30
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Tasks
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                        50%
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar"
+                                            style="
+                                                                    width: 50%;
+                                                                "
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Pending Requests
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                20
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection('content')
+
+    <!-- Content Row -->
+
+    <div class="row">
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        Earnings Overview
+                    </h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">
+                                Dropdown Header:
+                            </div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="myAreaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        Revenue Sources
+                    </h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">
+                                Dropdown Header:
+                            </div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-pie pt-4 pb-2">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center small">
+                        <span class="mr-2">
+                            <i class="fas fa-circle text-primary"></i>
+                            Direct
+                        </span>
+                        <span class="mr-2">
+                            <i class="fas fa-circle text-success"></i>
+                            Social
+                        </span>
+                        <span class="mr-2">
+                            <i class="fas fa-circle text-info"></i>
+                            Referral
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row"></div>
+    </div>
+    <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+@endsection
 
 @section('scripts')
     <script>

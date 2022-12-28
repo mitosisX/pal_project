@@ -2,135 +2,260 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-    <link rel="stylesheet" href={{ asset('css/all.min.css') }}>
-    <link rel="stylesheet" href={{ asset('css/jquery-ui.css') }}>
-    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
-    <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
-    <link rel="stylesheet" href={{ asset('css/fontawesome/css/all.min.css') }}>
-    <link rel="stylesheet" href={{ asset('css/dataTables.bootstrap5.css') }}>
-    <link rel="stylesheet" href={{ asset('css/graph.css') }}>
-    <link rel="stylesheet" href={{ asset('css/styles.css') }}>
+    <title>Admin Dashboard</title>
 
-    @yield('title')
+    <!-- Custom fonts for this template-->
+    <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" />
+    <style>
+        .section .section-title {
+            color: #5a5c69 !important;
+        }
+
+        .section .section-title:before {
+            content: ' ';
+            border-radius: 5px;
+            height: 8px;
+            width: 30px;
+            background-color: #365DCD;
+            display: inline-block;
+            float: left;
+            margin-top: 6px;
+            margin-right: 15px;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-light py-6" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-tractor me-2"></i>PAL</div>
-            <div class="list-group list-group-flush my-3 ">
-                <a href="#"
-                    class="list-group-item list-group-item-action bg-transparent text-success second-text active"><i
-                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
-                        class="fas fa-chart-line me-2"></i>Reports</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
-                        class="fas fa-truck-loading me-2"></i>Delivery Jobs</a>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#addedProduct"
-                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
-                        class="fas fa-gift me-2"></i>Products</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>Logout</a>
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-tractor"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">PAL</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0" />
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('admin.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider" />
+
+            <!-- Heading -->
+            <div class="sidebar-heading">Interface</div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Admin tasks</span>
+                </a>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Admin tasks:</h6>
+                        <a class="collapse-item" href="createUser.html">Manage users</a>
+                        <a class="collapse-item" href="{{ route('admin.estate.create') }}">Create estate</a>
+                        <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage estates</a>
+                        <a class="collapse-item" href="buttons.html">Add Product</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Reports</a>
+                        <a class="collapse-item" href="utilities-border.html">Delivery Jobs</a>
+                        <a class="collapse-item" href="utilities-animation.html">Products</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider" />
+
+            <!-- Heading -->
+            <div class="sidebar-heading">Addons</div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="requestTableAdmin.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Requests</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block" />
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-        </div>
-        <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4 border-bottom">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0 text-muted fw-bold">Admin</h2>
-                </div>
+            <!-- Sidebar Message -->
+        </ul>
+        <!-- End of Sidebar -->
 
-                <div class="dropdown position-absolute start-50">
-                    <button class="btn btn-light dropdown-toggle btn-lg" type="button" id="dropdownMenuButton2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <a class=" nav-link text-muted fw-bold "> <i class="fas fa-tasks "></i> Admin Tasks</a>
-
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item active fw-bold" href="#">Action</a></li>
-                        <li><a class="dropdown-item fw-bold" data-bs-toggle="modal" href="#create_estate_modal"
-                                role="button">Create Estate</a></li>
-                        <li><a class="dropdown-item fw-bold" href="#create_field_modal" data-bs-toggle="modal">Create
-                                Field</a></li>
-                        <li><a class="dropdown-item fw-bold" href="#" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">Manage Estate</a></li>
-                        <li><a class="dropdown-item fw-bold" href="#">Manage User</a></li>
-                        <li><a class="dropdown-item fw-bold" href="#" data-bs-toggle="modal"
-                                data-bs-target="#addProduct">Add Product</a></li>
-                        {{-- <li><hr class="dropdown-divider"> </li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li> --}}
 
-                    </ul>
-                </div>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>John Doe
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
                         </li>
                     </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <section class="section">
+                        <div class="section-body">
+                            @yield('breadcrumb')
+                        </div>
+                    </section>
+
+                    <!-- ##################################################### -->
+
+                    @yield('content')
+
+                    <!-- ##################################################### -->
+
+                    <!-- Footer -->
+                    {{-- <footer class="sticky-footer bg-white" style="position:sticky;top:0;">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Your Website 2021</span>
+                            </div>
+                        </div>
+                    </footer> --}}
+                    <!-- End of Footer -->
                 </div>
-            </nav>
-
-            <div class="container-fluid px-4 pr-5">
-                @yield('content')
+                <!-- End of Content Wrapper -->
             </div>
-        </div>
-    </div>
+            <!-- End of Page Wrapper -->
 
-    <script src={{ asset('js/jquery-3.6.1.min.js') }}></script>
-    <script src={{ asset('js/jquery.min.js') }}></script>
-    <script src={{ asset('js/jquery.js') }}></script>
-    <script src={{ asset('js/jquery-ui.js') }}></script>
-    <script src={{ asset('js/bootstrap.bundle.js') }}></script>
-    <script src={{ asset('js/bootstrap.bundle.min.js') }}></script>
-    <script src={{ asset('js/jquery.dataTables.min.js') }}></script>
-    <script src={{ asset('js/dataTables.bootstrap5.js') }}></script>
-    <script src={{ asset('js/bootstrap.js') }}></script>
-    <script src={{ asset('js/bootstrap.min.js') }}></script>
-    <script src={{ asset('js/bootstrap-modal.js') }}></script>
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
 
-    <script src={{ asset('js/chart.js') }}></script>
-    <script src={{ asset('js/bar.js') }}></script>
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                Ready to Leave?
+                            </h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Select "Logout" below if you are ready to end your
+                            current session.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                                Cancel
+                            </button>
+                            <a class="btn btn-primary" href="login.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    @yield('scripts')
+            <!-- Bootstrap core JavaScript-->
+            <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{ asset('css/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-    <script>
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
+            <!-- Core plugin JavaScript-->
+            <script src="{{ asset('js/jquery-easing/jquery.easing.min.js') }}"></script>
 
-        toggleButton.onclick = function() {
-            el.classList.toggle("toggled");
-        };
+            <!-- Custom scripts for all pages-->
+            <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
-        $('#stdModal').on('shown.bs.modal', function() {
-            $('#stdModal').trigger('focus');
-        });
+            <!-- Page level plugins -->
+            <script src="{{ asset('js/Chart.min.js') }}"></script>
 
-        var myModal = document.getElementById('myModal');
-        var myInput = document.getElementById('myInput');
-
-        myModal.addEventListener('shown.bs.modal', function() {
-            myInput.focus();
-        });
-    </script>
+            <!-- Page level custom scripts -->
+            <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
+            <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
 </body>
 
 </html>

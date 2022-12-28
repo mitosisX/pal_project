@@ -11,4 +11,14 @@ class Estate extends Model
 
     protected $primaryKey = 'id';
     protected $fillable = ['managers_id', 'name', 'location'];
+
+    public function manager()
+    {
+        return $this->hasOne(User::class, 'id', 'managers_id');
+    }
+
+    public function fields()
+    {
+        return $this->hasMany(Field::class, 'id', '');
+    }
 }
