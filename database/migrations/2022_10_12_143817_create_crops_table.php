@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedInteger('fields_id');
             $table->mediumText('name');
+            $table->integer('acres');
             $table->mediumText('description');
             $table->timestamps();
 

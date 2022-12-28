@@ -77,8 +77,8 @@
                             <canvas id="myChart" width="400" height="200"></canvas>
 
                             <!-- <canvas id="bar" class="chart chart-bar"
-                                                                              chart-data="data" chart-labels="labels"> chart-series="series"
-                                                                             </canvas> -->
+                                                                                      chart-data="data" chart-labels="labels"> chart-series="series"
+                                                                                     </canvas> -->
                         </div>
                     </div>
                 </div>
@@ -182,6 +182,14 @@
 
                     <form class="row g-3 needs-validation" action="{{ route('admin.field.store') }}" method="POST">
                         @csrf
+                        <div class="col-md-6">
+                            <label for="validationCustom04" class="form-label">Name</label>
+                            <input type="text" class="form-control" name='name' id="validationCustom02"
+                                value="" required>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <label for="validationCustom04" class="form-label">Area</label>
                             <input type="text" class="form-control" name='area' id="validationCustom02"

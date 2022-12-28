@@ -95,20 +95,20 @@
         </div>
     </div>
 
-    <script src={{ 'js/jquery-3.6.1.min.js' }}></script>
-    <script src={{ 'js/jquery.min.js' }}></script>
-    <script src={{ 'js/jquery.js' }}></script>
-    <script src={{ 'js/jquery-ui.js' }}></script>
-    <script src={{ 'js/bootstrap.bundle.js' }}></script>
-    <script src={{ 'js/bootstrap.bundle.min.js' }}></script>
-    <script src={{ 'js/jquery.dataTables.min.js' }}></script>
-    <script src={{ 'js/dataTables.bootstrap5.js' }}></script>
-    <script src={{ 'js/bootstrap.js' }}></script>
-    <script src={{ 'js/bootstrap.min.js' }}></script>
-    <script src={{ 'js/bootstrap-modal.js' }}></script>
+    <script src={{ asset('js/jquery-3.6.1.min.js') }}></script>
+    <script src={{ asset('js/jquery.min.js') }}></script>
+    <script src={{ asset('js/jquery.js') }}></script>
+    <script src={{ asset('js/jquery-ui.js') }}></script>
+    <script src={{ asset('js/bootstrap.bundle.js') }}></script>
+    <script src={{ asset('js/bootstrap.bundle.min.js') }}></script>
+    <script src={{ asset('js/jquery.dataTables.min.js') }}></script>
+    <script src={{ asset('js/dataTables.bootstrap5.js') }}></script>
+    <script src={{ asset('js/bootstrap.js') }}></script>
+    <script src={{ asset('js/bootstrap.min.js') }}></script>
+    <script src={{ asset('js/bootstrap-modal.js') }}></script>
 
-    <script src={{ 'js/chart.js' }}></script>
-    <script src={{ 'js/bar.js' }}></script>
+    <script src={{ asset('js/chart.js') }}></script>
+    <script src={{ asset('js/bar.js') }}></script>
 
     @yield('scripts')
 

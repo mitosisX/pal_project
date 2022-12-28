@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Crop;
-use App\Models\User;
-use App\Models\Field;
-use App\Models\Estate;
 use Illuminate\Http\Request;
-use App\Http\Requests\EstateRequest;
 
-class EstateController extends Controller
+class CropController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +14,7 @@ class EstateController extends Controller
      */
     public function index()
     {
-        $fields = Field::all();
-        $crops = Crop::all();
-
-        return view(
-            'admin.estate.index',
-            compact('fields', 'crops')
-        );
+        //
     }
 
     /**
@@ -43,14 +33,11 @@ class EstateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EstateRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
-        $data['managers_id'] = 1;
+        Crop::create($request->all());
 
-        Estate::create($data);
-
-        return redirect()->route('admin.index');
+        return back();
     }
 
     /**
@@ -96,10 +83,5 @@ class EstateController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function myreq()
-    {
-        return view('estate.index');
     }
 }

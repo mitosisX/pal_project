@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Crop extends Model
 {
     use HasFactory;
+    protected $fillable = ['fields_id', 'name', 'acres', 'description'];
+
+    public function field()
+    {
+        return $this->belongsTo(Field::class, 'id');
+    }
 }

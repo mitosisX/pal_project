@@ -12,6 +12,7 @@ use App\Http\Controllers\productsController;
 use App\Http\Controllers\editFieldController;
 use App\Http\Controllers\EditEstateController;
 use App\Http\Controllers\Admin\FieldController;
+use App\Http\Controllers\CropController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,12 +45,14 @@ Route::controller(FieldController::class)->group(function () {
     // Route::post('admin/field/update', 'update')->name('admin.field.update');
 });
 
+Route::controller(CropController::class)->group(function () {
+    Route::post('admin/crop/store', 'store')->name('crop.store');
+});
+
 Route::get('/admin/s', [adminController::class, 'adminData']);
 Route::get('/estate', [EstateController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'myJobs']);
-Route::get('/editEstate', [EditEstateController::class, 'index']);
-Route::get('/editEstate', [EditEstateController::class, 'editestate']);
 Route::get('/viewjob', [dJobController::class, 'viewDeliveryJob']);
 
 Route::get('/editField', [editFieldController::class, 'index']);

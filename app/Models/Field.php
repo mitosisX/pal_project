@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Field extends Model
 {
     use HasFactory;
-    protected $fillable = ['area', 'managers_id', 'estates_id'];
+    protected $fillable = ['area', 'name', 'estates_id'];
 }
