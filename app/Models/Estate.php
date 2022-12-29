@@ -14,11 +14,16 @@ class Estate extends Model
 
     public function manager()
     {
-        return $this->hasOne(User::class, 'id', 'managers_id');
+        return $this->hasOne(User::class, 'id');
     }
 
     public function fields()
     {
-        return $this->hasMany(Field::class, 'id', '');
+        return $this->hasMany(Field::class, 'fields_id', 'id');
+    }
+
+    public function crops()
+    {
+        return $this->hasManyThrough(Crop::class, Field::class);
     }
 }

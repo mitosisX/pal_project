@@ -4,10 +4,6 @@
     <title>Press Agriculture Limited</title>
 @endsection
 
-@section('breadcrumb')
-    <h2 class="section-title">Admin</h2>
-@endsection
-
 @section('content')
     <div class="row justify-content-center">
         <div class="col-lg-10">

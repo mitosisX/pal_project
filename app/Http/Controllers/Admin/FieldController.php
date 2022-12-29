@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Crop;
 use App\Models\User;
 use App\Models\Field;
 use App\Models\Estate;
@@ -94,5 +95,15 @@ class FieldController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function manageCrop(Crop $crop)
+    {
+        $fields = Field::all();
+
+        return view(
+            'admin.crop.edit',
+            compact('fields', 'crop')
+        );
     }
 }

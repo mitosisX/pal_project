@@ -184,7 +184,8 @@
                     <!-- Page Heading -->
                     <section class="section">
                         <div class="section-body">
-                            @yield('breadcrumb')
+                            {{-- BREADCRUMB /////////////////// --}}
+                            <h2 class="section-title">Admin</h2>
                         </div>
                     </section>
 

@@ -14,4 +14,9 @@ class Field extends Model
     {
         return $this->hasMany(Crop::class, 'fields_id', 'id');
     }
+
+    public function estate()
+    {
+        return $this->belongsTo(Estate::class, 'estates_id', 'id');
+    }
 }

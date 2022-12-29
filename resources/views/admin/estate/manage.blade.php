@@ -26,7 +26,7 @@
                                     @foreach ($fields as $field)
                                         <tr>
                                             <!-- <th scope="row">1</th> -->
-                                            <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $field->name }}</td>
                                             <td>{{ $field->area }}</td>
                                             <td>50</td>
@@ -73,12 +73,13 @@
                                     @foreach ($fields as $field)
                                         <tr>
                                             <!-- <th scope="row">1</th> -->
-                                            <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $field->name }}</td>
                                             <td>
                                                 @foreach ($field->crops as $crop)
                                                     {{-- {{ $crop->field['name'] }} --}}
-                                                    {{ $crop->name }}
+                                                    <a
+                                                        href="{{ route('admin.crop.edit', ['crop' => $crop->id]) }}">{{ $crop->name }}</a>
                                                     <br>
                                                 @endforeach
                                             </td>
@@ -132,7 +133,8 @@
                                                     aria-label="Item Name: activate to sort column descending"
                                                     style="width: 204px;">Item Name</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example" rowspan="1"
-                                                    colspan="1" aria-label="Item Type: activate to sort column ascending"
+                                                    colspan="1"
+                                                    aria-label="Item Type: activate to sort column ascending"
                                                     style="width: 186px;">Item Type</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example"
                                                     rowspan="1" colspan="1"

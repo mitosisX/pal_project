@@ -5,7 +5,7 @@
 @endsection
 
 @section('breadcrumb')
-    <h2 class="section-title">Admin</h2>
+    Admin
 @endsection
 
 @section('content')
