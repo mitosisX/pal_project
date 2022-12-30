@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 
 class DriverController extends Controller
@@ -11,15 +12,20 @@ class DriverController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function view()
     {
-        return view('driver.layout');
+        return view('driver.app.layout');
+      
     }
 
 
     public function myJobs()
     {
-        return view('driver.index');
+
+     $data =DeliveryJob::all();
+        
+        
+        return view('driver.index',['data'=>$data]);  
     }
 
     /**

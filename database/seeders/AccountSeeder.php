@@ -31,6 +31,14 @@ class AccountSeeder extends Seeder
             'email' => 'farmer@pa.l',
             // fake()->email()
             'password' => bcrypt('password')
+        ], [
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
+            'phone_number' => fake()->phoneNumber(),
+            'role' => 'driver',
+            'email' => 'driver@pa.l',
+            // fake()->email()
+            'password' => bcrypt('password')
         ]] as $account) {
             DB::table('users')
                 ->insert($account);

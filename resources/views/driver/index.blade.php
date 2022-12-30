@@ -1,4 +1,4 @@
-@extends('driver.layout')
+@extends('driver.app.layout')
 
 
 @section('content')
@@ -14,26 +14,28 @@
                         <thead>
                             <tr>
                                 <th>Description</th>
-                                <th>Date</th>
-                                <th>Destination estate</th>
+                                <th>Item Name</th>
                                 <th>Products Type</th>
-                                <th>Name</th>
-                                <th>Quantity</th>
                                 <th>Unit</th>
+                                <th>Destination Estate</th>
+                                <th>Quantity</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($data as $jobdata)
                             <tr>
-                                <td>Deliver Fertilizers</td>
-                                <td>12-07-2022</td>
-                                <td>Estate 43</td>
-                                <td>Fertlizers</td>
-                                <td>NPK</td>
-                                <td>37,000</td>
-                                <td>KG</td>
+                        
+                                <td>{{$jobdata->description}}</td>
+                                <td>{{$jobdata->item->name}}</td>
+                                <td>{{$jobdata->type}}</td>
+                                <td>{{$jobdata->unit}}</td>
+                                <td>{{$jobdata->estate->name}}</td>
+                                <td>{{$jobdata->quantity}}</td>
                                 <td><button type="button" class="btn btn-primary">clear</button></td>
                             </tr>
+                            @endforeach 
+                          
                               
                         </tbody>
                     </table>

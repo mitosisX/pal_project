@@ -15,7 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            AccountSeeder::class
+            AccountSeeder::class,
+
+            deliveryJobSeeder::class,
+
+
         ]);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -23,3 +27,6 @@ class DatabaseSeeder extends Seeder
         // ]);
     }
 }
+
+
+

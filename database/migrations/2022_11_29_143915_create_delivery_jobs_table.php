@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('delivery_jobs', function (Blueprint $table) {
             $table->increments('id');
             $table->mediumText('description');
+            $table->mediumText('type');
+            $table->mediumText('unit');
+            $table->mediumText('quantity');
             $table->mediumText('status');
             $table->unsignedInteger('drivers_id');
             $table->unsignedInteger('items_id');

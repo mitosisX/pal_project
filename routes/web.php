@@ -51,10 +51,19 @@ Route::controller(CropController::class)->group(function () {
     Route::post('admin/crop/store', 'store')->name('crop.store');
 });
 
+
+Route::controller(DriverController::class)->group(function () {
+    Route::post('admin/field/store', 'store')->name('admin.field.store');
+    Route::get('driver/field/edit/{field}', 'edit')->name('admin.field.edit');
+    Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
+    Route::get('/driver', 'index')->name('driver.index');
+    Route::get('/driver', 'myJobs')->name('driver.myjobs');
+});
+
 Route::get('/admin/s', [adminController::class, 'adminData']);
 Route::get('/estate', [EstateController::class, 'index']);
-Route::get('/driver', [DriverController::class, 'index']);
-Route::get('/driver', [DriverController::class, 'myJobs']);
+// Route::get('/driver', [DriverController::class, 'index']);
+// Route::get('/driver', [DriverController::class, 'myJobs']);
 Route::get('/viewjob', [dJobController::class, 'viewDeliveryJob']);
 
 Route::get('/editField', [editFieldController::class, 'index']);
