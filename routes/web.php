@@ -44,7 +44,7 @@ Route::controller(FieldController::class)->group(function () {
     Route::post('admin/field/store', 'store')->name('admin.field.store');
     Route::get('admin/field/edit/{field}', 'edit')->name('admin.field.edit');
     Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
-    Route::get('admin/field/manage/crop/{crop}', 'manageCrop')->name('admin.crop.edit');
+    Route::get('admin/field/manage/crop/{field}/{crop}', 'manageCrop')->name('admin.crop.edit');
 });
 
 Route::controller(CropController::class)->group(function () {

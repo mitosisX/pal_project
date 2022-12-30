@@ -97,9 +97,17 @@ class FieldController extends Controller
         //
     }
 
-    public function manageCrop(Crop $crop)
+    public function manageCrop(Field $field, Crop $crop)
     {
-        $fields = Field::all();
+        //Only want to show fields are from the same estate
+        //as the field passed as the argument
+        $estateId = Estate::where('id', $field->estates_id)
+            ->first()
+            ->id;
+
+        //Here are all the fields
+        $fields = Field::where('estates_id', $estateId)
+            ->get();
 
         return view(
             'admin.crop.edit',

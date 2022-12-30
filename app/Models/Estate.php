@@ -14,7 +14,7 @@ class Estate extends Model
 
     public function manager()
     {
-        return $this->hasOne(User::class, 'id');
+        return $this->hasOne(User::class, 'id', 'managers_id');
     }
 
     public function fields()

@@ -17,6 +17,6 @@ class Field extends Model
 
     public function estate()
     {
-        return $this->belongsTo(Estate::class, 'estates_id', 'id');
+        return $this->hasOneThrough(Estate::class, 'estates_id', 'id');
     }
 }
