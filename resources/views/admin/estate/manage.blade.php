@@ -4,6 +4,12 @@
     <title>Press Agriculture Limited</title>
 @endsection
 
+@section('navbutton')
+    <a href="{{ route('admin.estate.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50"></i>
+        Back</a>
+@endsection
+
 @section('content')
     <div class="container-fluid px-4 pr-5">
         <div class="row g-3 my-2">
@@ -79,7 +85,7 @@
                                                 @foreach ($field->crops as $crop)
                                                     {{-- {{ $crop->field['name'] }} --}}
                                                     <a
-                                                        href="{{ route('admin.crop.edit', ['crop' => $crop->id]) }}">{{ $crop->name }}</a>
+                                                        href="{{ route('admin.crop.edit', ['field' => $field->id, 'crop' => $crop->id]) }}">{{ $crop->name }}</a>
                                                     <br>
                                                 @endforeach
                                             </td>

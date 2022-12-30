@@ -19,11 +19,11 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" />
     <style>
-        .section .section-title {
+        .sect {
             color: #5a5c69 !important;
         }
 
-        .section .section-title:before {
+        .sect:before {
             content: ' ';
             border-radius: 5px;
             height: 8px;
@@ -182,12 +182,17 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <section class="section">
-                        <div class="section-body">
-                            {{-- BREADCRUMB /////////////////// --}}
-                            <h2 class="section-title">Admin</h2>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800 sect">Admin</h1>
+                        @yield('navbutton')
+                    </div>
+                    {{-- <section class="section"> --}}
+                    {{-- <div class="section-body"> --}}
+                    {{-- BREADCRUMB /////////////////// --}}
+                    {{-- <h2 class="section-title">Admin</h2>
+                            @yield('navbutton')
                         </div>
-                    </section>
+                    </section> --}}
 
                     <!-- ##################################################### -->
 
