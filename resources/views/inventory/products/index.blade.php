@@ -1,5 +1,5 @@
 
-@extends('products.app.layout')
+@extends('inventory.app.layout')
 
 @section('content')
 
@@ -81,7 +81,7 @@
                                       <th>Cost</th>
                                   </tr>
                               </thead>
-                              <tbody>
+                              {{-- <tbody>
                                 @foreach ($products as $product)
                                 <tr>
                                     <td>{{$product->id}}</td>
@@ -92,7 +92,7 @@
                                     <td>{{$product->unit}}</td>
                                     <td>{{$product->price}}</td>   
                                 </tr>
-                                @endforeach 
+                                @endforeach  --}}
                             </tbody>
                               </tfoot>
                           </table>
@@ -167,18 +167,18 @@ $.ajaxSetup({
 
 
 
-        $(document).on('click', '.add_product', function(e){
-            e.preventDefault();
+        // $(document).on('click', '.add_product', function(e){
+        //     e.preventDefault();
            
 
-            var data ={
-                'date': $('.date').val(),
-                'type': $('.type').val(),
-                'name': $('.name').val(),
-                'quantity': $('.quantity').val(),
-                'unit': $('.unit').val(),
-                'price': $('.price').val(),
-            } 
+        //     var data ={
+        //         'date': $('.date').val(),
+        //         'type': $('.type').val(),
+        //         'name': $('.name').val(),
+        //         'quantity': $('.quantity').val(),
+        //         'unit': $('.unit').val(),
+        //         'price': $('.price').val(),
+        //     } 
             
             // console.log(data); 
 
@@ -186,39 +186,39 @@ $.ajaxSetup({
 
 
 
-            $.ajax({
-                type: "POST",
-                url: "/products",
-                data: data,
-                dataType: "json",
-                success: function(response) {
+            // $.ajax({
+            //     type: "POST",
+            //     url: "/products",
+            //     data: data,
+            //     dataType: "json",
+            //     success: function(response) {
                     // console.log(response);
-                    if(response.status ==400)
-                    {
-                        $('#saveform_errList').html("");
-                        $('#saveform_errList').addClass('alert alert-danger');
-                        $.each(response.errors, function(key, err_values){
-                            $('#saveform_errList').append('<li>' +err_values+ '</li>');
-                        });
-                    }else{
-                        $('#saveform_errList').html("");
-                        $('#success_message').addClass('alert alert-success');
-                        $('#success_message').text(response.message);
-                        $('#addProduct').modal('hide');
-                        $('#addProduct').find('input').value("");
-                    }
+    //                 if(response.status ==400)
+    //                 {
+    //                     $('#saveform_errList').html("");
+    //                     $('#saveform_errList').addClass('alert alert-danger');
+    //                     $.each(response.errors, function(key, err_values){
+    //                         $('#saveform_errList').append('<li>' +err_values+ '</li>');
+    //                     });
+    //                 }else{
+    //                     $('#saveform_errList').html("");
+    //                     $('#success_message').addClass('alert alert-success');
+    //                     $('#success_message').text(response.message);
+    //                     $('#addProduct').modal('hide');
+    //                     $('#addProduct').find('input').value("");
+    //                 }
                 
-                }
+    //             }
 
 
-            });
+    //         });
         
 
-        });
+    //     });
 
 
 
-    });
+    // });
 
 
 </script>

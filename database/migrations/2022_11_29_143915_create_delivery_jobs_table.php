@@ -21,7 +21,7 @@ return new class extends Migration
             $table->mediumText('quantity');
             $table->mediumText('status');
             $table->unsignedInteger('drivers_id');
-            $table->unsignedInteger('items_id');
+            $table->unsignedInteger('products_id');
             $table->unsignedInteger('estates_id');
             $table->timestamps();
 
@@ -30,9 +30,9 @@ return new class extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->foreign('items_id')
+            $table->foreign('products_id')
                 ->references('id')
-                ->on('items')
+                ->on('products')
                 ->onDelete('cascade');
 
             $table->foreign('estates_id')

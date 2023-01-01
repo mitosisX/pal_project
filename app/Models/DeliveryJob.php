@@ -19,7 +19,7 @@ class DeliveryJob extends Model
 
     public function item()
     {
-        return $this->belongsTo(items::class, 'items_id', 'id');
+        return $this->belongsTo(products::class, 'items_id', 'id');
     }
 
 
