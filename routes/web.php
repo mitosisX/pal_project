@@ -35,6 +35,8 @@ Route::controller(adminController::class)->group(function () {
 
 Route::controller(EstateController::class)->group(function () {
     Route::get('admin/estate/view', 'index')->name('admin.estate.index');
+    Route::get('admin/estate/edit/{estate}', 'edit')->name('admin.estate.edit');
+    Route::get('admin/estate/update/{estate}', 'update')->name('admin.estate.update');
     Route::get('admin/estate/create', 'create')->name('admin.estate.create');
     Route::post('admin/estate/store', 'store')->name('admin.estate.store');
     Route::get('admin/estate/manage/{estate}', 'manage')->name('admin.estate.manage');
