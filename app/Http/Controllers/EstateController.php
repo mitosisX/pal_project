@@ -109,9 +109,13 @@ class EstateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Estate $estate, Request $request)
     {
-        return 2;
+        $estate->update($request->all());
+
+        return redirect()
+            ->back();
+        // ->route('admin.estate.manage');
     }
 
     /**

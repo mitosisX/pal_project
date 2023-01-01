@@ -17,7 +17,7 @@
                         <div class="card border-0 o-hidden shadow-lg my-5">
                             <div class="card-header">
                                 <h4>Edit Estate</h4>
-                            </div>
+                            </div>+
                             <div class="card-body">
                                 <form class="px-md-2" action="{{ route('admin.estate.update', ['estate' => $estate->id]) }}">
                                     <div class="form-outline mb-4">
@@ -28,10 +28,10 @@
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label for="validationCustom01" class="form-label">Field</label>
+                                        <label for="validationCustom01" class="form-label">Manager</label>
                                         <select name="managers_id" class="type form-control">
                                             @foreach ($managers as $manager)
-                                                <option value="{{ $manager->id }}" @selected([$manager->id == $estate->managers_id])>
+                                                <option value="{{ $manager->id }}" @selected([$estate->managers_id === $manager->id])>
                                                     {{ $manager->name }}</option>
                                             @endforeach
                                         </select>
