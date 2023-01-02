@@ -34,10 +34,20 @@
                                 <label for="inputEmail4">Name</label>
                                 <input type="text" name= "pname"class="form-control name"  placeholder="Enter Name">
                               </div>
+
                               <div class="form-group col-md-4">
                                 <label for="inputPassword4">Type</label>
-                                <input type="text" name="ptype" class="form-control type"  placeholder="Enter Type">
+                                <select type="text" name="ptype" class="form-control crop"  placeholder="Type">
+                                  <option selected>--select--</option>
+                                  @foreach($data as $type)
+                                  <option value="{{$type->id}}">{{$type->name}} </option>
+                                  {{-- <option value="Groundnuts"> Gound Nuts</option> --}}
+
+                                  
+                                  @endforeach
+                                </select>
                               </div>
+                             
 
                               <div class="form-group col-md-4">
                                 <label for="inputPassword4">Unit</label>
@@ -56,18 +66,7 @@
                               </div>
 
                              
-                              <div class="form-group col-md-4">
-                                <label for="inputPassword4">Crop</label>
-                                <select type="text" class="form-control crop"  placeholder="crop">
-                                  <option selected>Select crop</option>
-                                  
-                                  <option value=""> </option>
-                                  {{-- <option value="Groundnuts"> Gound Nuts</option> --}}
-
-                                  
-
-                                </select>
-                              </div>
+                              
 
                               <div class="form-group col-md-4">
                                 <label for="inputPassword4">Unit Price</label>

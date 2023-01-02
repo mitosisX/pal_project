@@ -72,20 +72,19 @@ Route::controller(inventoryController::class)->group(function () {
 Route::controller(productsController::class)->group(function () {
     Route::get('inventory/products/', 'create')->name('inventory.products.create');
     Route::post('inventory/products/store', 'store')->name('inventory.products.store');
-    // Route::get('/inventory', 'index')->name('inventory.index');
-    // Route::get('/products', 'table')->name('products.table');
-    // Route::post('products/store', 'store')->name('products.store');
+    
+    
+   
 });
 
-// Route::resource('/inventory/products', 'productsController');
 
 
+                  //Stock
 Route::controller(stockController::class)->group(function () {
     Route::get('inventory/stock/', 'create')->name('inventory.stock.create');
-    // Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
-    // Route::get('/inventory', 'index')->name('inventory.index');
-    // Route::get('/products', 'table')->name('products.table');
-    // Route::post('products/store', 'store')->name('products.store');
+    Route::get('inventory/stock/findProductType', 'findProductType')->name('inventory.stock.findProductType');
+    Route::post('inventory/stock/store', 'store')->name('inventory.stock.store');
+  
 });
 
 Route::get('/admin/s', [adminController::class, 'adminData']);

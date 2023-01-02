@@ -23,8 +23,6 @@ class DriverController extends Controller
     {
 
      $data =DeliveryJob::all();
-        
-        
         return view('driver.index',['data'=>$data]);  
     }
 

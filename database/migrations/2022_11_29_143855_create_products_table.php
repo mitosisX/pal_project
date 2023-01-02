@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->mediumText('name');
-            $table->mediumText('type');
+            $table->unsignedInteger('type');
             $table->mediumText('unit');
             $table->integer('package_size');
             $table->mediumText('supplier');
@@ -24,10 +24,10 @@ return new class extends Migration
             // $table->unsignedInteger('crops_id');
             $table->timestamps();
 
-            // $table->foreign('crops_id')
-            //     ->references('id')
-            //     ->on('crops')
-            //     ->onDelete('cascade');
+            $table->foreign('type')
+                ->references('id')
+                ->on('product_type')
+                ->onDelete('cascade');
         });
     }
 

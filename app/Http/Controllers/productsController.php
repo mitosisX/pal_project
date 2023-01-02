@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 
 
 use datatables;
-use App\Models\products;
-use Illuminate\Http\Request;
-// use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Validator;
 use App\Models\Crop;
+use App\Models\products;
+// use Illuminate\Routing\Controller;
+use App\Models\ProductType;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 
 class productsController extends Controller
@@ -22,7 +23,7 @@ class productsController extends Controller
     public function create()
     {    
         // $crops=Crop::all();
-        $data = Crop::all();  
+        $data = ProductType::all();  
         return view('inventory.products.create', ['data'=>$data]);
         
     }

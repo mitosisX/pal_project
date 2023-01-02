@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Crop;
+use App\Models\ProductType;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\productsController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,10 +14,10 @@ class products extends Model
     protected $primaryKey ='id';
     protected $fillable =['name', 'type','unit', 'package_size', 'supplier','unit_price'];
 
-    // public function crops()
-    // {
-    //     return $this->belongsTo(Crop::class, 'crop_id',  'id');
-    // }
+    public function proType()
+    {
+        return $this->belongsTo(ProductType::class, 'type',  'id');
+    }
 }
 
 

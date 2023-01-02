@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class inventoryController extends Controller
@@ -18,12 +19,10 @@ class inventoryController extends Controller
 
     public function tabledata()
     {
-        return view('inventory.index');
+        $stocks=Stock::all();
+        return view('inventory.index', compact('stocks'));
     }
 
-
-
-    
 
     /**
      * Show the form for creating a new resource.
