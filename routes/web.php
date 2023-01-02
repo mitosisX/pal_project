@@ -13,6 +13,8 @@ use App\Http\Controllers\editFieldController;
 use App\Http\Controllers\EditEstateController;
 use App\Http\Controllers\Admin\FieldController;
 use App\Http\Controllers\CropController;
+use App\Http\Controllers\inventoryController;
+use App\Http\Controllers\stockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,13 +55,38 @@ Route::controller(CropController::class)->group(function () {
     Route::post('admin/crop/store', 'store')->name('crop.store');
 });
 
-
+                    // Driver
 Route::controller(DriverController::class)->group(function () {
-    Route::post('admin/field/store', 'store')->name('admin.field.store');
-    Route::get('driver/field/edit/{field}', 'edit')->name('admin.field.edit');
-    Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
+    // Route::post('admin/field/store', 'store')->name('admin.field.store');
+    // Route::get('driver/field/edit/{field}', 'edit')->name('admin.field.edit');
+    // Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
     Route::get('/driver', 'index')->name('driver.index');
     Route::get('/driver', 'myJobs')->name('driver.myjobs');
+});
+
+// Inventory
+Route::controller(inventoryController::class)->group(function () {
+    Route::get('/inventory', 'index')->name('inventory.index');
+    Route::get('/inventory', 'tabledata')->name('inventory.tabledata');
+});
+
+                //  Products
+Route::controller(productsController::class)->group(function () {
+    Route::get('inventory/products/', 'create')->name('inventory.products.create');
+    Route::post('inventory/products/store', 'store')->name('inventory.products.store');
+    
+    
+   
+});
+
+
+
+                  //Stock
+Route::controller(stockController::class)->group(function () {
+    Route::get('inventory/stock/', 'create')->name('inventory.stock.create');
+    Route::get('inventory/stock/findProductType', 'findProductType')->name('inventory.stock.findProductType');
+    Route::post('inventory/stock/store', 'store')->name('inventory.stock.store');
+  
 });
 
 Route::get('/admin/s', [adminController::class, 'adminData']);
@@ -79,10 +106,10 @@ Route::get('/editCrop', [editCropController::class, 'index']);
 Route::get('/editCrop', [editCropController::class, 'editCrop']);
 
 
-Route::get('/products', [productsController::class, 'index']);
-Route::get('/products', [productsController::class, 'table']);
-Route::post('/products', [productsController::class, 'store']);
-Route::get('fetch-products', [productsController::class, 'fetchproduct']);
+// Route::get('/products', [productsController::class, 'index']);
+// Route::get('/products', [productsController::class, 'table']);
+// Route::post('/products', [productsController::class, 'store']);
+// Route::get('fetch-products', [productsController::class, 'fetchproduct']);
 
 
 

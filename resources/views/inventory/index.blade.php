@@ -1,5 +1,5 @@
 
-@extends('products.app.layout')
+@extends('inventory.app.layout')
 
 @section('content')
 
@@ -62,35 +62,34 @@
           <div class="col-md-12">
               <div class="col-lg-12">
                   <div class="card">
-                      <h3 class="card-header">Inputs</h3>
+                      <h3 class="card-header">Inventory</h3>
                       <div class="card-body">
                          <div class="tables-responsive">
 
                           <table id="example" class="table table-borderd table-striped data-table" style="width:100%">
                               <thead class="text-muted">
                                   <tr>
-                                      <th>ID</th>
-                                      <th>Product</th>
+                                      
+                                      <th>Product Name</th>
                                       <th>Type</th>
-                                      <th>Last Purchased</th>
-                                      <th>Amount Purchsased</th>
-                                      {{-- <th>Amount Used</th>
-                                      <th>Remaining</th> --}}
-                                      <th>Unit</th>
-                                      {{-- <th>Average Unit Price</th> --}}
-                                      <th>Cost</th>
+                                      <th>Unit of Measure</th>
+                                      <th>Package Size</th>
+                                      <th>Quantity</th>
+                                      <th>Unit Price</th>
+                                      <th>Total Price</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                @foreach ($products as $product)
+                                @foreach ($stocks as $stock)
                                 <tr>
-                                    <td>{{$product->id}}</td>
-                                    <td>{{$product->name}}</td>
-                                    <td>{{$product->type}}</td>
-                                    <td>{{$product->date}}</td>
-                                    <td>{{$product->quantity}}</td>
-                                    <td>{{$product->unit}}</td>
-                                    <td>{{$product->price}}</td>   
+                                    <td>{{$stock->proName->name}}</td>
+                                    <td>{{$stock->proType->name}}</td>
+                                    <td>{{$stock->proUnit->name}}</td>
+                                    <td>{{$stock->package_size}}</td>
+                                    <td>{{$stock->quantity}}</td>
+                                    <td>{{$stock->unit_price}}</td>
+                                    <td></td> 
+                                     
                                 </tr>
                                 @endforeach 
                             </tbody>
@@ -167,18 +166,18 @@ $.ajaxSetup({
 
 
 
-        $(document).on('click', '.add_product', function(e){
-            e.preventDefault();
+        // $(document).on('click', '.add_product', function(e){
+        //     e.preventDefault();
            
 
-            var data ={
-                'date': $('.date').val(),
-                'type': $('.type').val(),
-                'name': $('.name').val(),
-                'quantity': $('.quantity').val(),
-                'unit': $('.unit').val(),
-                'price': $('.price').val(),
-            } 
+        //     var data ={
+        //         'date': $('.date').val(),
+        //         'type': $('.type').val(),
+        //         'name': $('.name').val(),
+        //         'quantity': $('.quantity').val(),
+        //         'unit': $('.unit').val(),
+        //         'price': $('.price').val(),
+        //     } 
             
             // console.log(data); 
 
@@ -186,39 +185,39 @@ $.ajaxSetup({
 
 
 
-            $.ajax({
-                type: "POST",
-                url: "/products",
-                data: data,
-                dataType: "json",
-                success: function(response) {
+            // $.ajax({
+            //     type: "POST",
+            //     url: "/products",
+            //     data: data,
+            //     dataType: "json",
+            //     success: function(response) {
                     // console.log(response);
-                    if(response.status ==400)
-                    {
-                        $('#saveform_errList').html("");
-                        $('#saveform_errList').addClass('alert alert-danger');
-                        $.each(response.errors, function(key, err_values){
-                            $('#saveform_errList').append('<li>' +err_values+ '</li>');
-                        });
-                    }else{
-                        $('#saveform_errList').html("");
-                        $('#success_message').addClass('alert alert-success');
-                        $('#success_message').text(response.message);
-                        $('#addProduct').modal('hide');
-                        $('#addProduct').find('input').value("");
-                    }
+    //                 if(response.status ==400)
+    //                 {
+    //                     $('#saveform_errList').html("");
+    //                     $('#saveform_errList').addClass('alert alert-danger');
+    //                     $.each(response.errors, function(key, err_values){
+    //                         $('#saveform_errList').append('<li>' +err_values+ '</li>');
+    //                     });
+    //                 }else{
+    //                     $('#saveform_errList').html("");
+    //                     $('#success_message').addClass('alert alert-success');
+    //                     $('#success_message').text(response.message);
+    //                     $('#addProduct').modal('hide');
+    //                     $('#addProduct').find('input').value("");
+    //                 }
                 
-                }
+    //             }
 
 
-            });
+    //         });
         
 
-        });
+    //     });
 
 
 
-    });
+    // });
 
 
 </script>

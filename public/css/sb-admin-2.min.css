@@ -12685,3 +12685,22 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%;
 }
+
+
+.form-control{
+    border-radius: 0 !important;
+    border-width: thin !important;
+  }
+  
+  .form-select{
+    border-radius: 0 !important;
+    border-width: thin !important;
+  }
+  
+  .form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: inherit;
+    outline: 0;
+    box-shadow: none;
+  }

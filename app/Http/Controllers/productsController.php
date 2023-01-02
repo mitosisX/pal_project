@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 
 
 use datatables;
+use App\Models\Crop;
 use App\Models\products;
+// use Illuminate\Routing\Controller;
+use App\Models\ProductType;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -18,10 +20,11 @@ class productsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function create()
     {    
-        
-        return view('products.layout');
+        // $crops=Crop::all();
+        $data = ProductType::all();  
+        return view('inventory.products.create', ['data'=>$data]);
         
     }
 
@@ -30,11 +33,11 @@ class productsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function table()
-    { 
-        $products = products::all();
-        return view('products.index')->with('products', $products);
-    }
+    // public function table()
+    // { 
+    //     $products = products::all();
+    //     return view('products.index')->with('products', $products);
+    // }
 
 
     // public function store(Request $request){
@@ -53,51 +56,37 @@ class productsController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'date'=>'required',
-            'type'=>'required',
-            'name'=>'required',
-            'quantity'=>'required',
-            'unit'=>'required',
-            'price'=>'required',
-            
+        $this ->Validate($request,[
+            'pname'=>'required',
+            'ptype'=>'required',
+            'punit'=>'required',
+            'ppackage'=>'required',
+            'psupplier'=>'required',
+            'pprice'=>'required',
+              
         ]);
-
-        if($validator->fails())
-        {
-            return response()->json([
-                'status'=>400,
-                'errors'=>$validator->messages(),
-            ]);
-        }
-        else{
 
         $produ = new products;
 
-        $produ->date =$request->input('date');
-        $produ->type =$request->input('type');
-        $produ->name =$request->input('name');
-        $produ->unit =$request->input('unit');
-        $produ->quantity =$request->input('quantity');
-        $produ->price =$request->input('price');
+        $produ->name =$request->input('pname');
+        $produ->type =$request->input('ptype');
+        $produ->unit =$request->input('punit');
+        $produ->package_size =$request->input('ppackage');
+        $produ->supplier =$request->input('psupplier');
+        $produ->unit_price =$request->input('pprice');
         $produ->save();
 
-        return response()->json([
-            'status'=>200,
-            'message'=>'Product added successfully',
-        ]);
+        return redirect('/inventory/products')->with('success', 'Data saved successfully'); 
 
     }
 
-}
 
-// public function fethproduct(Request $request){
-//     if ($request->ajax()) {
-//          $datas = products::all();
-//          return datatables()->of(products::all())->toJson();
-//      }        
+
+public function fethproduct(Request $request){
+
+     }        
      
-//  }
+ 
 
     /**
      * Display the specified resource.

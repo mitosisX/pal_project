@@ -2,29 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DeliveryJob;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
-class DriverController extends Controller
+class inventoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function view()
+    public function index()
     {
-        return view('driver.app.layout');
-      
+        return view('inventory.app.layout');
     }
 
-
-    public function myJobs()
+    public function tabledata()
     {
-
-     $data =DeliveryJob::all();
-        return view('driver.index',['data'=>$data]);  
+        $stocks=Stock::all();
+        return view('inventory.index', compact('stocks'));
     }
+
 
     /**
      * Show the form for creating a new resource.

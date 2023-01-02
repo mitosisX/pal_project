@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('request_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('items_id');
+            $table->unsignedInteger('products_id');
             $table->mediumText('description');
             $table->unsignedInteger('estates_id');
             $table->mediumText('category');
@@ -24,9 +24,9 @@ return new class extends Migration
             $table->date('date');
             $table->timestamps();
 
-            $table->foreign('items_id')
+            $table->foreign('products_id')
                 ->references('id')
-                ->on('items')
+                ->on('products')
                 ->onDelete('cascade');
 
             $table->foreign('estates_id')
