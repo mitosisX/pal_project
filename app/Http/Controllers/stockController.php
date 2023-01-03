@@ -32,7 +32,7 @@ class stockController extends Controller
        $prod1=products::all();
        $sup=Suppliers::all();
        $unit=productUnit::all();
-       return view('inventory.stock.create', compact('prod', 'prod1', 'sup', 'unit', 'stocks'));
+       return view('inventory.stock.create', compact('prod', 'prod1', 'sup', 'unit',));
     }
 
 
@@ -63,19 +63,20 @@ class stockController extends Controller
             'sprice'=>'required', 
         ]);
 
-        $stock = Stock::where([
-            ['name', '=', $request->name],
+        $stock1 = Stock::where([
+            ['name', $request->sname],
          // ['supplier_id', '=', $request->supplier_id]
         ])->first();
     
-        if ($stock) {
-            $stock->increment('quantity', $request->quantity);
+        if($stock1) {
+            $stock1->increment('quantity', $request->squantity);
+            return redirect('/inventory/stock')->with('success', 'Stock Updated'); 
         } else {
             // Stock::create($request->all());
         $stock = new Stock;
 
         $stock->name =$request->input('stype');
-        $stock->type =$request->input('stype');
+        $stock->type =$request->input('sname');
         $stock->unit =$request->input('sunit');
         $stock->package_size =$request->input('spackage');
         $stock->supplier =$request->input('ssupplier');

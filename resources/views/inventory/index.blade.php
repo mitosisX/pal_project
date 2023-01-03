@@ -75,6 +75,7 @@
                                       <th>Unit of Measure</th>
                                       <th>Package Size</th>
                                       <th>Quantity</th>
+                                      <th>Supplier</th>
                                       <th>Unit Price</th>
                                       <th>Total Price</th>
                                   </tr>
@@ -87,6 +88,7 @@
                                     <td>{{$stock->proUnit->name}}</td>
                                     <td>{{$stock->package_size}}</td>
                                     <td>{{$stock->quantity}}</td>
+                                    <td>{{$stock->proSupplier}}</td>
                                     <td>{{$stock->unit_price}}</td>
                                     <td></td> 
                                      
