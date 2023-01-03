@@ -36,8 +36,8 @@
                                                 <div class="btn-group mb-3" role="group" aria-label="Basic example">
                                                     <a href="{{ route('admin.estate.manage', ['estate' => $estate->id]) }}"
                                                         class="btn btn-icon btn-success"><i class="far fa-eye"></i></a>
-                                                    <a href="#" class="btn btn-icon btn-primary"><i
-                                                            class="far fa-edit"></i></a>
+                                                    <a href="{{ route('admin.estate.edit', ['estate' => $estate->id]) }}"
+                                                        class="btn btn-icon btn-primary"><i class="far fa-edit"></i></a>
                                                     <a href="#" class="btn btn-icon btn-danger"><i
                                                             class="far fa-edit"></i></a>
                                                 </div>
