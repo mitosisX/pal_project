@@ -88,7 +88,7 @@
                                     <td>{{$stock->proUnit->name}}</td>
                                     <td>{{$stock->package_size}}</td>
                                     <td>{{$stock->quantity}}</td>
-                                    <td>{{$stock->proSupplier}}</td>
+                                    <td>{{$stock->proSupplier->name}}</td>
                                     <td>{{$stock->unit_price}}</td>
                                     <td></td> 
                                      

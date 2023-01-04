@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Stock;
 use Illuminate\Http\Request;
 
-class inventoryController extends Controller
+class requestController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     return view('inventory.app.layout');
-    // }
-
-    public function tabledata()
+    public function index()
     {
-        $stocks=Stock::all();
-        return view('inventory.index', compact('stocks'));
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -31,7 +23,7 @@ class inventoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('manager.submit.create');
     }
 
     /**

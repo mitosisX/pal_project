@@ -64,7 +64,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('inventory.tabledata') }}">
+                <a class="nav-link" href="{{ route('manager.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -86,7 +86,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tasks:</h6>
-                        <a class="collapse-item" href="{{ route('inventory.products.create') }}">Add products</a>
+                        <a class="collapse-item" href="{{ route('manager.submit.create') }}">Submit Request</a>
                         <a class="collapse-item" href="{{ route('inventory.stock.create') }}">Update Inventory</a>
                         {{-- <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage estates</a> --}}
                         {{-- <a class="collapse-item" href="buttons.html">Add Product</a> --}}
@@ -160,7 +160,7 @@
                     <section class="section">
                         <div class="section-body">
                             {{-- BREADCRUMB /////////////////// --}}
-                            <h2 class="section-title">Inventory</h2>
+                            <h2 class="section-title">Estate</h2>
                         </div>
                     </section>
 

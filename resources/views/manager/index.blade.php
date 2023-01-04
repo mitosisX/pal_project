@@ -1,4 +1,4 @@
-@extends('estate.layout')
+@extends('manager.app.layout')
 
 
 @section('content')

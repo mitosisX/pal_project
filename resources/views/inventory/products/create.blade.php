@@ -3,9 +3,9 @@
 
 @section('content')
 
-      <div class="row g-3 my-2">
-          <div class="col-md-12">
-              <div class="col-lg-12">
+<div class="row justify-content-center align-items-center">
+  <div class="col-md-6 col-md-offset-6">
+      <div class="col-lg-12 col-md-offset-6">
                   <div class="card">
                     
                       <div class="card-body">
@@ -30,12 +30,12 @@
                             {{csrf_field()}}
 
                             <div class="form-row">
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-12">
                                 <label for="inputEmail4">Name</label>
                                 <input type="text" name= "pname"class="form-control name"  placeholder="Enter Name">
                               </div>
 
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-12">
                                 <label for="inputPassword4">Type</label>
                                 <select type="text" name="ptype" class="form-control crop"  placeholder="Type">
                                   <option selected>--select--</option>
@@ -49,18 +49,18 @@
                               </div>
                              
 
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-12">
                                 <label for="inputPassword4">Unit</label>
                                 <input type="text" name="punit" class="form-control unit"  placeholder="Enter Unit">
                               </div>
 
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-12">
                                 <label for="inputPassword4">Package</label>
                                 <input type="text" name="ppackage" class="form-control package_size"  placeholder="EnterPackage">
                               </div>
 
                               
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-12">
                                 <label for="inputPassword4">Supplier</label>
                                 <input type="text" name="psupplier" class="form-control supplier"  placeholder="Enter Suppler">
                               </div>
@@ -68,7 +68,7 @@
                              
                               
 
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-12">
                                 <label for="inputPassword4">Unit Price</label>
                                 <input type="text" name="pprice" class="form-control unit_price"  placeholder="Enter Unit Price">
                               </div>

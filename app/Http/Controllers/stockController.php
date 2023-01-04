@@ -75,8 +75,8 @@ class stockController extends Controller
             // Stock::create($request->all());
         $stock = new Stock;
 
-        $stock->name =$request->input('stype');
-        $stock->type =$request->input('sname');
+        $stock->type =$request->input('stype');
+        $stock->name =$request->input('sname');
         $stock->unit =$request->input('sunit');
         $stock->package_size =$request->input('spackage');
         $stock->supplier =$request->input('ssupplier');

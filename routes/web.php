@@ -1,20 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CropController;
 use App\Http\Controllers\dJobController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\stockController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\EstateController;
 use App\Http\Controllers\addUserController;
+use App\Http\Controllers\managerController;
 use App\Http\Controllers\ReportsController;
+use App\Http\Controllers\requestController;
 use App\Http\Controllers\editCropController;
 use App\Http\Controllers\productsController;
 use App\Http\Controllers\editFieldController;
+use App\Http\Controllers\inventoryController;
 use App\Http\Controllers\EditEstateController;
 use App\Http\Controllers\Admin\FieldController;
-use App\Http\Controllers\CropController;
-use App\Http\Controllers\inventoryController;
-use App\Http\Controllers\stockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,10 +76,24 @@ Route::controller(inventoryController::class)->group(function () {
 Route::controller(productsController::class)->group(function () {
     Route::get('inventory/products/', 'create')->name('inventory.products.create');
     Route::post('inventory/products/store', 'store')->name('inventory.products.store');
-    
-    
-   
+     
 });
+
+              //manager
+Route::controller(managerController::class)->group(function () {
+    Route::get('manager', 'index')->name('manager.index');
+    // Route::post('inventory/products/store', 'store')->name('inventory.products.store');
+     
+});
+
+              //requests
+Route::controller(requestController::class)->group(function () {
+    Route::get('manager/submit', 'create')->name('manager.submit.create');
+    // Route::post('inventory/products/store', 'store')->name('inventory.products.store');
+     
+});
+
+
 
 
 
