@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\productUnit;
 use Illuminate\Database\Seeder;
+use Database\Seeders\Supplierseeder;
+use Database\Seeders\ProductTypeseeder;
+use Database\Seeders\ProductUnitseeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +22,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AccountSeeder::class,
 
-            deliveryJobSeeder::class,
+            ProductTypeseeder::class,
+            ProductUnitseeder::class,
+            Supplierseeder::class,
+            
 
 
         ]);

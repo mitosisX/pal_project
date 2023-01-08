@@ -4,22 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DeliveryJob extends Model
 {
-    use HasFactory;
-
+    use HasFactory, SoftDeletes;
+    protected $table ='delivery_jobs';
     protected $primaryKey = 'id';
-    protected $fillable =['description', 'type', 'unit', 'quantity', 'status', 'drivers_id', 'items_id', 'estates_id'];
+    protected $fillable =['type', 'unit', 'quantity', 'status', 'drivers_id', 'products_id', 'estates_id', 'deleted_at', 'created_at', 'updated_at'];
 
     public function driver()
     {
-        return $this->hasOne(User::class, 'id');
+        return $this->belongsTo(User::class,'drivers_id', 'id');
     }
 
     public function item()
     {
-        return $this->belongsTo(products::class, 'items_id', 'id');
+        return $this->belongsTo(products::class, 'products_id', 'id');
     }
 
 

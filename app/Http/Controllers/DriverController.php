@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DriverController extends Controller
 {
@@ -12,11 +13,11 @@ class DriverController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function view()
-    {
-        return view('driver.app.layout');
+    // public function view()
+    // {
+    //     return view('driver.app.layout');
       
-    }
+    // }
 
 
     public function myJobs()
@@ -31,11 +32,21 @@ class DriverController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function delete($id)
     {
-        //
+        // DB::delete('delete from delivery_jobs where id=?', [$id] );
+
+        DeliveryJob::find($id)->delete();
+        return redirect('driver')->with('success', 'job cleared');
     }
 
+    public function completed()
+    {
+       $completed = DeliveryJob::onlyTrashed()->get();
+       return view('driver.completed.index', compact('completed'));
+    }
+
+    
     /**
      * Store a newly created resource in storage.
      *

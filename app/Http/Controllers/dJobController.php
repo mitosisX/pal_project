@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 
 class dJobController extends Controller
@@ -11,9 +12,16 @@ class dJobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewDeliveryJob()
+    public function index()
     {
-        return view('viewjob.dJob');
+        $jobs = DeliveryJob::onlyTrashed()->get();
+        return view('admin.jobs.completed.index', compact('jobs'));
+    }
+
+    public function view()
+    {
+        $all = DeliveryJob::all();
+        return view('admin.jobs.index', compact('all'));
     }
 
     /**

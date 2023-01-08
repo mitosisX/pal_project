@@ -63,7 +63,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('admin.index') }}">
+                <a class="nav-link" href="/driver">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -84,8 +84,8 @@
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Admin tasks:</h6>
-                        <a class="collapse-item" href="createUser.html">Clear Jobs</a>
+                        <h6 class="collapse-header">Driver tasks:</h6>
+                        <a class="collapse-item" href="{{ route('driver.completed') }}">Completed Jobs</a>
                         {{-- <a class="collapse-item" href="{{ route('admin.estate.create') }}">Create estate</a>
                         <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage estates</a>
                         <a class="collapse-item" href="buttons.html">Add Product</a> --}}

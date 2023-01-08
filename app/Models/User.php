@@ -28,7 +28,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
+    
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -58,4 +58,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function driver()
+    {
+        return $this->hasMany(DeliveryJob::class);
+    }
 }

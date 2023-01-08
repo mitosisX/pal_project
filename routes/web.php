@@ -57,16 +57,22 @@ Route::controller(CropController::class)->group(function () {
     Route::post('admin/crop/store', 'store')->name('crop.store');
 });
 
-                    // Driver
-Route::controller(DriverController::class)->group(function () {
-    // Route::post('admin/field/store', 'store')->name('admin.field.store');
-    // Route::get('driver/field/edit/{field}', 'edit')->name('admin.field.edit');
-    // Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
-    Route::get('/driver', 'index')->name('driver.index');
-    Route::get('/driver', 'myJobs')->name('driver.myjobs');
+                    //admin view delivery jobs
+Route::controller(dJobController::class)->group(function () {
+    Route::get('admin/jobs/completed', 'index')->name('admin.jobs.completed.index');
+    Route::get('admin/jobs/', 'view')->name('admin.jobs.index');
+    
 });
 
-// Inventory
+                    // Driver
+Route::controller(DriverController::class)->group(function () {
+    Route::get('/driver', 'index')->name('driver.index');
+    Route::get('/driver', 'myJobs')->name('driver.myjobs');
+    Route::get('/driver/completed', 'completed')->name('driver.completed');
+    Route::get('/click_clear/{id}','delete')->name('driver.myjobs');
+});
+
+               // Inventory
 Route::controller(inventoryController::class)->group(function () {
     Route::get('/inventory', 'index')->name('inventory.index');
     Route::get('/inventory', 'tabledata')->name('inventory.tabledata');
@@ -79,23 +85,19 @@ Route::controller(productsController::class)->group(function () {
      
 });
 
-              //manager
+               //manager
 Route::controller(managerController::class)->group(function () {
     Route::get('manager', 'index')->name('manager.index');
     // Route::post('inventory/products/store', 'store')->name('inventory.products.store');
      
 });
 
-              //requests
+               //requests
 Route::controller(requestController::class)->group(function () {
     Route::get('manager/submit', 'create')->name('manager.submit.create');
     // Route::post('inventory/products/store', 'store')->name('inventory.products.store');
      
 });
-
-
-
-
 
                   //Stock
 Route::controller(stockController::class)->group(function () {

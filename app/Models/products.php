@@ -14,10 +14,17 @@ class products extends Model
     protected $primaryKey ='id';
     protected $fillable =['name', 'type','unit', 'package_size', 'supplier','unit_price'];
 
+    public function item()
+    {
+        return $this->hasMany(Deliveryjob::class);
+    }
+
     public function proType()
     {
         return $this->belongsTo(ProductType::class, 'type',  'id');
     }
+
+   
 }
 
 

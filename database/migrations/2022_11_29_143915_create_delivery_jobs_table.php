@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('delivery_jobs', function (Blueprint $table) {
             $table->increments('id');
-            $table->mediumText('description');
             $table->mediumText('type');
             $table->mediumText('unit');
             $table->mediumText('quantity');
@@ -23,6 +22,7 @@ return new class extends Migration
             $table->unsignedInteger('drivers_id');
             $table->unsignedInteger('products_id');
             $table->unsignedInteger('estates_id');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('drivers_id')
