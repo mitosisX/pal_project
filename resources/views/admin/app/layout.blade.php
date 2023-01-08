@@ -80,7 +80,6 @@
                         <a class="collapse-item" href="{{ route('admin.user.index') }}">Manage Users</a>
                         <a class="collapse-item" href="{{ route('admin.estate.create') }}">Create Estate</a>
                         <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage Estates</a>
-                        <a class="collapse-item" href="buttons.html">Add Product</a>
                     </div>
                 </div>
             </li>
@@ -90,16 +89,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Delivery Jobs</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Reports</a>
-                        <a class="collapse-item" href="utilities-border.html">Delivery Jobs</a>
-                        <a class="collapse-item" href="utilities-animation.html">Products</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">Delivery Jobs</h6>
+                        <a class="collapse-item" href="{{ route('admin.jobs.index') }}">All Delivery Jobs</a>
+                        <a class="collapse-item" href="{{ route('admin.jobs.completed.index') }}">Completed Delivery Jobs</a>
                     </div>
                 </div>
             </li>
