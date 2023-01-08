@@ -41,7 +41,7 @@ class EstateController extends Controller
 
         return view(
             'admin.estate.manage',
-            compact('fields', 'crops')
+            compact('fields', 'crops', 'estate')
         );
     }
 

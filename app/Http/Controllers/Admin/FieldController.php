@@ -26,9 +26,12 @@ class FieldController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Estate $estate)
+    {;
+        return view(
+            'admin.field.create',
+            compact('estate')
+        );
     }
 
     /**
@@ -40,6 +43,7 @@ class FieldController extends Controller
     public function store(Request $request)
     {
         Field::create($request->all());
+
         return back();
     }
 

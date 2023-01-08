@@ -11,12 +11,7 @@
     <title>Admin Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    
     <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href= "{{asset('css/dataTables.bootstrap5.css') }}">
-    <link href= "{{asset('css/bootstrap.min.css') }}">
-    <link href= "{{asset('css/styles.css') }}">
-
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet" />
@@ -82,10 +77,10 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Admin tasks:</h6>
-                        <a class="collapse-item" href="createUser.html">Manage users</a>
-                        <a class="collapse-item" href="{{ route('admin.estate.create') }}">Create estate</a>
-                        <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage estates</a>
-                        <a class="collapse-item" href="">Generate report</a>
+                        <a class="collapse-item" href="{{ route('admin.user.index') }}">Manage Users</a>
+                        <a class="collapse-item" href="{{ route('admin.estate.create') }}">Create Estate</a>
+                        <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage Estates</a>
+                        <a class="collapse-item" href="buttons.html">Add Product</a>
                     </div>
                 </div>
             </li>
@@ -95,14 +90,16 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Delivery Jobs</span>
+                    <span>Utilities</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Delivery Jobs</h6>
-                        <a class="collapse-item" href="{{ route('admin.jobs.index') }}">All Delivery Jobs</a>
-                        <a class="collapse-item" href="{{ route('admin.jobs.completed.index') }}">Completed Delivery Jobs</a>
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Reports</a>
+                        <a class="collapse-item" href="utilities-border.html">Delivery Jobs</a>
+                        <a class="collapse-item" href="utilities-animation.html">Products</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
             </li>
@@ -265,23 +262,6 @@
             <!-- Page level custom scripts -->
             <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
             <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
-
-             <!-- Bootstrap datatables JavaScript-->
-            {{-- <script src="{{ asset('js/bootstrap.bundle.js') }}"></script> --}}
-            <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-            <script src="{{ asset('js/dataTables.bootstrap5.js') }}"></script>
-
-
-
-
-
-            <script>
-
-                $(document).ready(function () {
-                        $('.data-table').DataTable();
-                    });
-                
-                </script>
 </body>
 
 </html>
