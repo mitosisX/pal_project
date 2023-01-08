@@ -118,89 +118,49 @@
             <div class="col-md-12">
                 <div class="col-lg-12">
                     <div class="card">
-                        <h3 class="card-header">Estate Inventory</h3>
-                        <div class="card-body">
-                            <div class="tables-responsive">
-
-                                <div id="example_wrapper" class="dataTables_wrapper no-footer">
-                                    <div class="dataTables_length" id="example_length"><label>Show <select
-                                                name="example_length" aria-controls="example" class="">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select> entries</label></div>
-                                    <div id="example_filter" class="dataTables_filter"><label>Search:<input type="search"
-                                                class="" placeholder="" aria-controls="example"></label></div>
-                                    <table id="example" class="table table-borderd data-table dataTable no-footer"
-                                        style="width: 100%;" role="grid" aria-describedby="example_info">
-                                        <thead>
-                                            <tr role="row">
-                                                <th class="sorting_asc" tabindex="0" aria-controls="example"
-                                                    rowspan="1" colspan="1" aria-sort="ascending"
-                                                    aria-label="Item Name: activate to sort column descending"
-                                                    style="width: 204px;">Item Name</th>
-                                                <th class="sorting" tabindex="0" aria-controls="example" rowspan="1"
-                                                    colspan="1" aria-label="Item Type: activate to sort column ascending"
-                                                    style="width: 186px;">Item Type</th>
-                                                <th class="sorting" tabindex="0" aria-controls="example"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Item Unit: activate to sort column ascending"
-                                                    style="width: 178px;">Item Unit</th>
-                                                <th class="sorting" tabindex="0" aria-controls="example"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Pakage Size: activate to sort column ascending"
-                                                    style="width: 214px;">Pakage Size</th>
-                                                <th class="sorting" tabindex="0" aria-controls="example"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Quantity: activate to sort column ascending"
-                                                    style="width: 168px;">Quantity</th>
-                                                <th class="sorting" tabindex="0" aria-controls="example"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Total: activate to sort column ascending"
-                                                    style="width: 110px;">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-
-
-
-                                            <tr role="row" class="odd">
-                                                <td class="sorting_1">Fertilizer</td>
-                                                <td>23:21:0+41</td>
-                                                <td>KG</td>
-                                                <td>50</td>
-                                                <td>20</td>
-                                                <td>1000</td>
-                                                <!-- <td>$320,800</td> -->
-                                                <!-- <td>$320,800</td> -->
-                                            </tr>
-                                            <tr role="row" class="even">
-                                                <td class="sorting_1">Pesticides</td>
-                                                <td>RoundUp</td>
-                                                <td>Ltrs</td>
-                                                <td>5</td>
-                                                <td>50</td>
-                                                <td>250</td>
-                                                <!-- <td>$170,750</td> -->
-                                                <!-- <td>$170,750</td> -->
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="dataTables_info" id="example_info" role="status" aria-live="polite">
-                                        Showing 1 to 2 of 2 entries</div>
-                                    <div class="dataTables_paginate paging_simple_numbers" id="example_paginate"><a
-                                            class="paginate_button previous disabled" aria-controls="example"
-                                            data-dt-idx="0" tabindex="-1" id="example_previous">Previous</a><span><a
-                                                class="paginate_button current" aria-controls="example" data-dt-idx="1"
-                                                tabindex="0">1</a></span><a class="paginate_button next disabled"
-                                            aria-controls="example" data-dt-idx="2" tabindex="-1"
-                                            id="example_next">Next</a></div>
-                                </div>
+                        {{-- <div class="card"> --}}
+                            <h3 class="card-header fw-bold text-muted">MY Jobs</h3>
+                            <div class="card-body">
+                               <div class="tables-responsive">
+                               {{-- @if(\Session::has('success'))
+                               <div class="alert alert-success">
+                                <h4>{{\Session::get('success')}}</h4>
+                               </div>
+                               @endif --}}
+                                <table id="example" class="table table-striped data-table fw-bold text-muted" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>Item Name</th>
+                                            <th>Products Type</th>
+                                            <th>Unit</th>
+                                            <th>Destination Estate</th>
+                                            <th>Quantity</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                        
+                                            </td>
+                                        </tr>
+                                        
+                                      
+                                          
+                                    </tbody>
+                                </table>
+            
+            
+                               </div>
                             </div>
-                        </div>
-                    </div>
+                          </div>
                 </div>
             </div>
         </div>
