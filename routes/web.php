@@ -17,6 +17,7 @@ use App\Http\Controllers\editFieldController;
 use App\Http\Controllers\inventoryController;
 use App\Http\Controllers\EditEstateController;
 use App\Http\Controllers\Admin\FieldController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,17 +48,25 @@ Route::controller(EstateController::class)->group(function () {
 });
 
 Route::controller(FieldController::class)->group(function () {
+    Route::get('admin/field/create/{estate}', 'create')->name('admin.field.create');
     Route::post('admin/field/store', 'store')->name('admin.field.store');
     Route::get('admin/field/edit/{field}', 'edit')->name('admin.field.edit');
     Route::post('admin/field/update/{field}', 'update')->name('admin.field.update');
     Route::get('admin/field/manage/crop/{field}/{crop}', 'manageCrop')->name('admin.crop.edit');
 });
 
-Route::controller(CropController::class)->group(function () {
-    Route::post('admin/crop/store', 'store')->name('crop.store');
+Route::controller(UserController::class)->group(function () {
+    Route::get('admin/user/index', 'index')->name('admin.user.index');
+    Route::get('admin/user/create', 'create')->name('admin.user.create');
 });
 
-                    // Driver
+Route::controller(CropController::class)->group(function () {
+    Route::get('admin/crop/create/{estate}', 'create')->name('admin.crop.create');
+    Route::post('admin/crop/store', 'store')->name('admin.crop.store');
+    Route::post('admin/crop/update', 'update')->name('admin.crop.update');
+});
+
+// Driver
 Route::controller(DriverController::class)->group(function () {
     // Route::post('admin/field/store', 'store')->name('admin.field.store');
     // Route::get('driver/field/edit/{field}', 'edit')->name('admin.field.edit');
@@ -72,37 +81,35 @@ Route::controller(inventoryController::class)->group(function () {
     Route::get('/inventory', 'tabledata')->name('inventory.tabledata');
 });
 
-                //  Products
+//  Products
 Route::controller(productsController::class)->group(function () {
     Route::get('inventory/products/', 'create')->name('inventory.products.create');
     Route::post('inventory/products/store', 'store')->name('inventory.products.store');
-     
 });
 
-              //manager
+//manager
 Route::controller(managerController::class)->group(function () {
     Route::get('manager', 'index')->name('manager.index');
     // Route::post('inventory/products/store', 'store')->name('inventory.products.store');
-     
+
 });
 
-              //requests
+//requests
 Route::controller(requestController::class)->group(function () {
     Route::get('manager/submit', 'create')->name('manager.submit.create');
     // Route::post('inventory/products/store', 'store')->name('inventory.products.store');
-     
+
 });
 
 
 
 
 
-                  //Stock
+//Stock
 Route::controller(stockController::class)->group(function () {
     Route::get('inventory/stock/', 'create')->name('inventory.stock.create');
     Route::get('inventory/stock/findProductType', 'findProductType')->name('inventory.stock.findProductType');
     Route::post('inventory/stock/store', 'store')->name('inventory.stock.store');
-  
 });
 
 Route::get('/admin/s', [adminController::class, 'adminData']);

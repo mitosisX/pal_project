@@ -77,9 +77,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Admin tasks:</h6>
-                        <a class="collapse-item" href="createUser.html">Manage users</a>
-                        <a class="collapse-item" href="{{ route('admin.estate.create') }}">Create estate</a>
-                        <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage estates</a>
+                        <a class="collapse-item" href="{{ route('admin.user.index') }}">Manage Users</a>
+                        <a class="collapse-item" href="{{ route('admin.estate.create') }}">Create Estate</a>
+                        <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage Estates</a>
                         <a class="collapse-item" href="buttons.html">Add Product</a>
                     </div>
                 </div>

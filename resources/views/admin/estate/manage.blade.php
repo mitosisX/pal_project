@@ -33,7 +33,9 @@
                                         <tr>
                                             <!-- <th scope="row">1</th> -->
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $field->name }}</td>
+                                            <td><a
+                                                    href="{{ route('admin.field.edit', ['field' => $field->id]) }}">{{ $field->name }}</a>
+                                            </td>
                                             <td>{{ $field->area }}</td>
                                             <td>50</td>
                                         </tr>
@@ -41,8 +43,8 @@
                                 </tbody>
                             </table>
 
-                            <div> <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">Add Field</a>
+                            <div><a href="{{ route('admin.field.create', ['estate' => $estate->id]) }}" type="button"
+                                    class="btn btn-primary">Add Field</a>
                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Action
@@ -50,8 +52,8 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1"
                                             href="#">Edit Field</a></li>
-                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal2"
-                                            href="#">Add Crop</a></li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#">Add Crop</a>
+                                    </li>
                                     <li><a class="dropdown-item" href="#"></a></li>
                                 </ul>
                             </div>
@@ -104,8 +106,8 @@
 
                             <p class="card-text"></p>
 
-                            <div> <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal2">Add Crop</a> </div>
+                            <div> <a href="{{ route('admin.crop.create', ['estate' => $estate->id]) }}" type="button"
+                                    class="btn btn-primary">Add Crop</a> </div>
                         </div>
                     </div>
                 </div>
@@ -139,8 +141,7 @@
                                                     aria-label="Item Name: activate to sort column descending"
                                                     style="width: 204px;">Item Name</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example" rowspan="1"
-                                                    colspan="1"
-                                                    aria-label="Item Type: activate to sort column ascending"
+                                                    colspan="1" aria-label="Item Type: activate to sort column ascending"
                                                     style="width: 186px;">Item Type</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example"
                                                     rowspan="1" colspan="1"
@@ -216,7 +217,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form class="row g-3" action="{{ route('crop.store') }}" method="POST">
+                    <form class="row g-3" action="{{ route('admin.crop.store') }}" method="POST">
                         @csrf
                         <div class="col-md-6">
                             <label for="Field" class="form-label">Field</label>

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Crop;
-use App\Models\Field;
-use App\Models\Estate;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class CropController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,9 @@ class CropController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -24,15 +25,9 @@ class CropController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Estate $estate)
+    public function create()
     {
-        $fields = Field::where('estates_id', $estate->id)
-            ->get();
-
-        return view(
-            'admin.crop.create',
-            compact('fields', 'estate')
-        );
+        return view('admin.users.create_user');
     }
 
     /**
@@ -43,9 +38,7 @@ class CropController extends Controller
      */
     public function store(Request $request)
     {
-        Crop::create($request->all());
-
-        return back();
+        //
     }
 
     /**
