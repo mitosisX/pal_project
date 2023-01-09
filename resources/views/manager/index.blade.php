@@ -6,11 +6,11 @@
                     <div class="col-md-6">
 
                         <div class="col-lg-12">
-                            <div class="card fw-bold text-muted">
+                            <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
                                 <h3 class="card-header">Fields</h3>
                                 <div class="card-body">
                                     <h4 class="card-title font-weight-bold text-justify-center" > </h4>
-                                    <table class="table table-striped fwobold text-muted">
+                                    <table class="table fw-bold text-muted">
                                         <thead>
                                           <tr>
                                             <!-- <th scope="col">#</th> -->
@@ -66,12 +66,12 @@
                     <div class="col-md-6">
 
                         <div class="col-lg-12">
-                            <div class="card fw-bold text-muted">
+                            <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
                                 <h3 class="card-header">Crops</h3>
                                 <div class="card-body">
                                   <h5 class="card-title "></h5>
                                 
-                                  <table class="table table-striped text-muted fw-bold">
+                                  <table class="table text-muted fw-bold">
                                     <thead>
                                       <tr>
                                         <!-- <th scope="col">#</th> -->
@@ -128,12 +128,12 @@
                 <div class="row g-3 my-2">
                     <div class="col-md-12">
                         <div class="col-lg-12">
-                            <div class="card fw-bold text-muted">
-                                <h3 class="card-header">MY Requets</h3>
+                            <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
+                                <h3 class="card-header bg-info text-white">MY Requets</h3>
                                 <div class="card-body">
-                                   <div class="tables-responsive">
+                                   <div class="tables-responsive shadow-4 ">
                 
-                                    <table id="example" class="table table-striped data-table fw-bold text-muted" style="width:100%">
+                                    <table id="example" class="table data-table fw-bold text-muted" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>Item Name</th>
@@ -155,7 +155,7 @@
                                                 <td>2011-04-25</td>
                                                 <td>$320,800</td>
                                                 <td>$320,800</td>
-                                                <td><button type="button" class="btn btn-warning ">pending</button></td>
+                                                <td><button type="button" class="btn btn-outline-warning ">pending</button></td>
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>
@@ -165,7 +165,7 @@
                                                 <td>2011-07-25</td>
                                                 <td>$170,750</td>
                                                 <td>$170,750</td>
-                                                <td><button type="button" class="btn btn-success  ">approved</button></td>
+                                                <td><button type="button" class="btn btn-outline-success  ">approved</button></td>
                                             </tr>
                                             
                                         </tfoot>

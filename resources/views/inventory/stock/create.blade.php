@@ -6,7 +6,11 @@
        <div class="row justify-content-center align-items-center">
           <div class="col-md-6 col-md-offset-6">
               <div class="col-lg-12 col-md-offset-6">
-                  <div class="card">
+                  <div class="card border-0 o-hidden shadow-lg my-5">
+
+                    <div class="card-header">
+                      <h4>Update Stock</h4>
+                  </div>
                     
                       <div class="card-body">
                         @if(count($errors)>0)
@@ -93,7 +97,7 @@
                               </div>
 
                             </div>
-                            <button type="submit"  class="btn btn-success add_product">update</button>
+                            <button type="submit"  class="btn btn-outline-info add_product">Update</button>
                           </form>
 
                       </div>

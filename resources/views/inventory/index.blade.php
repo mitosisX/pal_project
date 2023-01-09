@@ -4,8 +4,8 @@
 @section('content')
 
 
-      <div class="row g-3 my-2">
-          <div class="col-md-12">
+      {{-- <div class="row g-3 my-2">
+          <div class="col-md-12"> --}}
             
               <!-- modal buttons -->
             {{-- @if(count($errors)>0)
@@ -25,7 +25,7 @@
                  </div>
             @endif   --}}
 
-              <div class="col-lg-12">
+              {{-- <div class="col-lg-12">
                <div id="success_message"> </div>
                 <table class="table ">
                   <thead class="table-light text-muted">
@@ -56,17 +56,17 @@
           </div>
 
 
-      </div>
+      </div> --}}
 
       <div class="row g-3 my-2">
           <div class="col-md-12">
               <div class="col-lg-12">
-                  <div class="card">
-                      <h3 class="card-header">Inventory</h3>
+                  <div class="card border-0 o-hidden shadow-lg my-5 ">
+                      <h3  class="card-header bg-info text-white">Inventory</h3>
                       <div class="card-body">
                          <div class="tables-responsive">
 
-                          <table id="example" class="table table-borderd table-striped data-table" style="width:100%">
+                          <table id="example" class="table table-hover data-table" style="width:100%">
                               <thead class="text-muted">
                                   <tr>
                                       

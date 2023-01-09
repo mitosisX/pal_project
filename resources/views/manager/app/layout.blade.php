@@ -87,7 +87,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tasks:</h6>
                         <a class="collapse-item" href="{{ route('manager.submit.create') }}">Submit Request</a>
-                        <a class="collapse-item" href="{{ route('inventory.stock.create') }}">Update Inventory</a>
+                        {{-- <a class="collapse-item" href="{{ route('inventory.stock.create') }}">Update Inventory</a> --}}
                         {{-- <a class="collapse-item" href="{{ route('admin.estate.index') }}">Manage estates</a> --}}
                         {{-- <a class="collapse-item" href="buttons.html">Add Product</a> --}}
                     </div>
@@ -116,7 +116,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
+                    <h1 class="text-info fw-bold text-center"> Press Agriculture Limited</h1> 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
