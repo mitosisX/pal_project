@@ -52,8 +52,11 @@ class issueStockController extends Controller
         ])->first();
     
         if($stock2) {
+
             $stock2->decrement('quantity', $request->squantity);  
     }
+
+    // DB::table('users')->update(['votes' => DB::raw('GREATEST(votes - 5, 0)')]);
       
     $job = new DeliveryJob;
 
