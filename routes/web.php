@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\CropController;
 use App\Http\Controllers\dJobController;
 use App\Http\Controllers\adminController;
@@ -34,6 +36,18 @@ use App\Http\Controllers\Admin\FieldController;
 Route::get('/', function () {
     return redirect('login');
 });
+
+Route::get('/redirect', function () {
+    $role = Auth::user()->role_id;
+    return $role;
+});
+
+Route::get('logout', function () {
+    Session::flush();
+
+    return redirect()
+        ->route('login');
+})->name('logout');
 
 Route::controller(adminController::class)->group(function () {
     Route::get('admin', 'index')->name('admin.index');
