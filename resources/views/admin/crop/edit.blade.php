@@ -20,6 +20,7 @@
                             </div>
                             <div class="card-body">
                                 <form class="px-md-2">
+                                    @csrf
                                     <div class="form-outline mb-4">
                                         <label for="validationCustom01" class="form-label">
                                             Name
@@ -31,7 +32,7 @@
 
                                     <div class="form-outline mb-4">
                                         <label for="validationCustom01" class="form-label">Field</label>
-                                        <select name="field_id" class="type form-control">
+                                        <select name="fields_id" class="type form-control">
                                             @foreach ($fields as $field)
                                                 <option value="{{ $field->id }}" @selected([$field->id == $crop->field_id])>
                                                     {{ $field->name }}</option>
@@ -44,6 +45,13 @@
 
                                         <input type="text" class="form-control" name="acres" id="validationCustom01"
                                             value="{{ $crop->acres }}" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label for="validationCustom01" class="form-label">Acres</label>
+
+                                        <input type="text" class="form-control" name="description"
+                                            id="validationCustom01" value="{{ $crop->description }}" required />
                                     </div>
                                     <input type="submit" class="btn btn-success btn-lg mb-1" value="Update">
                                 </form>

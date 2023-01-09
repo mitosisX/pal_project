@@ -5,6 +5,15 @@
 @endsection
 
 @section('content')
+    @if (session('created-crop'))
+        @section('scripts')
+            <script>
+                new swal("Done!",
+                    "Crop was created",
+                    "success");
+            </script>
+        @endsection
+    @endif
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
@@ -16,10 +25,11 @@
                     <div class="col-xl-10 col-lg-12 col-md-9">
                         <div class="card border-0 o-hidden shadow-lg my-5">
                             <div class="card-header">
-                                <h4>Edit Crop</h4>
+                                <h4>Add Crop</h4>
                             </div>
                             <div class="card-body">
-                                <form class="px-md-2">
+                                <form class="px-md-2" method="POST" action="{{ route('admin.crop.store') }}">
+                                    @csrf
                                     <div class="form-outline mb-4">
                                         <label for="validationCustom01" class="form-label">
                                             Name
@@ -31,7 +41,7 @@
 
                                     <div class="form-outline mb-4">
                                         <label for="validationCustom01" class="form-label">Field</label>
-                                        <select name="field_id" class="type form-control">
+                                        <select name="fields_id" class="type form-control">
                                             @foreach ($fields as $field)
                                                 <option value="{{ $field->id }}">
                                                     {{ $field->name }}</option>
@@ -42,10 +52,17 @@
                                     <div class="form-outline mb-4">
                                         <label for="validationCustom01" class="form-label">Acres</label>
 
-                                        <input type="text" class="form-control" name="acres" id="validationCustom01"
+                                        <input type="number" class="form-control" name="acres" id="validationCustom01"
                                             value="" required />
                                     </div>
-                                    <input type="submit" class="btn btn-success btn-lg mb-1" value="Update">
+
+                                    <div class="form-outline mb-4">
+                                        <label for="validationCustom01" class="form-label">Description</label>
+
+                                        <input type="text" class="form-control" name="description"
+                                            id="validationCustom01" value="" required />
+                                    </div>
+                                    <input type="submit" class="btn btn-success btn-lg mb-1" value="Save">
                                 </form>
                             </div>
                         </div>

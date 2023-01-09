@@ -11,17 +11,18 @@
     <title>Admin Dashboard</title>
 
     <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
     <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href= "{{asset('css/dataTables.bootstrap5.css') }}">
-    <link href= "{{asset('css/bootstrap.min.css') }}">
-    <link href= "{{asset('css/styles.css') }}">
+    <link href="{{ asset('css/dataTables.bootstrap5.css') }}">
+    <link href="{{ asset('css/bootstrap.min.css') }}">
+    <link href="{{ asset('css/styles.css') }}">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet" />
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" />
-    
+
     <style>
         .sect {
             color: #5a5c69 !important;
@@ -100,7 +101,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Delivery Jobs</h6>
                         <a class="collapse-item" href="{{ route('admin.jobs.index') }}">All Delivery Jobs</a>
-                        <a class="collapse-item" href="{{ route('admin.jobs.completed.index') }}">Completed Delivery Jobs</a>
+                        <a class="collapse-item" href="{{ route('admin.jobs.completed.index') }}">Completed Delivery
+                            Jobs</a>
                     </div>
                 </div>
             </li>
@@ -248,6 +250,7 @@
             </div>
 
             <!-- Bootstrap core JavaScript-->
+            <script src="{{ asset('js/sweetalerts.js') }}"></script>
             <script src="{{ asset('js/jquery.min.js') }}"></script>
             <script src="{{ asset('css/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -264,19 +267,17 @@
             <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
             <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
 
-             <!-- Bootstrap datatables JavaScript-->
+            <!-- Bootstrap datatables JavaScript-->
             {{-- <script src="{{ asset('js/bootstrap.bundle.js') }}"></script> --}}
             <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
             <script src="{{ asset('js/dataTables.bootstrap5.js') }}"></script>
-
+            @yield('scripts')
 
             <script>
-
-                $(document).ready(function () {
-                        $('.data-table').DataTable();
-                    });
-                
-                </script>
+                $(document).ready(function() {
+                    $('.data-table').DataTable();
+                });
+            </script>
 </body>
 
 </html>

@@ -45,7 +45,7 @@ class CropController extends Controller
     {
         Crop::create($request->all());
 
-        return back();
+        return back()->with('created-crop', true);
     }
 
     /**
@@ -79,7 +79,10 @@ class CropController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Crop::find($id)
+            ->update($request->all());
+
+        return back()->with('updated-crop', true);
     }
 
     /**
