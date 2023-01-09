@@ -11,7 +11,9 @@ class DeliveryJob extends Model
     use HasFactory, SoftDeletes;
     protected $table ='delivery_jobs';
     protected $primaryKey = 'id';
-    protected $fillable =['type', 'unit', 'quantity', 'status', 'drivers_id', 'products_id', 'estates_id', 'deleted_at', 'created_at', 'updated_at'];
+    protected $fillable =['type', 'unit', 'quantity', 'status', 'category_id', 'products_id', 'estates_id', 'deleted_at', 'created_at', 'updated_at'];
+    protected $attributes = [
+        'status' => 'pending',];
 
     public function driver()
     {
@@ -28,4 +30,10 @@ class DeliveryJob extends Model
     {
          return $this->belongsTo(Estate::class, 'estates_id', 'id');
      }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+
 }

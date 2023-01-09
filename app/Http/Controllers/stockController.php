@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DeliveryJob;
 use App\Models\Stock;
+use App\Models\Estate;
 use App\Models\products;
 use App\Models\Suppliers;
 use App\Models\ProductType;
@@ -95,9 +97,10 @@ class stockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function issue()
     {
-        //
+           
+        // return view('inventory/issue/index');
     }
 
     /**
@@ -108,7 +111,7 @@ class stockController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -118,10 +121,10 @@ class stockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,)
     {
-        //
-    }
+       
+}
 
     /**
      * Remove the specified resource from storage.

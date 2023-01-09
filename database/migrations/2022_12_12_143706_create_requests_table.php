@@ -34,7 +34,7 @@ return new class extends Migration
 
             $table->foreign('request_category_id')
                 ->references('id')
-                ->on('request__categories')
+                ->on('request_categories')
                 ->onDelete('cascade');
         });
     }

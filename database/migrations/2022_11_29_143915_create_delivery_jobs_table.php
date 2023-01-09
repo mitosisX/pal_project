@@ -19,15 +19,15 @@ return new class extends Migration
             $table->mediumText('unit');
             $table->mediumText('quantity');
             $table->mediumText('status');
-            $table->unsignedInteger('drivers_id');
+            $table->unsignedInteger('category_id');
             $table->unsignedInteger('products_id');
             $table->unsignedInteger('estates_id');
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('drivers_id')
+            $table->foreign('category_id')
                 ->references('id')
-                ->on('users')
+                ->on('request_categories')
                 ->onDelete('cascade');
 
             $table->foreign('products_id')

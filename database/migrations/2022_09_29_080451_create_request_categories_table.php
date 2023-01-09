@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('request__categories', function (Blueprint $table) {
+        Schema::create('request_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->mediumText('name');
             $table->mediumText('description');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request__categories');
+        Schema::dropIfExists('request_categories');
     }
 };

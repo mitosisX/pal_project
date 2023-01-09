@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\productUnit;
 use Illuminate\Database\Seeder;
+use Database\Seeders\categorySeeder;
 use Database\Seeders\Supplierseeder;
 use Database\Seeders\ProductTypeseeder;
 use Database\Seeders\ProductUnitseeder;
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
             ProductTypeseeder::class,
             ProductUnitseeder::class,
             Supplierseeder::class,
+            categorySeeder::class,
             
 
 

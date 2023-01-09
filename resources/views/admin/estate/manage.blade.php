@@ -119,7 +119,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         {{-- <div class="card"> --}}
-                            <h3 class="card-header fw-bold text-muted">MY Jobs</h3>
+                            <h3 class="card-header fw-bold text-muted">Esatate Inventory</h3>
                             <div class="card-body">
                                <div class="tables-responsive">
                                {{-- @if(\Session::has('success'))
@@ -130,26 +130,27 @@
                                 <table id="example" class="table table-striped data-table fw-bold text-muted" style="width:100%">
                                     <thead>
                                         <tr>
-                                            
-                                            <th>Item Name</th>
-                                            <th>Products Type</th>
-                                            <th>Unit</th>
-                                            <th>Destination Estate</th>
+                                      
+                                            <th>Product Name</th>
+                                            <th>Type</th>
+                                            <th>Unit of Measure</th>
+                                            <th>Package Size</th>
                                             <th>Quantity</th>
-                                            <th>Action</th>
+                                            <th>Unit Price</th>
+                                            <th>Total Price</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                        
-                                            </td>
+                                            <td>NPK</td>
+                                            <td>Fertilizer</td>
+                                            <td>kg</td>
+                                            <td>50</td>
+                                            <td>375</td>
+                                            <td>50000</td>
+                                            <td>18750000</td> 
+                                             
                                         </tr>
                                         
                                       

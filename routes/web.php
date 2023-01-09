@@ -15,9 +15,10 @@ use App\Http\Controllers\editCropController;
 use App\Http\Controllers\productsController;
 use App\Http\Controllers\editFieldController;
 use App\Http\Controllers\inventoryController;
-use App\Http\Controllers\EditEstateController;
-use App\Http\Controllers\Admin\FieldController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\EditEstateController;
+use App\Http\Controllers\issueStockController;
+use App\Http\Controllers\Admin\FieldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +113,14 @@ Route::controller(stockController::class)->group(function () {
     Route::get('inventory/stock/', 'create')->name('inventory.stock.create');
     Route::get('inventory/stock/findProductType', 'findProductType')->name('inventory.stock.findProductType');
     Route::post('inventory/stock/store', 'store')->name('inventory.stock.store');
+    Route::get('inventory/issue', 'issueOut')->name('inventory.issue.issueOut');
+    Route::post('inventory/issue/update', 'update')->name('inventory.issue.update');
+});
+
+//Issue Stock
+Route::controller(issueStockController::class)->group(function () {
+    Route::get('inventory/issue', 'index')->name('inventory.issue.index');
+    Route::post('inventory/issue/update', 'update')->name('inventory.issue.update');
 });
 
 Route::get('/admin/s', [adminController::class, 'adminData']);
