@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\products;
+use App\Models\ProductType;
+use App\Models\productUnit;
+use App\Models\Request_Category;
 use Illuminate\Http\Request;
 
 class requestController extends Controller
@@ -23,7 +27,20 @@ class requestController extends Controller
      */
     public function create()
     {
-        return view('manager.submit.create');
+        $products = products::all();
+        $p_types = ProductType::all();
+        $p_units = productUnit::all();
+        $r_categories = Request_Category::all();
+
+        return view(
+            'manager.submit.create',
+            compact(
+                'products',
+                'p_types',
+                'p_units',
+                'r_categories'
+            )
+        );
     }
 
     /**

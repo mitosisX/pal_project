@@ -47,7 +47,7 @@ class UserController extends Controller
             'last_name' => $data['last_name'],
             'role' => $data['role'],
             'phone_number' => $data['phone_number'],
-            'password' => bcrypt($data['password'])
+            'password' => bcrypt($data['passpass'])
         ]);
 
         return back()->with('account-created', true);

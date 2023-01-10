@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Request_Category extends Model
 {
     use HasFactory;
+
+    protected $table = 'request_categories';
+    protected $primaryKey = 'id';
 }
