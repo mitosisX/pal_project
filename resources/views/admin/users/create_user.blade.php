@@ -74,7 +74,7 @@
                                     <label for="validationCustom01" class="form-label">Password</label>
 
                                     <input type="text" class="form-control" name="password" id="validationCustom01"
-                                        value="12345" readonly required />
+                                        value="passpass" readonly required />
                                 </div>
 
                                 <button type="submit" class="btn btn-success btn-lg mb-1">
