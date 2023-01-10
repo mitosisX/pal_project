@@ -92,6 +92,13 @@ Route::controller(DriverController::class)->group(function () {
     Route::get('/driver/completed', 'completed')->name('driver.completed');
 });
 
+//Report
+
+Route::controller(ReportsController::class)->group(function () {
+    Route::get('/admin/report', 'index')->name('admin.report.index');
+    Route::post('/admin/report', 'search')->name('admin.report.search');
+});
+
 //dJobController
 Route::controller(dJobController::class)->group(function () {
     Route::get('/admin/jobs/completed', 'index')->name('admin.jobs.completed.index');
