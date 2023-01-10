@@ -73,6 +73,9 @@ Route::controller(FieldController::class)->group(function () {
 Route::controller(UserController::class)->group(function () {
     Route::get('admin/user/index', 'index')->name('admin.user.index');
     Route::get('admin/user/create', 'create')->name('admin.user.create');
+    Route::post('admin/user/store', 'store')->name('admin.user.store');
+    Route::post('admin/user/update', 'update')->name('admin.user.update');
+    Route::get('admin/user/edit/{user}', 'edit')->name('admin.user.edit');
 });
 
 Route::controller(CropController::class)->group(function () {

@@ -29,9 +29,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Name</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
                                         <th scope="col">Phone Number</th>
-                                        <th scope="col">Email</th>
                                         <th scope="col">Role</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -40,16 +40,14 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $user->getName() }}</td>
+                                            <td>{{ $user->first_name }}</td>
+                                            <td>{{ $user->last_name }}</td>
                                             <td>{{ $user->phone_number }}</td>
-                                            <td>{{ $user->email }}</td>
                                             <td>{{ $user->role }}</td>
                                             <td>
                                                 <div class="btn-group mb-3" role="group" aria-label="Basic example">
-                                                    <a href="" class="btn btn-icon btn-success"><i
-                                                            class="far fa-eye"></i></a>
-                                                    <a href="" class="btn btn-icon btn-primary"><i
-                                                            class="far fa-edit"></i></a>
+                                                    <a href="{{ route('admin.user.edit', ['user' => $user->id]) }}"
+                                                        class="btn btn-icon btn-primary"><i class="far fa-edit"></i></a>
                                                     <a href="#" class="btn btn-icon btn-danger"><i
                                                             class="fa fa-trash"></i></a>
                                                 </div>

@@ -31,7 +31,7 @@
 
                     <div class="card border-0 o-hidden shadow-lg my-5">
                         <div class="card-header">
-                            <h4>Create New User</h4>
+                            <h4>Manage User</h4>
                         </div>
                         <div class="card-body">
                             <form class="px-md-2" action="{{ route('admin.user.store') }}" method="POST">
@@ -41,7 +41,7 @@
                                         Name</label>
 
                                     <input type="text" class="form-control" name="first_name" id="validationCustom01"
-                                        value="" required />
+                                        value="{{ $user->first_name }}" required />
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -49,7 +49,7 @@
                                         Name</label>
 
                                     <input type="text" class="form-control" name="last_name" id="validationCustom01"
-                                        value="" required />
+                                        value="{{ $user->last_name }}" required />
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -57,16 +57,15 @@
                                         number</label>
 
                                     <input type="text" class="form-control" name="phone_number" id="validationCustom01"
-                                        value="" required />
+                                        value="{{ $user->phone_number }}" required />
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label for="validationCustom01" class="form-label">Role</label>
                                     <select name="role" class="type form-control">
-                                        <option value="manager">Manager</option>
-                                        <option value="e-manager">E-Manager</option>
-                                        <option value="w-manager">WareHouse Manager</option>
-                                        <option value="driver">Driver</option>
+                                        @foreach (['manager' => 'Manager', 'e-manager' => 'E-Manager', 'w-manager' => 'WareHouse Manager', 'driver' => 'Driver'] as $role => $content)
+                                            <option value="{{ $role }}">{{ $content }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 

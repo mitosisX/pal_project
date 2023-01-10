@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->mediumText('first_name');
             $table->mediumText('last_name');
-            $table->mediumText('phone_number');
+            $table->mediumText('phone_number')->unique();
             $table->mediumText('role');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
