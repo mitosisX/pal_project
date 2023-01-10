@@ -19,11 +19,16 @@ class Estate extends Model
 
     public function fields()
     {
-        return $this->hasMany(Field::class, 'fields_id', 'id');
+        return $this->hasMany(Field::class, 'id');
     }
 
     public function crops()
     {
-        return $this->hasManyThrough(Crop::class, Field::class);
+        return $this->hasManyThrough(
+            Crop::class,
+            Field::class,
+            'id',
+            'fields_id'
+        );
     }
 }

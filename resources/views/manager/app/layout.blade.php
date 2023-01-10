@@ -13,9 +13,9 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
-     <link href= "{{asset('css/dataTables.bootstrap5.css') }}">
-     <link href= "{{asset('css/bootstrap.min.css') }}">
-     <link href= "{{asset('css/styles.css') }}">
+    <link href="{{ asset('css/dataTables.bootstrap5.css') }}">
+    <link href="{{ asset('css/bootstrap.min.css') }}">
+    <link href="{{ asset('css/styles.css') }}">
 
 
 
@@ -41,8 +41,6 @@
             margin-top: 6px;
             margin-right: 15px;
         }
-
-    
     </style>
 </head>
 
@@ -116,7 +114,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <h1 class="text-info fw-bold text-center"> Press Agriculture Limited</h1> 
+                    <h1 class="text-info fw-bold text-center"> Press Agriculture Limited</h1>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -125,7 +123,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->first_name }}</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -143,8 +142,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -216,7 +214,7 @@
                 </div>
             </div>
 
-        
+
 
             <!-- Bootstrap core JavaScript-->
             <script src="{{ asset('js/jquery.min.js') }}"></script>
@@ -240,18 +238,16 @@
             <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
             <script src="{{ asset('js/dataTables.bootstrap5.js') }}"></script>
 
-           
-           
+
+
 
             <script>
+                $(document).ready(function() {
+                    $('.data-table').DataTable();
+                });
+            </script>
 
-                $(document).ready(function () {
-                        $('.data-table').DataTable();
-                    });
-                
-                </script>
-
-          @yield('javascript')
+            @yield('javascript')
 </body>
 
 </html>

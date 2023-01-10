@@ -32,6 +32,7 @@
                                         <th scope="col">Name</th>
                                         <th scope="col">Phone Number</th>
                                         <th scope="col">Email</th>
+                                        <th scope="col">Role</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -39,9 +40,10 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->getName() }}</td>
                                             <td>{{ $user->phone_number }}</td>
                                             <td>{{ $user->email }}</td>
+                                            <td>{{ $user->role }}</td>
                                             <td>
                                                 <div class="btn-group mb-3" role="group" aria-label="Basic example">
                                                     <a href="" class="btn btn-icon btn-success"><i

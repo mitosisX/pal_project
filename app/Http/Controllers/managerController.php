@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class managerController extends Controller
 {
@@ -13,7 +15,12 @@ class managerController extends Controller
      */
     public function index()
     {
-        return view('manager.index');
+        $estates = Estate::where(
+            'managers_id',
+            Auth::user()->id
+        )->get();
+
+        return view('manager.index', compact('estates'));
     }
 
     /**

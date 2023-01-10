@@ -32,7 +32,7 @@
                                     <label for="validationCustom01" class="form-label">First
                                         Name</label>
 
-                                    <input type="text" class="form-control" name="name" id="validationCustom01"
+                                    <input type="text" class="form-control" name="first_name" id="validationCustom01"
                                         value="" required />
                                 </div>
 
@@ -40,7 +40,7 @@
                                     <label for="validationCustom01" class="form-label">Last
                                         Name</label>
 
-                                    <input type="text" class="form-control" name="name" id="validationCustom01"
+                                    <input type="text" class="form-control" name="last_name" id="validationCustom01"
                                         value="" required />
                                 </div>
 
@@ -48,17 +48,17 @@
                                     <label for="validationCustom01" class="form-label">Phone
                                         number</label>
 
-                                    <input type="text" class="form-control" name="name" id="validationCustom01"
+                                    <input type="text" class="form-control" name="phone_number" id="validationCustom01"
                                         value="" required />
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label for="validationCustom01" class="form-label">Role</label>
-                                    <select name="type" class="type form-control">
-                                        <option>Manager</option>
-                                        <option>E-Manager</option>
-                                        <option>WareHouse</option>
-                                        <option>Driver</option>
+                                    <select name="role" class="type form-control">
+                                        <option value="manager">Manager</option>
+                                        <option value="e-manager">E-Manager</option>
+                                        <option value="w-manager">WareHouse Manager</option>
+                                        <option value="driver">Driver</option>
                                     </select>
                                 </div>
 
@@ -66,7 +66,7 @@
                                     <label for="validationCustom01" class="form-label">Password</label>
 
                                     <input type="text" class="form-control" name="name" id="validationCustom01"
-                                        value="" required />
+                                        value="12345" required />
                                 </div>
 
                                 <button type="submit" class="btn btn-success btn-lg mb-1">
