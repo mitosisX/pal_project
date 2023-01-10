@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,15 +24,19 @@ class ReportsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function searh()
+    public function search(Request $request)
     {
-        $fromDate ="2023-11-01";
-        $toDate =  "2023-11-20";
+        $date1 =$request->input('fromDate');
+        $date2 =$request->input('toDate');
 
-        $query = DB::table('delivery_job')->select()->where("(created_at>=? AND created_at<= ? )",
-         [$fromDate. "00:00:00", $toDate. "23:59:59"])->get();
+        $date = DeliveryJob::whereBetween('created_at',
+                  [
+                    $date1,
+                    Carbon::parse($date2)->endOfDay(),
+                  ])->count();
 
-         dd($query);
+
+          return redirect('admin/report/index', compact('date'));
     }
 
     /**

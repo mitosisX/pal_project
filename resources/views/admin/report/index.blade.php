@@ -53,9 +53,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            @foreach ($date as $dates)
                             <tr data-status="active">
-                                <td></td>
+                                <td>{{$dates->created_at}}</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -63,6 +63,7 @@
                                 <td></td>
                                 <td></td>
                             </tr>
+                            @endforeach
                              
                           
                               
