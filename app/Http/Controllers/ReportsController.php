@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReportsController extends Controller
 {
@@ -13,7 +14,7 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        return view('adminReport.index');
+        return view('admin.report.index');
     }
 
     /**
@@ -21,9 +22,15 @@ class ReportsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function searh()
     {
-        //
+        $fromDate ="2023-11-01";
+        $toDate =  "2023-11-20";
+
+        $query = DB::table('delivery_job')->select()->where("(created_at>=? AND created_at<= ? )",
+         [$fromDate. "00:00:00", $toDate. "23:59:59"])->get();
+
+         dd($query);
     }
 
     /**
