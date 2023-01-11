@@ -113,8 +113,8 @@ Route::controller(dJobController::class)->group(function () {
 
 // Inventory
 Route::controller(inventoryController::class)->group(function () {
-    Route::get('/inventory', 'index')->name('inventory.index');
-    Route::get('/inventory', 'tabledata')->name('inventory.tabledata');
+    // Route::get('/inventory', 'index')->name('inventory.index');
+    Route::get('inventory', 'tabledata')->name('inventory.tabledata');
 });
 
 //  Products

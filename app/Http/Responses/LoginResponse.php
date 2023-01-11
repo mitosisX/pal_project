@@ -22,9 +22,9 @@ class LoginResponse implements LoginResponseContract
         } elseif (Auth::user()->role === 'driver') {
             return redirect()
                 ->route('driver.index');
-        } elseif (Auth::user()->role === 'e-manager') {
+        } elseif (Auth::user()->role === 'w-manager') {
             return redirect()
-                ->route('driver.index');
+                ->route('inventory.index');
         }
     }
 
