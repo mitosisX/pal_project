@@ -24,7 +24,7 @@ class LoginResponse implements LoginResponseContract
                 ->route('driver.index');
         } elseif (Auth::user()->role === 'w-manager') {
             return redirect()
-                ->route('inventory.index');
+                ->route('inventory.tabledata');
         }
     }
 
