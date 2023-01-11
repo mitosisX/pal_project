@@ -4,6 +4,12 @@
     <title>Press Agriculture Limited</title>
 @endsection
 
+@section('navbutton')
+    <a href="{{ route('admin.estate.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50"></i>
+        Back</a>
+@endsection
+
 @section('content')
     @if (session('created-crop'))
         @section('scripts')
@@ -24,7 +30,7 @@
 
                     <div class="col-xl-10 col-lg-12 col-md-9">
                         <div class="card border-0 o-hidden shadow-lg my-5">
-                            <div class="card-header">
+                            <div class="card-header bg-info text-white">
                                 <h4>Add Crop</h4>
                             </div>
                             <div class="card-body">

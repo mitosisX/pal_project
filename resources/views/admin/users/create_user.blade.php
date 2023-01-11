@@ -30,7 +30,7 @@
                 <div class="col-xl-10 col-lg-12 col-md-9">
 
                     <div class="card border-0 o-hidden shadow-lg my-5">
-                        <div class="card-header">
+                        <div class="card-header bg-info text-white">
                             <h4>Create New User</h4>
                         </div>
                         <div class="card-body">

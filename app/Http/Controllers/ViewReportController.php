@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use index;
-use Carbon\Carbon;
 use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class ReportsController extends Controller
+class ViewReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,35 +14,41 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        return view('admin.report.index');
+        //
     }
+
+
+    public function search(Request $request)
+
+    {
+
+        $date=2;
+
+        $date1 =$request->input('from');
+        $date2 =$request->input('to');
+
+        $date = DeliveryJob::whereBetween('created_at',
+                  [ $date1. '00:00:00', $date2. '23:59:59'])->count();
+
+          
+       
+
+         return redirect('admin.report.search', ['date'=> $date]);
+
+    
+
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function search(Request $request)
-    // {
-    //     if($request->ajax()) {
-    //         if($request->from_date != '' && $request->to_date !=''){
-    //             $data = DB::table('delivery_jobs')
-    //                     ->whereBetween('created_at', array($request->
-    //                        from_date, $request->to_date ))->get(); 
-
-    //         }else{
-    //                $data = DB::table('delivery_jobs')->orderBy('created_at', 'desc')
-    //                ->get();    
-    //         }
-    //         echo json_encode($data);
-
-
-    //     }
-
-
-    
-
-
+    public function create()
+    {
+        //
     }
 
     /**

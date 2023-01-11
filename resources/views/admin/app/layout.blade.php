@@ -13,6 +13,7 @@
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
     <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="{{asset('css/jquery-ui.css')}}">
     <link href="{{ asset('css/dataTables.bootstrap5.css') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}">
     <link href="{{ asset('css/styles.css') }}">
@@ -145,6 +146,8 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
+                    <h1 class="text-info fw-bold text-center"> Press Agriculture Limited</h1> 
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -252,6 +255,7 @@
             <!-- Bootstrap core JavaScript-->
             <script src="{{ asset('js/sweetalerts.js') }}"></script>
             <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{asset('js/jquery-ui.js') }}"></script>
             <script src="{{ asset('css/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
             <!-- Core plugin JavaScript-->
@@ -266,6 +270,9 @@
             <!-- Page level custom scripts -->
             <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
             <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+            <script src="{{ asset('js/demo/chart-bar-demo.js') }}"></script>
+
+           
 
             <!-- Bootstrap datatables JavaScript-->
             {{-- <script src="{{ asset('js/bootstrap.bundle.js') }}"></script> --}}
@@ -278,6 +285,9 @@
                     $('.data-table').DataTable();
                 });
             </script>
+
+            
+           @yield('javascript')
 </body>
 
 </html>

@@ -15,9 +15,9 @@
         <div class="row g-3 my-2">
             <div class="col-md-6">
                 <div class="col-lg-12">
-                    <div class="card">
-                        <h3 class="card-header d-inline">Fields</h3>
-                        <div class="card-body">
+                    <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5 ">
+                        <h3 class="card-header d-inline bg-info text-white">Fields</h3>
+                        <div class="card-body ">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -45,10 +45,7 @@
 
                             <div><a href="{{ route('admin.field.create', ['estate' => $estate->id]) }}" type="button"
                                     class="btn btn-primary">Add Field</a>
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Action
-                                </button>
+                               
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1"
                                             href="#">Edit Field</a></li>
@@ -64,8 +61,8 @@
 
             <div class="col-md-6">
                 <div class="col-lg-12">
-                    <div class="card">
-                        <h3 class="card-header">Crops</h3>
+                    <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5 ">
+                        <h3 class="card-header bg-info text-white">Crops</h3>
                         <div class="card-body">
                             <table class="table table-striped">
                                 <thead>
@@ -95,12 +92,12 @@
                                         </tr>
                                     @endforeach
 
-                                    <tr>
+                                    {{-- <tr>
                                         <td colspan="1"></td>
                                         <td class="font-weight-bold">TOTAL ACREARAGE</td>
                                         <td></td>
                                         <td>100</td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
 
@@ -114,58 +111,7 @@
             </div>
         </div>
 
-        <div class="row g-3 my-2">
-            <div class="col-md-12">
-                <div class="col-lg-12">
-                    <div class="card">
-                        {{-- <div class="card"> --}}
-                            <h3 class="card-header fw-bold text-muted">Esatate Inventory</h3>
-                            <div class="card-body">
-                               <div class="tables-responsive">
-                               {{-- @if(\Session::has('success'))
-                               <div class="alert alert-success">
-                                <h4>{{\Session::get('success')}}</h4>
-                               </div>
-                               @endif --}}
-                                <table id="example" class="table table-striped data-table fw-bold text-muted" style="width:100%">
-                                    <thead>
-                                        <tr>
-                                      
-                                            <th>Product Name</th>
-                                            <th>Type</th>
-                                            <th>Unit of Measure</th>
-                                            <th>Package Size</th>
-                                            <th>Quantity</th>
-                                            <th>Unit Price</th>
-                                            <th>Total Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                        <tr>
-                                            <td>NPK</td>
-                                            <td>Fertilizer</td>
-                                            <td>kg</td>
-                                            <td>50</td>
-                                            <td>375</td>
-                                            <td>50000</td>
-                                            <td>18750000</td> 
-                                             
-                                        </tr>
-                                        
-                                      
-                                          
-                                    </tbody>
-                                </table>
-            
-            
-                               </div>
-                            </div>
-                          </div>
-                </div>
-            </div>
-        </div>
-    </div>
+       
 
 
     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"

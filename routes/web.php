@@ -20,6 +20,7 @@ use App\Http\Controllers\inventoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\EditEstateController;
 use App\Http\Controllers\issueStockController;
+use App\Http\Controllers\ViewReportController;
 use App\Http\Controllers\Admin\FieldController;
 
 /*
@@ -95,7 +96,11 @@ Route::controller(DriverController::class)->group(function () {
 //Report
 
 Route::controller(ReportsController::class)->group(function () {
-    Route::get('/admin/report', 'index')->name('admin.report.index');
+    Route::get('/admin/report/', 'index')->name('admin.report.index');
+    Route::post('/admin/report/search', 'search')->name('admin.report.search');
+});
+
+Route::controller(ViewReportController::class)->group(function () {
     Route::post('/admin/report/search', 'search')->name('admin.report.search');
 });
 
