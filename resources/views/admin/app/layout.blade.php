@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
     <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="{{asset('css/jquery-ui.css')}}">
+    <link rel="{{asset('css/graph.css')}}">
     <link href="{{ asset('css/dataTables.bootstrap5.css') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}">
     <link href="{{ asset('css/styles.css') }}">
@@ -267,9 +268,9 @@
             <script src="{{ asset('js/Chart.min.js') }}"></script>
 
             <!-- Page level custom scripts -->
-            <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
+            {{-- <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
             <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
-            <script src="{{ asset('js/demo/chart-bar-demo.js') }}"></script>
+            <script src="{{ asset('js/demo/chart-bar-demo.js') }}"></script> --}}
 
            
 
@@ -287,6 +288,10 @@
 
             
            @yield('javascript')
+
+
+           <script src="{{ asset('js/chart.js') }}"></script>
+            {{-- <script src="{{ asset('js/bar.js') }}"></script> --}}
 </body>
 
 </html>

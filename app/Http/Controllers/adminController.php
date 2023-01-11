@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Estate;
 use App\Models\DeliveryJob;
@@ -21,13 +22,31 @@ class adminController extends Controller
 
         $jobs =DeliveryJob::count();
         $complete=DeliveryJob::onlyTrashed()->count();
-        $cpercent = $jobs / $complete * 100;
+        $cpercent = $complete / $jobs * 100;
         $perce = floor($cpercent);
+
+        //databymonthe
+        $data = DeliveryJob::select('id','created_at')->get()
+        ->groupBy(function($data){
+                return Carbon::parse($data->created_at)->format('M');
+        });
+
+        $months=[];
+        $monthCount=[];
+
+        foreach($data as $month => $values){
+            $months[]=$month;
+            $monthCount[]=count($values);
+        }
 
         return view(
             'admin.index',
-            compact('estates', 'managers', 'cpercent', 'perce')
+            compact('estates', 'managers', 'cpercent', 
+                  'perce', 'data', 'months', 'monthCount')
         );
+
+
+
     }
 
     public function adminData()

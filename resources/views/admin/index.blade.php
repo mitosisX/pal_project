@@ -48,7 +48,9 @@
                                 Approved Requests
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                30
+                                {{-- {{dd($months)}} --}}
+                                {{-- {{dd($monthCount)}} --}}
+
                             </div>
                         </div>
                         <div class="col-auto">
@@ -144,6 +146,9 @@
 @endsection
 
 @section('scripts')
+
+
+
     <script>
         var el = document.getElementById("wrapper");
         var toggleButton = document.getElementById("menu-toggle");
@@ -181,31 +186,31 @@
           data: data,
         }; **/
 
-        var ctx1 = document.getElementById('dChart').getContext('2d');
-        var dChart = new Chart(ctx1, {
-            type: 'doughnut',
-            data: {
+        // var ctx1 = document.getElementById('dChart').getContext('2d');
+        // var dChart = new Chart(ctx1, {
+        //     type: 'doughnut',
+        //     data: {
 
-                labels: [
-                    'Mize',
-                    'Breans',
-                    'Groundnuts',
-                    'Soya Beans'
-                ],
-                datasets: [{
-                    label: 'My First Dataset',
-                    data: [300, 50, 100, 70],
-                    backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)',
-                        'rgb(159, 43, 104)',
-                    ],
-                    hoverOffset: 4
-                }]
-            }
+        //         labels: [
+        //             'Mize',
+        //             'Breans',
+        //             'Groundnuts',
+        //             'Soya Beans'
+        //         ],
+        //         datasets: [{
+        //             label: 'My First Dataset',
+        //             data: [300, 50, 100, 70],
+        //             backgroundColor: [
+        //                 'rgb(255, 99, 132)',
+        //                 'rgb(54, 162, 235)',
+        //                 'rgb(255, 205, 86)',
+        //                 'rgb(159, 43, 104)',
+        //             ],
+        //             hoverOffset: 4
+        //         }]
+        //     }
 
-        });
+        // });
 
 
 
@@ -235,14 +240,18 @@
     <script>
         /** barchat **/
 
+
+    var _ydata =JSON.parse('{!! json_encode($months) !!}');
+    var _xdata =JSON.parse('{!! json_encode($monthCount) !!}');
+
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['WEEK 1', 'WEEK 2', 'WEEK 3', 'WEEK 4', 'WEEK 1', 'WEEK 2'],
+                labels: _ydata,
                 datasets: [{
                     label: '# of Approved Requests',
-                    data: [12, 19, 3, 5, 7, 16],
+                    data: _xdata,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -263,12 +272,18 @@
                 }]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+                scales:{
+                    xAxes: [{
+                        time:{
+                            unit:'month'
+                        },
+                    }]
                 }
             }
         });
+
     </script>
+
+
+
 @endsection
