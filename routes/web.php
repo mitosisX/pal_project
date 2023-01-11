@@ -87,8 +87,8 @@ Route::controller(CropController::class)->group(function () {
 
 // Driver
 Route::controller(DriverController::class)->group(function () {
-    Route::get('/driver', 'index')->name('driver.index');
-    Route::get('/driver', 'myJobs')->name('driver.myjobs');
+    Route::get('driver', 'myJobs')->name('driver.index');
+    Route::get('driver/jobs', 'myJobs')->name('driver.myjobs');
     Route::get('click_clear/{id}', 'delete')->name('driver.delete');
     Route::get('/driver/completed', 'completed')->name('driver.completed');
 });

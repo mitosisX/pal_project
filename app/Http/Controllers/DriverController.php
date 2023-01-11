@@ -16,15 +16,20 @@ class DriverController extends Controller
     // public function view()
     // {
     //     return view('driver.app.layout');
-      
+
     // }
+
+    public function index()
+    {
+        return view('driver.index');
+    }
 
 
     public function myJobs()
     {
 
-     $data = DeliveryJob::all();
-        return view('driver.index',['data'=>$data]);  
+        $data = DeliveryJob::all();
+        return view('driver.index', ['data' => $data]);
     }
 
     /**
@@ -42,11 +47,11 @@ class DriverController extends Controller
 
     public function completed()
     {
-       $completed = DeliveryJob::onlyTrashed()->get();
-       return view('driver.completed.index', compact('completed'));
+        $completed = DeliveryJob::onlyTrashed()->get();
+        return view('driver.completed.index', compact('completed'));
     }
 
-    
+
     /**
      * Store a newly created resource in storage.
      *
