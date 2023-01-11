@@ -17,7 +17,12 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        return view('admin.report.index');
+        $jobs =DeliveryJob::count();
+        $complete=DeliveryJob::onlyTrashed()->count();
+
+        $cpercent = $complete / $jobs * 100;
+
+        return view('admin.report.index', compact('jobs', 'complete', 'cpercent'));
     }
 
     /**
@@ -25,26 +30,9 @@ class ReportsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function search(Request $request)
-    // {
-    //     if($request->ajax()) {
-    //         if($request->from_date != '' && $request->to_date !=''){
-    //             $data = DB::table('delivery_jobs')
-    //                     ->whereBetween('created_at', array($request->
-    //                        from_date, $request->to_date ))->get(); 
-
-    //         }else{
-    //                $data = DB::table('delivery_jobs')->orderBy('created_at', 'desc')
-    //                ->get();    
-    //         }
-    //         echo json_encode($data);
-
-
-    //     }
-
-
-    
-
+    public function search(Request $request)
+    {
+      
 
     }
 

@@ -1,5 +1,10 @@
 @extends('admin.app.layout')
 
+@section('navbutton')
+    <a href="{{ route('admin.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50"></i>
+        Back</a>
+@endsection
 
 @section('content')
 <div class="row g-3 my-2">
@@ -27,7 +32,7 @@
                              
                             <tr>
                                 <td>Total Request</td>
-                                <td>{{$date}}</td>
+                                <td></td>
                                
                             </tr>
 
@@ -44,12 +49,12 @@
                             </tr>
                             <tr>
                                 <td>Total Delivery Jobs</td>
-                                <td></td>
+                                <td>{{$jobs}}</td>
                                
                             </tr>
                             <tr >
                                 <td>Total Completed Delivery Jobs</td>
-                                <td></td>
+                                <td>{{$complete}}</td>
                                
                             </tr>
                             

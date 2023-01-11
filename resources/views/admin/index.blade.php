@@ -1,5 +1,11 @@
 @extends('admin.app.layout')
 
+@section('navbutton')
+    <a href="{{route('admin.report.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50"></i>
+        Generate Report</a>
+@endsection
+
 @section('title')
     <title>Press Agriculture Limited</title>
 @endsection
@@ -60,12 +66,12 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Tasks
+                                Delivery Job Completion rate
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                        50%
+                                     {{ $perce}}%
                                     </div>
                                 </div>
                                 <div class="col">

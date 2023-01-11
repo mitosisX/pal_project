@@ -103,7 +103,6 @@
                         <h6 class="collapse-header">Delivery Jobs</h6>
                         <a class="collapse-item" href="{{ route('admin.jobs.index') }}">All Delivery Jobs</a>
                         <a class="collapse-item" href="{{ route('admin.jobs.completed.index') }}">Completed Delivery Jobs</a>
-                        <a class="collapse-item" href="{{ route('admin.report.index') }}">Report</a>
                     </div>
                 </div>
             </li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Estate;
+use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -18,15 +19,21 @@ class adminController extends Controller
         $estates = Estate::all();
         $managers = User::where('role', 'manager')->get();
 
+        $jobs =DeliveryJob::count();
+        $complete=DeliveryJob::onlyTrashed()->count();
+        $cpercent = $jobs / $complete * 100;
+        $perce = floor($cpercent);
+
         return view(
             'admin.index',
-            compact('estates', 'managers')
+            compact('estates', 'managers', 'cpercent', 'perce')
         );
     }
 
     public function adminData()
     {
-        return view('admin.index');
+
+       
     }
 
     /**
