@@ -67,7 +67,6 @@ class EstateController extends Controller
     public function store(EstateRequest $request)
     {
         $data = $request->validated();
-        $data['managers_id'] = 1;
 
         Estate::create($data);
 
