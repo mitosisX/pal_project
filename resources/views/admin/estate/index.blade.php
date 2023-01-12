@@ -30,7 +30,7 @@
                                         <tr>
                                             <th scope="row">{{ $loop->index += 1 }}</th>
                                             <td>{{ $estate->name }}</td>
-                                            <td>{{ $estate->manager['name'] }}</td>
+                                            <td>{{ $estate->manager->getName() }}</td>
                                             <td>{{ $estate->location }}</td>
                                             <td>
                                                 <div class="btn-group mb-3" role="group" aria-label="Basic example">
