@@ -144,6 +144,8 @@ Route::controller(stockController::class)->group(function () {
     Route::post('inventory/stock/store', 'store')->name('inventory.stock.store');
     Route::get('inventory/issue', 'issueOut')->name('inventory.issue.issueOut');
     Route::post('inventory/issue/update', 'update')->name('inventory.issue.update');
+
+    Route::get('inventory/test', 'tes')->name('inventory.issue.update');
 });
 
 //Issue Stock
