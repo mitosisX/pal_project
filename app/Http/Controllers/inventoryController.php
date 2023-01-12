@@ -20,7 +20,14 @@ class inventoryController extends Controller
     public function tabledata()
     {
         $stocks=Stock::all();
-        return view('inventory.index', compact('stocks'));
+
+        $data = Stock::get(['quantity', 'unit_price']);
+
+        $quantity = $data->reduce(function ($carry, $item) {
+        return $item->quantity * $item->unit_price;
+        });
+
+        return view('inventory.index', compact('stocks', 'quantity'));
     }
 
 

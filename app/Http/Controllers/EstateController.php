@@ -52,7 +52,7 @@ class EstateController extends Controller
      */
     public function create()
     {
-        $managers = User::where('role', 'manager')
+        $managers = User::where('role', 'e-manager')
             ->get();
 
         return view('admin.estate.create', compact('managers'));
@@ -93,7 +93,7 @@ class EstateController extends Controller
      */
     public function edit(Estate $estate)
     {
-        $managers = User::where('role', 'manager')
+        $managers = User::where('role', 'e-manager')
             ->get();
 
         return view(

@@ -134,14 +134,14 @@ class stockController extends Controller
         //
     }
 
-    public function tes()
-    {
-        $data = Stock::get(['quantity', 'unit_price']);
+    // public function tes()
+    // {
+    //     $data = Stock::get(['quantity', 'unit_price']);
 
-        $quantity = $data->reduce(function ($carry, $item) {
-            return $item->quantity * $item->unit_price;
-        });
+    //     $quantity = $data->reduce(function ($carry, $item) {
+    //         return $item->quantity * $item->unit_price;
+    //     });
 
-        dd($quantity);
-    }
+    //     dd($quantity);
+    // }
 }

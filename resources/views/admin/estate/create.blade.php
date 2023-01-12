@@ -39,7 +39,7 @@
                                         Manager</label>
                                     <select name="managers_id" class="type form-control">
                                         @foreach ($managers as $manager)
-                                            <option value="{{ $manager->id }}">{{ $manager->name }}</option>
+                                            <option value="{{ $manager->id }}">{{ $manager->first_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
