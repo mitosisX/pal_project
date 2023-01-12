@@ -25,7 +25,8 @@ class EstateRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'location' => 'required'
+            'location' => 'required',
+            'managers_id' => 'required'
         ];
     }
 
