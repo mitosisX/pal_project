@@ -13,8 +13,8 @@
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
     <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="{{asset('css/jquery-ui.css')}}">
-    <link rel="{{asset('css/graph.css')}}">
+    <link rel="{{ asset('css/jquery-ui.css') }}">
+    <link rel="{{ asset('css/graph.css') }}">
     <link href="{{ asset('css/dataTables.bootstrap5.css') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}">
     <link href="{{ asset('css/styles.css') }}">
@@ -103,7 +103,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Delivery Jobs</h6>
                         <a class="collapse-item" href="{{ route('admin.jobs.index') }}">All Delivery Jobs</a>
-                        <a class="collapse-item" href="{{ route('admin.jobs.completed.index') }}">Completed Delivery Jobs</a>
+                        <a class="collapse-item" href="{{ route('admin.jobs.completed.index') }}">Completed Delivery
+                            Jobs</a>
                     </div>
                 </div>
             </li>
@@ -146,7 +147,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <h1 class="text-info fw-bold text-center"> Press Agriculture Limited</h1> 
+                    <h1 class="text-info fw-bold text-center"> Press Agriculture Limited</h1>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -154,10 +155,10 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
-                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->getName() }}</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -255,7 +256,7 @@
             <!-- Bootstrap core JavaScript-->
             <script src="{{ asset('js/sweetalerts.js') }}"></script>
             <script src="{{ asset('js/jquery.min.js') }}"></script>
-            <script src="{{asset('js/jquery-ui.js') }}"></script>
+            <script src="{{ asset('js/jquery-ui.js') }}"></script>
             <script src="{{ asset('css/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
             <!-- Core plugin JavaScript-->
@@ -272,7 +273,7 @@
             <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
             <script src="{{ asset('js/demo/chart-bar-demo.js') }}"></script> --}}
 
-           
+
 
             <!-- Bootstrap datatables JavaScript-->
             {{-- <script src="{{ asset('js/bootstrap.bundle.js') }}"></script> --}}
@@ -286,11 +287,11 @@
                 });
             </script>
 
-            
-           @yield('javascript')
+
+            @yield('javascript')
 
 
-           <script src="{{ asset('js/chart.js') }}"></script>
+            <script src="{{ asset('js/chart.js') }}"></script>
             {{-- <script src="{{ asset('js/bar.js') }}"></script> --}}
 </body>
 
