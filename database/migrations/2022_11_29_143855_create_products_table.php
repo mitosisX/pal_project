@@ -20,6 +20,7 @@ return new class extends Migration
             $table->mediumText('unit');
             $table->integer('package_size');
             $table->mediumText('supplier');
+            $table->mediumText('use');
             $table->integer('unit_price');
             // $table->unsignedInteger('crops_id');
             $table->timestamps();

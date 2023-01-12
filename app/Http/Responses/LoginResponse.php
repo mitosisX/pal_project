@@ -16,7 +16,7 @@ class LoginResponse implements LoginResponseContract
         if (Auth::user()->role === 'admin') {
             return redirect()
                 ->route('admin.index');
-        } elseif (Auth::user()->role === 'manager') {
+        } elseif (Auth::user()->role === 'e-manager') {
             return redirect()
                 ->route('manager.index');
         } elseif (Auth::user()->role === 'driver') {

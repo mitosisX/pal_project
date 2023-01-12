@@ -20,10 +20,10 @@ class adminController extends Controller
         $estates = Estate::all();
         $managers = User::where('role', 'manager')->get();
 
-        $jobs =DeliveryJob::count();
-        $complete=DeliveryJob::onlyTrashed()->count();
-        $cpercent = $complete / $jobs * 100;
-        $perce = floor($cpercent);
+        // $jobs =DeliveryJob::count();
+        // $complete=DeliveryJob::onlyTrashed()->count();
+        // $cpercent = $complete / $jobs * 100;
+        // $perce = floor($cpercent);
 
         //databymonthe
         $data = DeliveryJob::select('id','created_at')->get()
@@ -41,8 +41,7 @@ class adminController extends Controller
 
         return view(
             'admin.index',
-            compact('estates', 'managers', 'cpercent', 
-                  'perce', 'data', 'months', 'monthCount')
+            compact('estates', 'managers', 'data', 'months', 'monthCount')
         );
 
 

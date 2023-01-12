@@ -69,6 +69,11 @@
                                 <input type="text" name="psupplier" class="form-control supplier"  placeholder="Enter Suppler">
                               </div>
 
+                              <div class="form-group col-md-12">
+                                <label for="inputPassword4">Use</label>
+                                <input type="text" name="puse" class="form-control supplier"  placeholder="Enter Suppler">
+                              </div>
+
                              
                               
 

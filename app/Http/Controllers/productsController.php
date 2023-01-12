@@ -62,6 +62,7 @@ class productsController extends Controller
             'punit'=>'required',
             'ppackage'=>'required',
             'psupplier'=>'required',
+            'puse'=>'required',
             'pprice'=>'required',
               
         ]);
@@ -73,6 +74,7 @@ class productsController extends Controller
         $produ->unit =$request->input('punit');
         $produ->package_size =$request->input('ppackage');
         $produ->supplier =$request->input('psupplier');
+        $produ->use =$request->input('puse');
         $produ->unit_price =$request->input('pprice');
         $produ->save();
 
