@@ -69,6 +69,7 @@ class EstateController extends Controller
         $data = $request->validated();
 
         Estate::create($data);
+        
 
         return redirect()->route('admin.index');
     }

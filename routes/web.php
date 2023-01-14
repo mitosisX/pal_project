@@ -13,6 +13,7 @@ use App\Http\Controllers\addUserController;
 use App\Http\Controllers\managerController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\requestController;
+use App\Http\Controllers\sreportController;
 use App\Http\Controllers\editCropController;
 use App\Http\Controllers\productsController;
 use App\Http\Controllers\editFieldController;
@@ -115,6 +116,13 @@ Route::controller(dJobController::class)->group(function () {
 Route::controller(inventoryController::class)->group(function () {
     // Route::get('/inventory', 'index')->name('inventory.index');
     Route::get('inventory', 'tabledata')->name('inventory.tabledata');
+    // Route::get('inventory/test', 'tes')->name('inventory.issue.update');
+});
+
+
+// Inventory Report
+Route::controller(sreportController::class)->group(function () {
+    Route::get('/inventory/report/index', 'index')->name('inventory.report.index');
 });
 
 //  Products
@@ -145,7 +153,7 @@ Route::controller(stockController::class)->group(function () {
     Route::get('inventory/issue', 'issueOut')->name('inventory.issue.issueOut');
     Route::post('inventory/issue/update', 'update')->name('inventory.issue.update');
 
-    Route::get('inventory/test', 'tes')->name('inventory.issue.update');
+    
 });
 
 //Issue Stock

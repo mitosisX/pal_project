@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stock;
+use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 
-class inventoryController extends Controller
+class sreportController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     return view('inventory.app.layout');
-    // }
+    public function index()
 
-    public function tabledata()
+
     {
-        $stocks=Stock::all();
+        $jobs = DeliveryJob::count();
+        $stock= Stock::count();
+
 
         $data = Stock::get(['quantity', 'unit_price']);
 
@@ -28,9 +28,8 @@ class inventoryController extends Controller
         });
 
 
-        return view('inventory.index', compact('stocks', 'quantity'));
+        return view('inventory.report.index', compact('jobs', 'stock'));
     }
-
 
     /**
      * Show the form for creating a new resource.

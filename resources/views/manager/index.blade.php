@@ -32,13 +32,7 @@
                                     @endforeach
                                 @endforeach
 
-                                <tr>
-                                    <!-- <th scope="row">3</th> -->
-                                    <td colspan="1"></td>
-                                    <td class="font-weight-bold">TOTAL ACREARAGE</td>
-                                    <td></td>
-                                    <td>100</td>
-                                </tr>
+                                
                             </tbody>
                         </table>
 
@@ -83,13 +77,7 @@
                                     @endforeach
                                 @endforeach
 
-                                <tr>
-                                    <!-- <th scope="row">3</th> -->
-                                    <td colspan="1"></td>
-                                    <td class="font-weight-bold">TOTAL ACREARAGE</td>
-                                    <td></td>
-                                    <td>100</td>
-                                </tr>
+                                
                             </tbody>
                         </table>
 

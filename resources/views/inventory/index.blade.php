@@ -1,5 +1,11 @@
 @extends('inventory.app.layout')
 
+@section('navbutton')
+    <a href="{{route('inventory.report.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50"></i>
+        Generate Report</a>
+@endsection
+
 @section('content')
     {{-- <div class="row g-3 my-2">
           <div class="col-md-12"> --}}
@@ -75,6 +81,7 @@
                                         <th>Supplier</th>
                                         <th>Unit Price</th>
                                         <th>Total Price</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,8 +94,7 @@
                                             <td>{{ $stock->quantity }}</td>
                                             <td>{{ $stock->proSupplier->name }}</td>
                                             <td>{{ $stock->unit_price }}</td>
-                                            <td>{{$quantity}}</td>
-
+                                            <td>{{$quantity}}<td>
                                         </tr>
                                     @endforeach
                                 </tbody>

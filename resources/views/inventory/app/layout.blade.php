@@ -52,7 +52,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-tractor"></i>
                 </div>
@@ -158,9 +158,10 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <section class="section">
-                        <div class="section-body">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             {{-- BREADCRUMB /////////////////// --}}
                             <h2 class="section-title">Inventory</h2>
+                            @yield('navbutton')
                         </div>
                     </section>
 
