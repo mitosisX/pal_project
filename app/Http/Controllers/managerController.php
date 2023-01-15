@@ -27,6 +27,7 @@ class managerController extends Controller
 
         
         return view('manager.index', compact('estates', 'field'));
+        
     }
 
     /**

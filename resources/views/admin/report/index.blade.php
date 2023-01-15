@@ -31,20 +31,20 @@
                         <tbody>
                              
                             <tr>
-                                <td>Total Recieved Request </td>
-                                <td>{{$reqs}}</td>
+                                <td>Outstanding Delivery Jobs</td>
+                                <td>{{$out}}</td>
                                
                             </tr>
 
-                            <tr>
+                            {{-- <tr>
                                 <td>Total Approved reqests</td>
                                 <td></td>
                                
-                            </tr>
+                            </tr> --}}
                             
                             <tr >
-                                <td>Outstanding Delivery Jobs</td>
-                                <td>{{$out}}</td>
+                                <td>Total Recieved Request </td>
+                                <td> {{$reqs}}</td>
                                
                             </tr>
                             <tr>

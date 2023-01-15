@@ -6,7 +6,7 @@
 
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
-                    <h3 class="card-header">Fields</h3>
+                    <h3 class="card-header text-white bg-info">Fields</h3>
                     <div class="card-body">
                         <h4 class="card-title font-weight-bold text-justify-center"> </h4>
                         <table class="table fw-bold text-muted">
@@ -24,9 +24,9 @@
                                     @foreach ($estate->fields as $field)
                                         <tr>
                                             <!-- <th scope="row">1</th> -->
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $field->name }}</td>
-                                            <td>{{$field->area }}</td>
+                                            <td>{{ $loop->iteration}}</td>
+                                            <td>{{ $field->name}}</td>
+                                            <td>{{$field->area}}</td>
                                             
 
                                         </tr>
@@ -51,7 +51,7 @@
 
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
-                    <h3 class="card-header">Crops</h3>
+                    <h3 class="card-header text-white bg-info">Crops</h3>
                     <div class="card-body">
                         <h5 class="card-title "></h5>
 
