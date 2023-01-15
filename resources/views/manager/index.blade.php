@@ -119,8 +119,8 @@
                                     @foreach ($requests as $request)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $request->productName }}</td>
-                                            <td>System Architect</td>
+                                            <td>{{ $request->product['name'] }}</td>
+                                            <td>{{ $request->created_at }}</td>
                                             <td>Edinburgh</td>
                                             <td>61</td>
                                             <td>2011-04-25</td>

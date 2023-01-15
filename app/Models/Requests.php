@@ -19,8 +19,8 @@ class Requests extends Model
         'quantity', 'description'
     ];
 
-    public function productName()
+    public function product()
     {
-        return $this->hasOne(Products::class, 'products_id', 'id');
+        return $this->hasOne(Products::class, 'id');
     }
 }
