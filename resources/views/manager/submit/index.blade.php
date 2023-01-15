@@ -24,7 +24,7 @@
         <div class="col-md-6 col-md-offset-6">
             <div class="col-lg-12 col-md-offset-6">
                 <div class="card border-0 o-hidden shadow-lg my-5">
-                    <div class="card-header">
+                    <div class="card-header text-white bg-info">
                         <h4>Submit Request</h4>
                     </div>
 
@@ -50,7 +50,7 @@
                             <div class="">
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Type</label>
-                                    <select type="text" name="type_id" class="form-control type" id="type_id">
+                                    <select type="text" name="type_id" class="form-control type" id="type_id" required>
                                         @foreach ($p_types as $p_type)
                                             <option value="{{ $p_type->id }}">{{ $p_type->name }}</option>
                                         @endforeach
@@ -59,7 +59,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Name</label>
-                                    <select type="text" name="products_id" class="form-control name">
+                                    <select type="text" name="products_id" class="form-control name" required>
                                         @foreach ($products as $product)
                                             <option value="{{ $product->id }}">{{ $product->name }}</option>
                                         @endforeach
@@ -68,7 +68,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Unit</label>
-                                    <select type="text" name="unit_id" class="form-control unit" id="">
+                                    <select type="text" name="unit_id" class="form-control unit" id="" required>
                                         @foreach ($p_units as $p_unit)
                                             <option value="{{ $p_unit->id }}">{{ $p_unit->name }}</option>
                                         @endforeach
@@ -77,7 +77,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Package Size</label>
-                                    <select name="request_category_id" class="form-control psize">
+                                    <select name="request_category_id" class="form-control psize" required>
                                         @foreach ($r_categories as $r_category)
                                             <option value="{{ $r_category->id }}">{{ $r_category->name }}</option>
                                         @endforeach
@@ -87,12 +87,12 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Quantity</label>
-                                    <input type="number" name="quantity" class="form-control qauntity" placeholder="">
+                                    <input type="number" name="quantity" class="form-control qauntity" placeholder="" required>
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Estate</label>
-                                    <select type="text" name="estates_id" class="form-control supplier">
+                                    <select type="text" name="estates_id" class="form-control supplier" required>
                                         @foreach ($user as $estate)
                                             <option value="{{ $estate->id }}">{{ $estate->name }}</option>
                                         @endforeach
@@ -101,7 +101,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Requests Description</label>
-                                    <textarea class="form-control" name="description" rows="4"></textarea>
+                                    <textarea class="form-control" name="description" rows="4" required></textarea>
                                 </div>
 
 
