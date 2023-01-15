@@ -109,9 +109,7 @@
                                         <th>Request Date</th>
                                         <th>Item Type</th>
                                         <th>Item Unit</th>
-                                        <th>Package size</th>
                                         <th>Quantity</th>
-                                        <th>Crop to be used</th>
                                         <th>Request Status</th>
                                     </tr>
                                 </thead>
@@ -121,12 +119,16 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $request->product['name'] }}</td>
                                             <td>{{ $request->created_at }}</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011-04-25</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td><button type="button" class="btn btn-outline-warning ">pending</button>
+                                            <td>{{ $request->productType['name'] }}</td>
+                                            <td>{{ $request->unit['name'] }}</td>
+                                            <td>{{ $request->quantity }}</td>
+                                            <td>
+                                                @if ($request->status === 'pending')
+                                                    <button type="button" class="btn btn-outline-success ">Pending</button>
+                                                @else
+                                                    <button type="button"
+                                                        class="btn btn-outline-warning ">Accepted</button>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

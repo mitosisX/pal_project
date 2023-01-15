@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use SebastianBergmann\CodeCoverage\Report\Xml\Unit;
 
 class Requests extends Model
 {
@@ -22,5 +23,15 @@ class Requests extends Model
     public function product()
     {
         return $this->hasOne(Products::class, 'id');
+    }
+
+    public function productType()
+    {
+        return $this->hasOne(ProductType::class, 'id');
+    }
+
+    public function unit()
+    {
+        return $this->hasOne(productUnit::class, 'id');
     }
 }
