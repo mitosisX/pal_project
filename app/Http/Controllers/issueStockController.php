@@ -68,7 +68,7 @@ class issueStockController extends Controller
         $job->quantity =$request->input('squantity');
         $job->save();
 
-        return redirect('/inventory/issue')->with('success', 'Data saved successfully');
+        return redirect('/inventory/issue')->with('success', 'Success');
  
 
     }
