@@ -21,11 +21,7 @@ class sreportController extends Controller
         $stock= Stock::count();
 
 
-        $data = Stock::get(['quantity', 'unit_price']);
-
-        $quantity = $data->reduce(function ($carry, $item) {
-        return $item->quantity * $item->unit_price;
-        });
+        
 
 
         return view('inventory.report.index', compact('jobs', 'stock'));

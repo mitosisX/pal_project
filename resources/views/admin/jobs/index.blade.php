@@ -5,8 +5,8 @@
 <div class="row g-3 my-2">
     <div class="col-md-12">
         <div class="col-lg-12">
-            <div class="card">
-                <h3 class="card-header fw-bold text-muted">Pending Delivery Jobs</h3>
+            <div class="card border-0 o-hidden shadow-lg my-5">
+                <h3 class="card-header fw-bold text-white bg-info">Pending Delivery Jobs</h3>
                 <div class="card-body">
                    <div class="tables-responsive">
                    @if(\Session::has('success'))
@@ -14,10 +14,9 @@
                     <h4>{{\Session::get('success')}}</h4>
                    </div>
                    @endif
-                    <table id="example" class="table table-striped table-hover data-table fw-bold text-muted" style="width:100%">
+                    <table id="example" class="table table-hover data-table fw-bold text-muted" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Driver</th>
                                 <th>Item Name</th>
                                 <th>Products Type</th>
                                 <th>Unit</th>
@@ -28,7 +27,6 @@
                         <tbody>
                             @foreach ($all as $jobs)
                             <tr data-status="active">
-                                <td>{{$jobs->driver->name}}</td>
                                 <td>{{$jobs->item->name}}</td>
                                 <td>{{$jobs->type}}</td>
                                 <td>{{$jobs->unit}}</td>
