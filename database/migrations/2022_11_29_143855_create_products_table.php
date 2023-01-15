@@ -22,7 +22,7 @@ return new class extends Migration
             $table->mediumText('supplier');
             $table->mediumText('use');
             $table->integer('unit_price');
-            // $table->unsignedInteger('crops_id');
+            $table->mediumText('usage')->default('');
             $table->timestamps();
 
             $table->foreign('type')

@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Estate;
 use App\Models\products;
 use App\Models\ProductType;
 use App\Models\productUnit;
-use App\Models\Request_Category;
 use Illuminate\Http\Request;
+use App\Models\Request_Category;
+use Illuminate\Support\Facades\Auth;
 
 class requestController extends Controller
 {
@@ -31,14 +34,19 @@ class requestController extends Controller
         $p_types = ProductType::all();
         $p_units = productUnit::all();
         $r_categories = Request_Category::all();
+        $user = User::where('id', Auth::user()->id)
+            ->first()
+            ->estates()
+            ->get();
 
         return view(
-            'manager.submit.create',
+            'manager.submit.index',
             compact(
                 'products',
                 'p_types',
                 'p_units',
-                'r_categories'
+                'r_categories',
+                'user'
             )
         );
     }
@@ -51,7 +59,7 @@ class requestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Requests::create($request->all());
     }
 
     /**

@@ -63,7 +63,7 @@
                                 <div class="form-outline mb-4">
                                     <label for="validationCustom01" class="form-label">Role</label>
                                     <select name="role" class="type form-control">
-                                        <option value="manager">Manager</option>
+                                        {{-- <option value="manager">Manager</option> --}}
                                         <option value="e-manager">E-Manager</option>
                                         <option value="w-manager">WareHouse Manager</option>
                                         <option value="driver">Driver</option>

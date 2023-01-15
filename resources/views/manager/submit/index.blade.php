@@ -26,12 +26,12 @@
                            </div>
                           @endif  --}}
 
-                        <form action="{{ action('App\Http\Controllers\stockController@store') }}" method="POST">
+                        <form action="{{ route('manager.request.store') }}" method="POST">
                             @csrf
                             <div class="">
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Type</label>
-                                    <select type="text" name="stype" class="form-control type" id="type_id">
+                                    <select type="text" name="products_id" class="form-control type" id="type_id">
                                         @foreach ($p_types as $p_type)
                                             <option value="{{ $p_type->id }}">{{ $p_type->name }}</option>
                                         @endforeach
@@ -40,7 +40,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Name</label>
-                                    <select type="text" name="sname" class="form-control name">
+                                    <select type="text" name="type_id" class="form-control name">
                                         @foreach ($products as $product)
                                             <option value="{{ $product->id }}">{{ $product->name }}</option>
                                         @endforeach
@@ -49,7 +49,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Unit</label>
-                                    <select type="text" name="sunit" class="form-control unit" id="">
+                                    <select type="text" name="unit_id" class="form-control unit" id="">
                                         @foreach ($p_units as $p_unit)
                                             <option value="{{ $p_unit->id }}">{{ $p_unit->name }}</option>
                                         @endforeach
@@ -58,7 +58,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Package Size</label>
-                                    <select name="spackage" class="form-control psize">
+                                    <select name="request_category_id" class="form-control psize">
                                         @foreach ($r_categories as $r_category)
                                             <option value="{{ $r_category->id }}">{{ $r_category->name }}</option>
                                         @endforeach
@@ -68,24 +68,21 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Quantity</label>
-                                    <input type="number" name="squantity" class="form-control qauntity" placeholder="">
+                                    <input type="number" name="quantity" class="form-control qauntity" placeholder="">
                                 </div>
 
-
-                                {{-- <div class="form-group col-md-12">
-                                    <label for="inputPassword4">Request Category</label>
-                                    <select type="text" name="ssupplier" class="form-control supplier"
-                                        placeholder="Supplier" id="">
-                                        @foreach ($r_categories as $r_category)
-                                            <option value="{{ $r_category->id }}">{{ $r_category->name }}</option>
+                                <div class="form-group col-md-12">
+                                    <label for="inputPassword4">Estate</label>
+                                    <select type="text" name="estates_id" class="form-control supplier">
+                                        @foreach ($user as $estate)
+                                            <option value="{{ $estate->id }}">{{ $estate->name }}</option>
                                         @endforeach
                                     </select>
-                                </div> --}}
-
+                                </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Requests Description</label>
-                                    <textarea class="form-control" id="textAreaExample1" rows="4"></textarea>
+                                    <textarea class="form-control" name="description" rows="4"></textarea>
                                 </div>
 
 

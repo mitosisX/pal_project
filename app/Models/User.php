@@ -63,7 +63,6 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-
     public function driver()
     {
         return $this->hasMany(DeliveryJob::class);
@@ -72,5 +71,10 @@ class User extends Authenticatable
     public function getName()
     {
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function estates()
+    {
+        return $this->hasMany(Estate::class, 'managers_id', 'id');
     }
 }

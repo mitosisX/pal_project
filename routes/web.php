@@ -140,7 +140,8 @@ Route::controller(managerController::class)->group(function () {
 
 //requests
 Route::controller(requestController::class)->group(function () {
-    Route::get('manager/submit', 'create')->name('manager.submit.create');
+    Route::get('manager/request/submit', 'create')->name('manager.submit.create');
+    Route::post('manager/request/store', 'store')->name('manager.request.store');
     // Route::post('inventory/products/store', 'store')->name('inventory.products.store');
 
 });
@@ -152,8 +153,6 @@ Route::controller(stockController::class)->group(function () {
     Route::post('inventory/stock/store', 'store')->name('inventory.stock.store');
     Route::get('inventory/issue', 'issueOut')->name('inventory.issue.issueOut');
     Route::post('inventory/issue/update', 'update')->name('inventory.issue.update');
-
-    
 });
 
 //Issue Stock

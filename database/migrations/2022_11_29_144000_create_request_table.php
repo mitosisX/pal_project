@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedInteger('unit_id');
             $table->unsignedInteger('estates_id');
             $table->unsignedInteger('request_category_id');
-            $table->mediumText('status');
+            $table->mediumText('status')->default('pending');
             $table->integer('quantity');
             $table->mediumText('description');
             $table->timestamps();
