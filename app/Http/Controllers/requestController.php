@@ -8,6 +8,7 @@ use App\Models\products;
 use App\Models\Requests;
 use App\Models\ProductType;
 use App\Models\productUnit;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Request_Category;
 use Illuminate\Support\Facades\Auth;
@@ -60,7 +61,42 @@ class requestController extends Controller
      */
     public function store(Request $request)
     {
-        Requests::create($request->all());
+        $data = $request->all();
+        $data['status'] = 'pending';
+
+        $estates = User::where('id', Auth::user()->id)
+            ->first()
+            ->estates()
+            ->get();
+
+        foreach ($estates as $estate) {
+            foreach ($estate->crops as $crop) {
+                $crop = ucfirst(trans($crop->name));
+
+                $requestedProduct = Products::where(
+                    'id',
+                    $request->products_id
+                )
+                    ->first();
+
+                $reqProductName = $requestedProduct->name;
+                $usage = explode(',', $requestedProduct->use);
+
+                if (in_array($crop, $usage) || $usage[0] === 'all') {
+                    // If codes reaches then a matching crop
+                    // has been found
+                    Requests::create($data);
+
+                    return back()
+                        ->with('request-submited', true);
+                }
+
+                // Othwerwise, the crop for the requested
+                // product was not found
+                return back()
+                    ->with('request-rejected', true);
+            }
+        }
     }
 
     /**

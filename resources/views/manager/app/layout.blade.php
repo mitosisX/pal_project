@@ -12,6 +12,7 @@
     <title>Inventory Dashboard</title>
 
     <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
     <link href="{{ asset('css/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/dataTables.bootstrap5.css') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}">
@@ -213,10 +214,8 @@
                     </div>
                 </div>
             </div>
-
-
-
             <!-- Bootstrap core JavaScript-->
+            <script src="{{ asset('js/sweetalerts.js') }}"></script>
             <script src="{{ asset('js/jquery.min.js') }}"></script>
             <script src="{{ asset('css/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -239,6 +238,7 @@
             <script src="{{ asset('js/dataTables.bootstrap5.js') }}"></script>
 
 
+            @yield('scripts')
 
 
             <script>

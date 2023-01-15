@@ -1,6 +1,25 @@
 @extends('manager.app.layout')
 
 @section('content')
+    @if (session('request-submited'))
+        @section('scripts')
+            <script>
+                new swal("Done!",
+                    "Your request has been submitted!",
+                    "failure");
+            </script>
+        @endsection
+    @endif
+    @if (session('request-rejected'))
+        @section('scripts')
+            <script>
+                new swal("Failed!",
+                    "Your request was rejected.",
+                    "success");
+            </script>
+        @endsection
+    @endif
+
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6 col-md-offset-6">
             <div class="col-lg-12 col-md-offset-6">
@@ -31,7 +50,7 @@
                             <div class="">
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Type</label>
-                                    <select type="text" name="products_id" class="form-control type" id="type_id">
+                                    <select type="text" name="type_id" class="form-control type" id="type_id">
                                         @foreach ($p_types as $p_type)
                                             <option value="{{ $p_type->id }}">{{ $p_type->name }}</option>
                                         @endforeach
@@ -40,7 +59,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputPassword4">Product Name</label>
-                                    <select type="text" name="type_id" class="form-control name">
+                                    <select type="text" name="products_id" class="form-control name">
                                         @foreach ($products as $product)
                                             <option value="{{ $product->id }}">{{ $product->name }}</option>
                                         @endforeach
@@ -86,8 +105,10 @@
                                 </div>
 
 
+                                <div class="form-group col-md-12">
+                                    <button type="submit" class="btn btn-success add_product">Submit</button>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-success add_product">update</button>
 
                         </form>
 

@@ -12,10 +12,15 @@ class Requests extends Model
     protected $table = 'request';
 
     protected $fillable = [
-        'id',
+        // 'id',
         'products_id', 'type_id',
         'unit_id', 'estates_id',
         'request_category_id', 'status',
         'quantity', 'description'
     ];
+
+    public function product()
+    {
+        return $this->hasOne(Product::class, 'products_id');
+    }
 }
