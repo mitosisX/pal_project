@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Estate;
 use App\Models\products;
+use App\Models\Requests;
 use App\Models\ProductType;
 use App\Models\productUnit;
 use Illuminate\Http\Request;
