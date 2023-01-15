@@ -15,8 +15,8 @@
                                     <!-- <th scope="col">#</th> -->
                                     <th scope="col">Number</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Total Acrerage</th>
-                                    <th scope="col">Acres in use</th>
+                                    <th scope="col">Acres</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,9 +25,10 @@
                                         <tr>
                                             <!-- <th scope="row">1</th> -->
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $estate->name }}</td>
-                                            <td>{{ 2 }}</td>
-                                            <td>50</td>
+                                            <td>{{ $field->name }}</td>
+                                            <td>{{$field->area }}</td>
+                                            
+
                                         </tr>
                                     @endforeach
                                 @endforeach
@@ -61,7 +62,7 @@
                                     <th scope="col">Number</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Field</th>
-                                    <th scope="col">Total acrerage</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -72,7 +73,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $crop['name'] }}</td>
                                             <td>{{ $crop->field['name'] }}</td>
-                                            <td>50</td>
+                                            
                                         </tr>
                                     @endforeach
                                 @endforeach

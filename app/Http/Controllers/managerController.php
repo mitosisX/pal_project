@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Field;
 use App\Models\Estate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,10 @@ class managerController extends Controller
             Auth::user()->id
         )->get();
 
-        return view('manager.index', compact('estates'));
+        $field =Field::where('estates_id', Auth::user()->id)->get();
+
+
+        return view('manager.index', compact('estates', 'field'));
     }
 
     /**
