@@ -80,7 +80,7 @@
                                         <th>Quantity</th>
                                         <th>Supplier</th>
                                         <th>Unit Price</th>
-                                        <th>Total Price</th>
+                                        
                                         
                                     </tr>
                                 </thead>
@@ -94,7 +94,7 @@
                                             <td>{{ $stock->quantity }}</td>
                                             <td>{{ $stock->proSupplier->name }}</td>
                                             <td>{{ $stock->unit_price }}</td>
-                                            <td>{{$quantity}}<td>
+                                            
                                         </tr>
                                     @endforeach
                                 </tbody>

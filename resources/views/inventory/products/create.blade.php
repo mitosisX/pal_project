@@ -8,7 +8,7 @@
       <div class="col-lg-12 col-md-offset-6">
                   <div class="card border-0 o-hidden shadow-lg my-5">
 
-                    <div class="card-header">
+                    <div class="card-header bg-info text-white">
                       <h4>Add Products</h4>
                   </div>
                     
