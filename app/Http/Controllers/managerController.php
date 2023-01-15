@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Field;
 use App\Models\Estate;
-use App\Models\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,16 +16,25 @@ class managerController extends Controller
      */
     public function index()
     {
-
         $estates = Estate::where(
             'managers_id',
             Auth::user()->id
         )->get();
 
-        $field =Field::where('estates_id', Auth::user()->id)->get();
+        $requests = Estate::where(
+            'managers_id',
+            Auth::user()->id
+        )
+            ->first()
+            ->requests()
+            ->get();
 
-        
-        return view('manager.index', compact('estates', 'field'));
+        $field = Field::where('estates_id', Auth::user()->id)->get();
+
+        return view(
+            'manager.index',
+            compact('estates', 'field', 'requests')
+        );
     }
 
     /**

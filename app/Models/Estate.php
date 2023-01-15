@@ -31,4 +31,9 @@ class Estate extends Model
             'fields_id'
         );
     }
+
+    public function requests()
+    {
+        return $this->hasMany(Requests::class, 'estates_id');
+    }
 }

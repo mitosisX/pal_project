@@ -16,7 +16,7 @@
                                     <th scope="col">Number</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Acres</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,14 +26,14 @@
                                             <!-- <th scope="row">1</th> -->
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $field->name }}</td>
-                                            <td>{{$field->area }}</td>
-                                            
+                                            <td>{{ $field->area }}</td>
+
 
                                         </tr>
                                     @endforeach
                                 @endforeach
 
-                                
+
                             </tbody>
                         </table>
 
@@ -62,7 +62,7 @@
                                     <th scope="col">Number</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Field</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,12 +73,12 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $crop['name'] }}</td>
                                             <td>{{ $crop->field['name'] }}</td>
-                                            
+
                                         </tr>
                                     @endforeach
                                 @endforeach
 
-                                
+
                             </tbody>
                         </table>
 
@@ -103,9 +103,9 @@
 
                             <table id="example" class="table data-table fw-bold text-muted" style="width:100%">
                                 <thead>
-                                
                                     <tr>
-                                        <th></th>
+                                        <th>#</th>
+                                        <th>Item Name</th>
                                         <th>Request Date</th>
                                         <th>Item Type</th>
                                         <th>Item Unit</th>
@@ -115,20 +115,26 @@
                                         <th>Request Status</th>
                                     </tr>
                                 </thead>
-                                
-
-                                    </tfoot>
+                                <tbody>
+                                    @foreach ($requests as $request)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $request->productName }}</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>2011-04-25</td>
+                                            <td>$320,800</td>
+                                            <td>$320,800</td>
+                                            <td><button type="button" class="btn btn-outline-warning ">pending</button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                             </table>
-
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
-
         </div>
     </div>
-@endsection('content')
+@endsection
