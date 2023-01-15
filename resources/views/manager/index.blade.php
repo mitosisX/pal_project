@@ -16,7 +16,6 @@
                                     <th scope="col">Number</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Acres</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,16 +23,12 @@
                                     @foreach ($estate->fields as $field)
                                         <tr>
                                             <!-- <th scope="row">1</th> -->
-                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $loop->parent->iteration }}</td>
                                             <td>{{ $field->name }}</td>
                                             <td>{{ $field->area }}</td>
-
-
                                         </tr>
                                     @endforeach
                                 @endforeach
-
-
                             </tbody>
                         </table>
 
@@ -41,14 +36,10 @@
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
-
-
             </div>
-
         </div>
 
         <div class="col-md-6">
-
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
                     <h3 class="card-header text-white bg-info">Crops</h3>
@@ -62,7 +53,6 @@
                                     <th scope="col">Number</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Field</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,27 +60,20 @@
                                     @foreach ($estate->crops as $crop)
                                         <tr>
                                             <!-- <th scope="row">1</th> -->
-                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $loop->parent->iteration }}</td>
                                             <td>{{ $crop['name'] }}</td>
                                             <td>{{ $crop->field['name'] }}</td>
-
                                         </tr>
                                     @endforeach
                                 @endforeach
-
-
                             </tbody>
                         </table>
-
                         <p class="card-text"></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
             </div>
-
-
         </div>
-
     </div>
 
     <div class="row g-3 my-2">
@@ -124,10 +107,10 @@
                                             <td>{{ $request->quantity }}</td>
                                             <td>
                                                 @if ($request->status === 'pending')
-                                                    <button type="button" class="btn btn-outline-success ">Pending</button>
+                                                    <button type="button" class="btn btn-outline-warning ">Pending</button>
                                                 @else
                                                     <button type="button"
-                                                        class="btn btn-outline-warning ">Accepted</button>
+                                                        class="btn btn-outline-success ">Accepted</button>
                                                 @endif
                                             </td>
                                         </tr>
