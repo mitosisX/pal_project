@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Estate;
+use App\Models\Requests;
 use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 
@@ -20,13 +21,15 @@ class adminController extends Controller
         $estates = Estate::all();
         $managers = User::where('role', 'manager')->get();
 
-        // $jobs =DeliveryJob::count();
-        // $complete=DeliveryJob::onlyTrashed()->count();
+        $jobs =DeliveryJob::withTrashed()->count();
+        $out =DeliveryJob::count();
+        $reqqs = Requests::count();
+        $complete=DeliveryJob::onlyTrashed()->count();
         // $cpercent = $complete / $jobs * 100;
         // $perce = floor($cpercent);
 
         //databymonthe
-        $data = DeliveryJob::select('id','created_at')->get()
+        $data = Requests::select('id','created_at')->get()
         ->groupBy(function($data){
                 return Carbon::parse($data->created_at)->format('M');
         });
@@ -41,7 +44,7 @@ class adminController extends Controller
 
         return view(
             'admin.index',
-            compact('estates', 'managers', 'data', 'months', 'monthCount')
+            compact('estates', 'managers', 'data', 'months', 'monthCount', 'complete','jobs', 'reqqs', 'out')
         );
 
 
@@ -71,6 +74,7 @@ class adminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
         //
     }

@@ -31,8 +31,8 @@
                         <tbody>
                              
                             <tr>
-                                <td>Total Request</td>
-                                <td></td>
+                                <td>Total Recieved Request </td>
+                                <td>{{$reqs}}</td>
                                
                             </tr>
 
@@ -43,8 +43,8 @@
                             </tr>
                             
                             <tr >
-                                <td>Total Pending reqests</td>
-                                <td></td>
+                                <td>Outstanding Delivery Jobs</td>
+                                <td>{{$out}}</td>
                                
                             </tr>
                             <tr>

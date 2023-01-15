@@ -36,13 +36,25 @@
                             <div class="card-body">
                                 <form class="px-md-2" method="POST" action="{{ route('admin.crop.store') }}">
                                     @csrf
-                                    <div class="form-outline mb-4">
+                                    {{-- <div class="form-outline mb-4">
                                         <label for="validationCustom01" class="form-label">
                                             Name
                                         </label>
 
                                         <input type="text" class="form-control" name="name" id="validationCustom01"
                                             value="" required />
+                                    </div> --}}
+
+                                    <div class="form-outline mb-4">
+                                        <label for="validationCustom01" class="form-label">Name</label>
+                                        <select name="name" class="type form-control">
+                                        
+                                                <option value="Maize">Maize</option>
+                                                <option value="Groundnuts">Groundnuts</option>
+                                                <option value="Maize">Maize</option>
+                                                <option value="Peas">Peas</option>
+                                            
+                                        </select>
                                     </div>
 
                                     <div class="form-outline mb-4">

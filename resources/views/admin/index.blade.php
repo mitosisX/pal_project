@@ -27,7 +27,7 @@
                                 Total Requests
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                50
+                               {{$reqqs}}
                             </div>
                         </div>
                         <div class="col-auto">
@@ -44,17 +44,17 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Approved Requests
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                 Pending delivery jobs
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                {{-- {{dd($months)}} --}}
-                                {{-- {{dd($monthCount)}} --}}
+                                {{($out)}}
+                                
 
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-spinner fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -67,18 +67,18 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Delivery Job Completion rate
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Delivery Job Completed
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                     {{-- {{ $perce}}% --}}
+                                     {{ $complete}}
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar"
+                                        <div class="progress-bar bg-success" role="progressbar"
                                             style="
                                                                     width: 50%;
                                                                 "
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-check fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -103,14 +103,14 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Pending Requests
+                                All Delivery Jobs
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                20
+                                {{$jobs}}
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
         <div class="col-xl-8 col-lg-8">
             <div class="card shadow mb-4">
                 <div class="card-header py-2 bg-info">
-                    <h3 class="m-0 font-weight-bold text-white">Approved Request</h3>
+                    <h3 class="m-0 font-weight-bold text-white">Monthly Requests</h3>
                 </div>
                 <div class="card-body">
                     <canvas id="myChart" width="400" height="200"></canvas>
@@ -250,7 +250,7 @@
             data: {
                 labels: _ydata,
                 datasets: [{
-                    label: '# of Approved Requests',
+                    label: '# of Recived Requests',
                     data: _xdata,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',

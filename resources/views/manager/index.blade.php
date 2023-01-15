@@ -103,8 +103,9 @@
 
                             <table id="example" class="table data-table fw-bold text-muted" style="width:100%">
                                 <thead>
+                                
                                     <tr>
-                                        <th>Item Name</th>
+                                        <th></th>
                                         <th>Request Date</th>
                                         <th>Item Type</th>
                                         <th>Item Unit</th>
@@ -114,27 +115,7 @@
                                         <th>Request Status</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011-04-25</td>
-                                        <td>$320,800</td>
-                                        <td>$320,800</td>
-                                        <td><button type="button" class="btn btn-outline-warning ">pending</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011-07-25</td>
-                                        <td>$170,750</td>
-                                        <td>$170,750</td>
-                                        <td><button type="button" class="btn btn-outline-success  ">approved</button></td>
-                                    </tr>
+                                
 
                                     </tfoot>
                             </table>

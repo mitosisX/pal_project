@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use index;
 use Carbon\Carbon;
+use App\Models\Requests;
 use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,12 +18,17 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        $jobs =DeliveryJob::count();
+        $reqs = Requests::count();
+
+        $jobs =DeliveryJob::withTrashed()->count();
+        $out =DeliveryJob::count();
         $complete=DeliveryJob::onlyTrashed()->count();
 
         $cpercent = $complete / $jobs * 100;
 
-        return view('admin.report.index', compact('jobs', 'complete', 'cpercent'));
+        return view('admin.report.index', compact('jobs', 'complete', 'cpercent', 'reqs', 'out'));
+
+    
     }
 
     /**
