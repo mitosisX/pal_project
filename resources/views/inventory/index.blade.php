@@ -69,7 +69,7 @@
                     <div class="card-body">
                         <div class="tables-responsive">
 
-                            <table id="example" class="table table-hover data-table" style="width:100%">
+                            <table id="example" class="table table-hover data-table" style="width:100% lead">
                                 <thead class="text-muted">
                                     <tr>
 
@@ -115,6 +115,52 @@
 
 
     </div>
+
+
+    <div class="row g-3 my-2">
+        <div class="col-md-12">
+            <div class="col-lg-12">
+                <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
+                    <h3 class="card-header bg-info text-white">Estate Requets</h3>
+                    <div class="card-body">
+                        <div class="tables-responsive shadow-4 ">
+
+                            <table id="example" class="table data-table fw-bold text-muted" style="width:100% lead lead" >
+                                <thead>
+                                    <tr>
+                                        
+                                        
+                                        <th>Request Date</th>
+                                        <th>Requesting Estate</th>
+                                        <th>Request Description</th>
+                                        <th>Quantity</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($request as $req)
+                                        <tr>
+                                            
+                                            <td>{{$req->created_at}}</td>
+                                            <td>{{$req->estate->name}}</td>
+                                            <td>{{$req->description}}</td>
+                                            <td>{{$req->quantity}}</td>
+                                            
+                                        </tr>
+                                    @endforeach
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 @endsection('content')
 
 @section('javascript')

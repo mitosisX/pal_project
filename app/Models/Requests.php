@@ -25,6 +25,11 @@ class Requests extends Model
         return $this->hasOne(Products::class, 'id');
     }
 
+    public function estate()
+    {
+        return $this->belongsTo(Estate::class, 'estates_id', 'id');
+    }
+
     public function productType()
     {
         return $this->hasOne(ProductType::class, 'id');

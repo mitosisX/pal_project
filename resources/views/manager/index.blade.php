@@ -76,7 +76,7 @@
         </div>
     </div>
 
-    <div class="row g-3 my-2">
+    {{-- <div class="row g-3 my-2">
         <div class="col-md-12">
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
@@ -93,7 +93,7 @@
                                         <th>Item Type</th>
                                         <th>Item Unit</th>
                                         <th>Quantity</th>
-                                        <th>Request Status</th>
+                                    
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -121,5 +121,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

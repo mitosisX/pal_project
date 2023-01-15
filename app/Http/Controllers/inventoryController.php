@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stock;
+use App\Models\Requests;
 use Illuminate\Http\Request;
 
 class inventoryController extends Controller
@@ -21,6 +22,8 @@ class inventoryController extends Controller
     {
         $stocks=Stock::all();
 
+        $request =Requests::all();
+
         // $data = Stock::get(['quantity', 'unit_price']);
 
         // $quantity = $data->reduce(function ($carry, $item) {
@@ -28,7 +31,7 @@ class inventoryController extends Controller
         // });
 
 
-        return view('inventory.index', compact('stocks'));
+        return view('inventory.index', compact('stocks', 'request'));
     }
 
 
