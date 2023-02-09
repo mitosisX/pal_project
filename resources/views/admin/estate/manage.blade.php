@@ -24,8 +24,8 @@
                                         <!-- <th scope="col">#</th> -->
                                         <th scope="col">Number</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Total Acrerage</th>
-                                        <th scope="col">Acres in use</th>
+                                        <th scope="col">Total Acreage</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,7 +37,7 @@
                                                     href="{{ route('admin.field.edit', ['field' => $field->id]) }}">{{ $field->name }}</a>
                                             </td>
                                             <td>{{ $field->area }}</td>
-                                            <td>50</td>
+                                            
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -71,7 +71,7 @@
                                         <th scope="col">Number</th>
                                         <th scope="col">Field Name</th>
                                         <th scope="col">Crops</th>
-                                        <th scope="col">Total acrerage</th>
+                                        <th scope="col">Total acreage</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -4,6 +4,8 @@
     <div class="row g-3 my-2">
         <div class="col-md-6">
 
+            
+
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
                     <h3 class="card-header text-white bg-info">Fields</h3>

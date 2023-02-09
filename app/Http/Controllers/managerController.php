@@ -29,12 +29,23 @@ class managerController extends Controller
             ->requests()
             ->get();
 
-        $field = Field::where('estates_id', Auth::user()->id)->get();
+        $field = Field::where(
+            'estates_id',
+             Auth::user()->id
+             )
+             ->first()
+             ->field()
+             ->get();
+
 
         return view(
             'manager.index',
             compact('estates', 'field', 'requests')
+
+           
         );
+
+       
     }
 
     /**
