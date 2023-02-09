@@ -31,21 +31,17 @@ class managerController extends Controller
 
         $field = Field::where(
             'estates_id',
-             Auth::user()->id
-             )
-             ->first()
-             ->field()
-             ->get();
+            Auth::user()->id
+        )
+            ->get();
 
 
         return view(
             'manager.index',
             compact('estates', 'field', 'requests')
 
-           
-        );
 
-       
+        );
     }
 
     /**

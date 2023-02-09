@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('package_size');
             $table->mediumText('supplier');
             $table->mediumText('use');
+            $table->mediumText('rate');
             $table->integer('unit_price');
             // $table->mediumText('usage')->default('');
             $table->timestamps();
