@@ -28,7 +28,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data as $jobdata)
+                            @foreach ($jobs as $jobdata)
                             <tr>
                                 <td>{{$jobdata->item->name}}</td>
                                 <td>{{$jobdata->type}}</td>

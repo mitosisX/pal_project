@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\assignments;
 use App\Models\DeliveryJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class DriverController extends Controller
 {
@@ -28,8 +30,25 @@ class DriverController extends Controller
     public function myJobs()
     {
 
-        $data = DeliveryJob::all();
-        return view('driver.index', ['data' => $data]);
+        // $user_id = assignments::where(
+        //     'driver_id',
+        //     Auth::user()->id
+        // )->get();
+
+        $user_id = Auth::user()->id;
+
+        $assigned_jobs = assignments::where('driver_id', $user_id)->get();
+        $jobs = [];
+
+
+
+        foreach ($assigned_jobs as $assigned_job) {
+            $job = DeliveryJob::find($assigned_job->job_id);
+            $jobs[] = $job;
+        }
+
+
+        return view('driver.index', ['jobs' => $jobs]);
     }
 
     /**
@@ -39,10 +58,35 @@ class DriverController extends Controller
      */
     public function delete($id)
     {
+        $user_id = Auth::user()->id;
+        $assigned_jobs = assignments::where('driver_id', $user_id)->get();
+        foreach ($assigned_jobs as $assigned_job) {
+            if ($assigned_job->job_id == $id) {
+                DeliveryJob::find($assigned_job->job_id)->delete();
+                break;
+            }
+        }
+        return redirect('driver')->with('success', 'job cleared');
+
+
+
+
+
+
         // DB::delete('delete from delivery_jobs where id=?', [$id] );
 
-        DeliveryJob::find($id)->delete();
-        return redirect('driver')->with('success', 'job cleared');
+        // $user_id = Auth::user()->id;
+
+        // $assigned_jobs = assignments::where('driver_id', $user_id)->get();
+
+        // // DeliveryJob::find($id)->delete();
+
+
+        // foreach ($assigned_jobs as $assigned_job) {
+        //     $job = DeliveryJob::find($assigned_job->job_id)->delete();
+        // }
+
+        // return redirect('driver')->with('success', 'job cleared');
     }
 
     public function completed()

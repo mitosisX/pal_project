@@ -77,4 +77,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Estate::class, 'managers_id', 'id');
     }
+
+
+    public function assignment()
+    {
+        return $this->hasOne(assignments::class);
+    }
 }
