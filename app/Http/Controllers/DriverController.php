@@ -55,7 +55,6 @@ class DriverController extends Controller
     {
 
         $user_id = Auth::user()->id;
-        // $assigned_jobs = assignments::where('driver_id', $user_id)->get();
 
         $assigned_job = assignments::where('driver_id', $user_id)
             ->where('job_id', $id)
@@ -70,6 +69,8 @@ class DriverController extends Controller
 
         return redirect('driver')->with('success', 'job cleared');
     }
+
+
 
     public function completed()
     {
@@ -89,24 +90,6 @@ class DriverController extends Controller
         }
 
         return view('driver.completed.index', compact('jobs'));
-
-
-
-
-        // $user_id = Auth::user()->id;
-        // $completed_jobs = assignments::where('driver_id', $user_id)->get();
-        // $jobs = [];
-
-        // foreach ($completed_jobs as $completed_job) {
-        //     $job = DeliveryJob::onlyTrashed($completed_job->job_id);
-
-        //     if ($job) {
-        //         $jobs[] = $job;
-        //     };
-        // }
-
-        // $completed = DeliveryJob::onlyTrashed()->get();
-        // return view('driver.completed.index', compact('completed'));
     }
 
 

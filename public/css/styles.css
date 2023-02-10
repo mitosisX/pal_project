@@ -99,14 +99,18 @@
 }
 
 
-.form-control{
+.form-control {
   border-radius: 0 !important;
   border-width: thin !important;
+
 }
 
-.form-select{
+.form-select {
   border-radius: 0 !important;
   border-width: thin !important;
+
+
+
 }
 
 .form-control:focus {
@@ -115,4 +119,12 @@
   border-color: inherit;
   outline: 0;
   box-shadow: none;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 10;
+  vertical-align: middle;
 }

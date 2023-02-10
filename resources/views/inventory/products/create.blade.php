@@ -4,8 +4,8 @@
 @section('content')
 
 <div class="row justify-content-center align-items-center">
-  <div class="col-md-6 col-md-offset-6">
-      <div class="col-lg-12 col-md-offset-6">
+  <div class="col-md-9 col-md-offset-9">
+      <div class="col-lg-12 col-md-offset-12">
                   <div class="card border-0 o-hidden shadow-lg my-5">
 
                     <div class="card-header bg-info text-white">
@@ -34,12 +34,12 @@
                             {{csrf_field()}}
 
                             <div class="form-row">
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-3">
                                 <label for="inputEmail4">Name</label>
                                 <input type="text" name= "pname"class="form-control name"  placeholder="Enter Name">
                               </div>
 
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-3">
                                 <label for="inputPassword4">Type</label>
                                 <select type="text" name="ptype" class="form-control crop"  placeholder="Type">
                                   <option selected>--select--</option>
@@ -53,28 +53,28 @@
                               </div>
                              
 
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-3">
                                 <label for="">Unit</label>
                                 <input type="text" name="punit" class="form-control unit"  placeholder="Enter Unit">
                               </div>
 
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-3">
                                 <label for="">Package</label>
                                 <input type="text" name="ppackage" class="form-control package_size"  placeholder="EnterPackage">
                               </div>
 
                               
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-3">
                                 <label for="">Supplier</label>
                                 <input type="text" name="psupplier" class="form-control supplier"  placeholder="Enter Suppler">
                               </div>
 
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-3">
                                 <label for="">Use</label>
                                 <input type="text" name="puse" class="form-control supplier"  placeholder="Enter Suppler">
                               </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                 <label for="">Usage Rate</label>
                                 <input type="text" name="prate" class="form-control supplier"  placeholder="Enter rate">
                               </div>
@@ -82,7 +82,7 @@
                              
                               
 
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-md-3">
                                 <label for="inputPassword4">Unit Price</label>
                                 <input type="text" name="pprice" class="form-control unit_price"  placeholder="Enter Unit Price">
                               </div>

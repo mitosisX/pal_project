@@ -78,7 +78,7 @@
         </div>
     </div>
 
-    {{-- <div class="row g-3 my-2">
+    <div class="row g-3 my-2">
         <div class="col-md-12">
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
@@ -102,11 +102,15 @@
                                     @foreach ($requests as $request)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $request->product['name'] }}</td>
+                                            {{-- <td>{{ $request->product['name'] }}</td> --}}
+                                            {{ $request->product ? $request->product['name'] : '' }}
                                             <td>{{ $request->created_at }}</td>
-                                            <td>{{ $request->productType['name'] }}</td>
-                                            <td>{{ $request->unit['name'] }}</td>
+                                            {{-- <td>{{ $request->productType['name'] }}</td> --}}
+                                            <td>{{ $request->productType ? $request->productType['name'] : '' }}</td>
+                                            {{-- <td>{{ $request->unit['name'] }}</td> --}}
+                                            <td>{{ $request->unit ? $request->unit['name'] : '' }}</td>
                                             <td>{{ $request->quantity }}</td>
+
                                             <td>
                                                 @if ($request->status === 'pending')
                                                     <button type="button" class="btn btn-outline-warning ">Pending</button>
@@ -123,5 +127,5 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 @endsection
