@@ -8,7 +8,9 @@
                   <div class="card border-0 o-hidden shadow-lg my-5">
 
                     <div class="card-header bg-info text-white">
+                   
                       <h4>Issue Stock</h4>
+
                   </div>
                     
                       <div class="card-body">

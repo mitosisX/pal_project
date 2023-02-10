@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\User;
 use App\Models\Stock;
 use App\Models\Estate;
+use App\Models\Category;
 use App\Models\products;
 use App\Models\Suppliers;
+use App\Models\assignments;
 use App\Models\DeliveryJob;
 use App\Models\ProductType;
 use App\Models\productUnit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+// use Illuminate\Foundation\Auth\User;
 
 class issueStockController extends Controller
 {
@@ -21,13 +25,13 @@ class issueStockController extends Controller
      */
     public function index()
     {
-        $prod=ProductType::all();
-        $prod1=products::all();
-        $sup=Suppliers::all();
-        $estate=Estate::all();
-        $unit=productUnit::all();
-        $cat=Category::all();
-        return view('inventory.issue.index', compact('prod', 'prod1', 'sup', 'unit', 'estate','cat'));
+        $prod = ProductType::all();
+        $prod1 = products::all();
+        $sup = Suppliers::all();
+        $estate = Estate::all();
+        $unit = productUnit::all();
+        $cat = Category::all();
+        return view('inventory.issue.index', compact('prod', 'prod1', 'sup', 'unit', 'estate', 'cat'));
     }
 
     /**
@@ -37,41 +41,93 @@ class issueStockController extends Controller
      */
     public function update(Request $request)
     {
-        $this ->Validate($request,[
-            'stype'=>'required',
-            'sname'=>'required',
-            'sunit'=>'required',
-            'estate'=>'required',
-            'scategory'=>'required',
-            'squantity'=>'required', 
+        $this->Validate($request, [
+            'stype' => 'required',
+            'sname' => 'required',
+            'sunit' => 'required',
+            'estate' => 'required',
+            'scategory' => 'required',
+            'squantity' => 'required',
         ]);
 
         $stock2 = Stock::where([
             ['name', $request->sname],
-         // ['supplier_id', '=', $request->supplier_id]
+            // ['supplier_id', '=', $request->supplier_id]
         ])->first();
-    
-        if($stock2) {
 
-            $stock2->decrement('quantity', $request->squantity);  
-    }
+        if ($stock2) {
 
-    // DB::table('users')->update(['votes' => DB::raw('GREATEST(votes - 5, 0)')]);
-      
-    $job = new DeliveryJob;
+            $stock2->decrement('quantity', $request->squantity);
+        }
 
-        $job->type =$request->input('stype');
-        $job->products_id =$request->input('sname');
-        $job->unit =$request->input('sunit');
-        $job->estates_id =$request->input('estate');
-        $job->category_id=$request->input('scategory');
-        $job->quantity =$request->input('squantity');
+        // DB::table('users')->update(['votes' => DB::raw('GREATEST(votes - 5, 0)')]);
+
+        $job = new DeliveryJob;
+
+        $job->type = $request->input('stype');
+        $job->products_id = $request->input('sname');
+        $job->unit = $request->input('sunit');
+        $job->estates_id = $request->input('estate');
+        $job->category_id = $request->input('scategory');
+        $job->quantity = $request->input('squantity');
         $job->save();
 
-        return redirect('/inventory/issue')->with('success', 'Success');
- 
 
+        // Get all the drivers with role "driver"
+        $drivers = User::where('role', 'driver')->get();
+        // $userIndex = 0;
+        $emergencyTasks = $job::where('category_id', '2')->get();
+
+        // $num = $emergencyTasks->count();
+
+        // dd($num);
+
+        if ($emergencyTasks->count() > 0) {
+            foreach ($emergencyTasks as $emergencyTask) {
+                $driver = $drivers->first();
+                $driver = $drivers->first();
+                assignments::firstOrCreate(
+                    ['job_id' => $emergencyTask->id, 'driver_id' => $driver->id]
+                );
+                $drivers = $drivers->slice(1);
+            }
+        }
+
+        $remainingTasks = $job::where('category_id', '!=', '2')->get();
+
+        if ($drivers->count() > 0) {
+            $numOfTasks = ceil($remainingTasks->count() / $drivers->count());
+        } else {
+
+            return redirect('/inventory/issue')->with('success', 'There are no drivers');
+        }
+
+        // $numOfTasks = ceil($remainingTasks->count() / $drivers->count());
+
+        foreach ($drivers as $driver) {
+            $assignedTasks = $remainingTasks->slice(0, $numOfTasks);
+            foreach ($assignedTasks as $assignedTask) {
+
+                assignments::firstOrCreate(
+                    ['job_id' => $assignedTask->id, 'driver_id' => $driver->id]
+                );
+
+
+                $index = $remainingTasks->search($assignedTask);
+                $remainingTasks = $remainingTasks->slice(0, $index)->concat($remainingTasks->slice($index + 1));
+            }
+
+            // $remainingTasks = $remainingTasks->slice($numOfTasks);
+        }
+
+
+
+        return redirect('/inventory/issue',)->with('success', 'Success', 'num');
     }
+
+
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -81,8 +137,9 @@ class issueStockController extends Controller
      */
     public function store(Request $request)
     {
-       
     }
+
+
 
     /**
      * Display the specified resource.

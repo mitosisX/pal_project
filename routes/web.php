@@ -19,6 +19,7 @@ use App\Http\Controllers\productsController;
 use App\Http\Controllers\editFieldController;
 use App\Http\Controllers\inventoryController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\assignmentController;
 use App\Http\Controllers\EditEstateController;
 use App\Http\Controllers\issueStockController;
 use App\Http\Controllers\ViewReportController;
@@ -159,7 +160,13 @@ Route::controller(stockController::class)->group(function () {
 Route::controller(issueStockController::class)->group(function () {
     Route::get('inventory/issue', 'index')->name('inventory.issue.index');
     Route::post('inventory/issue/update', 'update')->name('inventory.issue.update');
+    // Route::post('inventory/issue/assign', 'assign')->name('inventory.issue.assign');
 });
+
+// Route::controller(assignmentController::class)->group(function () {
+//     // Route::get('inventory/issue', 'index')->name('inventory.issue.index');
+//     Route::post('/assign-job', 'assign')->name('job.assign');
+// });
 
 Route::get('/admin/s', [adminController::class, 'adminData']);
 Route::get('/estate', [EstateController::class, 'index']);

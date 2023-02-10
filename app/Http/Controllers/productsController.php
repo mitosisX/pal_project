@@ -21,11 +21,10 @@ class productsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {    
+    {
         // $crops=Crop::all();
-        $data = ProductType::all();  
-        return view('inventory.products.create', ['data'=>$data]);
-        
+        $data = ProductType::all();
+        return view('inventory.products.create', ['data' => $data]);
     }
 
     /**
@@ -43,7 +42,7 @@ class productsController extends Controller
     // public function store(Request $request){
     //     $products = new products;
 
-           
+
 
 
     // }
@@ -56,39 +55,40 @@ class productsController extends Controller
      */
     public function store(Request $request)
     {
-        $this ->Validate($request,[
-            'pname'=>'required',
-            'ptype'=>'required',
-            'punit'=>'required',
-            'ppackage'=>'required',
-            'psupplier'=>'required',
-            'puse'=>'required',
-            'pprice'=>'required',
-              
+        $this->Validate($request, [
+            'pname' => 'required',
+            'ptype' => 'required',
+            'punit' => 'required',
+            'ppackage' => 'required',
+            'psupplier' => 'required',
+            'puse' => 'required',
+            'prate' => 'required',
+            'pprice' => 'required',
+
         ]);
 
         $produ = new products;
 
-        $produ->name =$request->input('pname');
-        $produ->type =$request->input('ptype');
-        $produ->unit =$request->input('punit');
-        $produ->package_size =$request->input('ppackage');
-        $produ->supplier =$request->input('psupplier');
-        $produ->use =$request->input('puse');
-        $produ->unit_price =$request->input('pprice');
+        $produ->name = $request->input('pname');
+        $produ->type = $request->input('ptype');
+        $produ->unit = $request->input('punit');
+        $produ->package_size = $request->input('ppackage');
+        $produ->supplier = $request->input('psupplier');
+        $produ->use = $request->input('puse');
+        $produ->rate = $request->input('prate');
+        $produ->unit_price = $request->input('pprice');
         $produ->save();
 
-        return redirect('/inventory/products')->with('success', 'Data saved successfully'); 
-
+        return redirect('/inventory/products')->with('success', 'Data saved successfully');
     }
 
 
 
-public function fethproduct(Request $request){
+    public function fethproduct(Request $request)
+    {
+    }
 
-     }        
-     
- 
+
 
     /**
      * Display the specified resource.
@@ -98,7 +98,6 @@ public function fethproduct(Request $request){
      */
     public function show($id)
     {
-
     }
 
     /**

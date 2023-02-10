@@ -54,24 +54,29 @@
                              
 
                               <div class="form-group col-md-12">
-                                <label for="inputPassword4">Unit</label>
+                                <label for="">Unit</label>
                                 <input type="text" name="punit" class="form-control unit"  placeholder="Enter Unit">
                               </div>
 
                               <div class="form-group col-md-12">
-                                <label for="inputPassword4">Package</label>
+                                <label for="">Package</label>
                                 <input type="text" name="ppackage" class="form-control package_size"  placeholder="EnterPackage">
                               </div>
 
                               
                               <div class="form-group col-md-12">
-                                <label for="inputPassword4">Supplier</label>
+                                <label for="">Supplier</label>
                                 <input type="text" name="psupplier" class="form-control supplier"  placeholder="Enter Suppler">
                               </div>
 
                               <div class="form-group col-md-12">
-                                <label for="inputPassword4">Use</label>
+                                <label for="">Use</label>
                                 <input type="text" name="puse" class="form-control supplier"  placeholder="Enter Suppler">
+                              </div>
+
+                                <div class="form-group col-md-12">
+                                <label for="">Usage Rate</label>
+                                <input type="text" name="prate" class="form-control supplier"  placeholder="Enter rate">
                               </div>
 
                              
