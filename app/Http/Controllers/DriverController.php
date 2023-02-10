@@ -30,23 +30,18 @@ class DriverController extends Controller
     public function myJobs()
     {
 
-        // $user_id = assignments::where(
-        //     'driver_id',
-        //     Auth::user()->id
-        // )->get();
-
         $user_id = Auth::user()->id;
 
         $assigned_jobs = assignments::where('driver_id', $user_id)->get();
         $jobs = [];
 
-
-
         foreach ($assigned_jobs as $assigned_job) {
             $job = DeliveryJob::find($assigned_job->job_id);
-            $jobs[] = $job;
-        }
 
+            if ($job) {
+                $jobs[] = $job;
+            };
+        }
 
         return view('driver.index', ['jobs' => $jobs]);
     }
@@ -58,35 +53,22 @@ class DriverController extends Controller
      */
     public function delete($id)
     {
+
         $user_id = Auth::user()->id;
-        $assigned_jobs = assignments::where('driver_id', $user_id)->get();
-        foreach ($assigned_jobs as $assigned_job) {
-            if ($assigned_job->job_id == $id) {
-                DeliveryJob::find($assigned_job->job_id)->delete();
-                break;
-            }
-        }
-        return redirect('driver')->with('success', 'job cleared');
-
-
-
-
-
-
-        // DB::delete('delete from delivery_jobs where id=?', [$id] );
-
-        // $user_id = Auth::user()->id;
-
         // $assigned_jobs = assignments::where('driver_id', $user_id)->get();
 
-        // // DeliveryJob::find($id)->delete();
+        $assigned_job = assignments::where('driver_id', $user_id)
+            ->where('job_id', $id)
+            ->first();
 
+        if ($assigned_job) {
+            DeliveryJob::find($assigned_job->job_id)->delete();
+            return redirect('driver')->with('success', 'Job cleared');
+        } else {
+            return redirect('driver')->with('error', 'You are not authorized to clear this job');
+        }
 
-        // foreach ($assigned_jobs as $assigned_job) {
-        //     $job = DeliveryJob::find($assigned_job->job_id)->delete();
-        // }
-
-        // return redirect('driver')->with('success', 'job cleared');
+        return redirect('driver')->with('success', 'job cleared');
     }
 
     public function completed()
