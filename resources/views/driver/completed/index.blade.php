@@ -27,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($completed as $complete)
+                            @foreach ($jobs as $complete)
                             <tr>
                         
                              

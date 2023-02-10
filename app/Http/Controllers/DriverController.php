@@ -73,8 +73,40 @@ class DriverController extends Controller
 
     public function completed()
     {
-        $completed = DeliveryJob::onlyTrashed()->get();
-        return view('driver.completed.index', compact('completed'));
+
+        $user_id = Auth::user()->id;
+        $completed_jobs = assignments::where('driver_id', $user_id)->get();
+        $jobs = [];
+
+        foreach ($completed_jobs as $completed_job) {
+            $job = DeliveryJob::onlyTrashed()
+                ->where('id', $completed_job->job_id)
+                ->first();
+
+            if ($job) {
+                $jobs[] = $job;
+            }
+        }
+
+        return view('driver.completed.index', compact('jobs'));
+
+
+
+
+        // $user_id = Auth::user()->id;
+        // $completed_jobs = assignments::where('driver_id', $user_id)->get();
+        // $jobs = [];
+
+        // foreach ($completed_jobs as $completed_job) {
+        //     $job = DeliveryJob::onlyTrashed($completed_job->job_id);
+
+        //     if ($job) {
+        //         $jobs[] = $job;
+        //     };
+        // }
+
+        // $completed = DeliveryJob::onlyTrashed()->get();
+        // return view('driver.completed.index', compact('completed'));
     }
 
 
