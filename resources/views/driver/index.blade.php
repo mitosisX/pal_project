@@ -22,7 +22,7 @@
                                 <th>Products Type</th>
                                 <th>Unit</th>
                                 <th>Destination Estate</th>
-                                <th>Quantity</th>
+                                <th>Quantityy</th>
                                  <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -30,6 +30,7 @@
                         <tbody>
                             @foreach ($jobs as $jobdata)
                             <tr>
+
                                 <td>{{$jobdata->item->name}}</td>
                                 <td>{{$jobdata->type}}</td>
                                 <td>{{$jobdata->unit}}</td>
