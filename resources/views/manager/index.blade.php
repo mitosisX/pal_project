@@ -103,7 +103,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             {{-- <td>{{ $request->product['name'] }}</td> --}}
-                                            {{ $request->product ? $request->product['name'] : '' }}
+                                            <td>{{ $request->product ? $request->product['name'] : '' }}</td>
                                             <td>{{ $request->created_at }}</td>
                                             {{-- <td>{{ $request->productType['name'] }}</td> --}}
                                             <td>{{ $request->productType ? $request->productType['name'] : '' }}</td>

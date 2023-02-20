@@ -21,7 +21,7 @@
     @endif
 
     <div class="row justify-content-center align-items-center">
-        <div class="col-md-6 col-md-offset-6">
+        <div class="col-md-9 col-md-offset-9">
             <div class="col-lg-12 col-md-offset-6">
                 <div class="card border-0 o-hidden shadow-lg my-5">
                     <div class="card-header text-white bg-info">
@@ -47,8 +47,8 @@
 
                         <form action="{{ route('manager.request.store') }}" method="POST">
                             @csrf
-                            <div class="">
-                                <div class="form-group col-md-12">
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
                                     <label for="inputPassword4">Product Type</label>
                                     <select type="text" name="type_id" class="form-control type" id="type_id" required>
                                         @foreach ($p_types as $p_type)
@@ -57,7 +57,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                     <label for="inputPassword4">Product Name</label>
                                     <select type="text" name="products_id" class="form-control name" required>
                                         @foreach ($products as $product)
@@ -66,7 +66,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                     <label for="inputPassword4">Product Unit</label>
                                     <select type="text" name="unit_id" class="form-control unit" id="" required>
                                         @foreach ($p_units as $p_unit)
@@ -75,7 +75,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                     <label for="inputPassword4">Product Package Size</label>
                                     <select name="request_category_id" class="form-control psize" required>
                                         @foreach ($r_categories as $r_category)
@@ -85,12 +85,12 @@
                                 </div>
 
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                     <label for="inputPassword4">Product Quantity</label>
                                     <input type="number" name="quantity" class="form-control qauntity" placeholder="" required>
                                 </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                     <label for="inputPassword4">Estate</label>
                                     <select type="text" name="estates_id" class="form-control supplier" required>
                                         @foreach ($user as $estate)
@@ -99,7 +99,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-6">
                                     <label for="inputPassword4">Requests Description</label>
                                     <textarea class="form-control" name="description" rows="4" required></textarea>
                                 </div>

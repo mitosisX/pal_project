@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class products extends Model
 {
-    protected $table ='products';
-    protected $primaryKey ='id';
-    protected $fillable =['name', 'type','unit', 'package_size', 'supplier', 'use', 'unit_price'];
+    protected $table = 'products';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name', 'type', 'unit', 'package_size', 'supplier', 'use', 'unit_price'];
 
     public function item()
     {
@@ -23,8 +23,4 @@ class products extends Model
     {
         return $this->belongsTo(ProductType::class, 'type',  'id');
     }
-
-   
 }
-
-

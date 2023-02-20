@@ -73,15 +73,13 @@ class issueStockController extends Controller
         $job->save();
 
 
-        // Get all the drivers with role "driver"
+        // Get all the users from user table with role of "driver"
         $drivers = User::where('role', 'driver')->get();
-        // $userIndex = 0;
+        // get delivery jobs with cartigory 'emergency'
         $emergencyTasks = $job::where('category_id', '2')->get();
 
-        // $num = $emergencyTasks->count();
 
-        // dd($num);
-
+        //check is emegency delivery job exists and assign it to the first driver
         if ($emergencyTasks->count() > 0) {
             foreach ($emergencyTasks as $emergencyTask) {
                 $driver = $drivers->first();
@@ -93,6 +91,7 @@ class issueStockController extends Controller
             }
         }
 
+        //get remaining delivery jobs without 'emergency' cartogory and assign them to to drivers
         $remainingTasks = $job::where('category_id', '!=', '2')->get();
 
         if ($drivers->count() > 0) {
@@ -102,8 +101,6 @@ class issueStockController extends Controller
             return redirect('/inventory/issue')->with('success', 'There are no drivers');
         }
 
-        // $numOfTasks = ceil($remainingTasks->count() / $drivers->count());
-
         foreach ($drivers as $driver) {
             $assignedTasks = $remainingTasks->slice(0, $numOfTasks);
             foreach ($assignedTasks as $assignedTask) {
@@ -112,12 +109,10 @@ class issueStockController extends Controller
                     ['job_id' => $assignedTask->id, 'driver_id' => $driver->id]
                 );
 
-
+                //Makes sure that assigned task is not assigned to another driver again. one task is only assigned to one driver
                 $index = $remainingTasks->search($assignedTask);
                 $remainingTasks = $remainingTasks->slice(0, $index)->concat($remainingTasks->slice($index + 1));
             }
-
-            // $remainingTasks = $remainingTasks->slice($numOfTasks);
         }
 
 
