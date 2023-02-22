@@ -11,6 +11,7 @@ use App\Models\productUnit;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Request_Category;
+use App\Models\Stock;
 use Illuminate\Support\Facades\Auth;
 
 class requestController extends Controller
@@ -62,6 +63,19 @@ class requestController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $requestedQuantity = $request->quantity;
+        $product = $request->products_id;
+
+        $stokQuantity = Stock::where('name', $product)
+                    ->first()
+                    ->quantity;
+
+        if($requestedQuantity > $stokQuantity){
+            return back()
+            ->with('quantity-error','error');
+        }
+
         $data['status'] = 'pending';
 
         $estates = User::where('id', Auth::user()->id)

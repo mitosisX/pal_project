@@ -6,7 +6,7 @@
             <script>
                 new swal("Done!",
                     "Your request has been submitted!",
-                    "failure");
+                    "error");
             </script>
         @endsection
     @endif
@@ -15,7 +15,16 @@
             <script>
                 new swal("Failed!",
                     "Your request was rejected.",
-                    "success");
+                    "error");
+            </script>
+        @endsection
+    @endif
+    @if (session('quantity-error'))
+        @section('scripts')
+            <script>
+                new swal("Failed!",
+                    "Your requested quantity was rejected.",
+                    "error");
             </script>
         @endsection
     @endif
@@ -35,7 +44,7 @@
                                 @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
                                 @endforeach
-                            </ul> 
+                            </ul>
                           </div>
                           @endif
 
@@ -150,7 +159,7 @@
                     },
 
                     success: function(data) {
-                        //  console.log('success');  
+                        //  console.log('success');
 
                         //  console.log(data);
 
