@@ -25,9 +25,12 @@ class managerController extends Controller
             'managers_id',
             Auth::user()->id
         )
-            ->first()
-            ->requests()
+        ->first()
+        ->requests()
             ->get();
+
+            // ->requests()
+            // ->get();
 
         $field = Field::where(
             'estates_id',

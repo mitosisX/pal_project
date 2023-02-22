@@ -3,9 +3,6 @@
 @section('content')
     <div class="row g-3 my-2">
         <div class="col-md-6">
-
-            
-
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
                     <h3 class="card-header text-white bg-info">Fields</h3>
@@ -95,7 +92,7 @@
                                         <th>Item Type</th>
                                         <th>Item Unit</th>
                                         <th>Quantity</th>
-                                    
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -103,12 +100,12 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             {{-- <td>{{ $request->product['name'] }}</td> --}}
-                                            <td>{{ $request->product ? $request->product['name'] : '' }}</td>
+                                            <td>{{ $request->product['name'] ?? '' }}</td>
                                             <td>{{ $request->created_at }}</td>
                                             {{-- <td>{{ $request->productType['name'] }}</td> --}}
-                                            <td>{{ $request->productType ? $request->productType['name'] : '' }}</td>
+                                            <td>{{ $request->productType['name'] ?? '' }}</td>
                                             {{-- <td>{{ $request->unit['name'] }}</td> --}}
-                                            <td>{{ $request->unit ? $request->unit['name'] : '' }}</td>
+                                            <td>{{ $request->unit['name'] ?? '' }}</td>
                                             <td>{{ $request->quantity }}</td>
 
                                             <td>

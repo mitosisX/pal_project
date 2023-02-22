@@ -22,7 +22,7 @@ class Requests extends Model
 
     public function product()
     {
-        return $this->belongsTo(Products::class, 'id');
+        return $this->belongsTo(Products::class, 'products_id');
     }
 
     public function estate()
@@ -32,11 +32,11 @@ class Requests extends Model
 
     public function productType()
     {
-        return $this->hasOne(ProductType::class,  'id');
+        return $this->hasOne(ProductType::class,  'id', 'type_id');
     }
 
     public function unit()
     {
-        return $this->hasOne(productUnit::class, 'id');
+        return $this->hasOne(productUnit::class, 'id','unit_id');
     }
 }
