@@ -138,6 +138,7 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+
             <!-- Main Content -->
             <div id="content">
                 <!-- Topbar -->
@@ -193,6 +194,7 @@
                         <h1 class="h3 mb-0 text-gray-800 sect">Admin</h1>
                         @yield('navbutton')
                     </div>
+                    
                     {{-- <section class="section"> --}}
                     {{-- <div class="section-body"> --}}
                     {{-- BREADCRUMB /////////////////// --}}

@@ -4,17 +4,28 @@
     @if (session('request-submited'))
         @section('scripts')
             <script>
-                new swal("Done!",
+                new swal("Request Accepted!",
                     "Your request has been submitted!",
+                    "success");
+            </script>
+        @endsection
+    @endif
+
+    @if (session('request-denied'))
+        @section('scripts')
+            <script>
+                new swal("Request Rejected!",
+                    "Your request has been rejected because you requested more than required",
                     "error");
             </script>
         @endsection
     @endif
+
     @if (session('request-rejected'))
         @section('scripts')
             <script>
-                new swal("Failed!",
-                    "Your request was rejected.",
+                new swal("Request Rejected!",
+                    "Your request was rejected because the requested inputs cannot be used for the crop allocated to this estate!.",
                     "error");
             </script>
         @endsection
@@ -22,9 +33,9 @@
     @if (session('quantity-error'))
         @section('scripts')
             <script>
-                new swal("Failed!",
-                    "Your requested quantity was rejected.",
-                    "error");
+                new swal("Request Pending!",
+                    "Your request has been put on pending due to low levels of stock.",
+                    "info");
             </script>
         @endsection
     @endif

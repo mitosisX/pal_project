@@ -1,5 +1,11 @@
 @extends('manager.app.layout')
 
+@section('navbutton')
+    <a href="{{route('manager.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50"></i>
+        Generate Report</a>
+@endsection
+
 @section('content')
     <div class="row g-3 my-2">
         <div class="col-md-6">
@@ -52,6 +58,7 @@
                                     <th scope="col">Number</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Field</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,6 +99,7 @@
                                         <th>Item Type</th>
                                         <th>Item Unit</th>
                                         <th>Quantity</th>
+                                        <th>Request Status</th>
 
                                     </tr>
                                 </thead>
@@ -117,6 +125,7 @@
                                                 @endif
                                             </td>
                                         </tr>
+
                                     @endforeach
                             </table>
                         </div>

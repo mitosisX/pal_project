@@ -37,6 +37,6 @@ class Requests extends Model
 
     public function unit()
     {
-        return $this->hasOne(productUnit::class, 'id','unit_id');
+        return $this->hasOne(productUnit::class, 'id', 'unit_id');
     }
 }

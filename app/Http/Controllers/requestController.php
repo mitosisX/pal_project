@@ -62,21 +62,76 @@ class requestController extends Controller
      */
     public function store(Request $request)
     {
+        //MATCH REQUESTED QUANTITY WITH REQUIRED QUANTITY
+
+        $estates = User::where('id', Auth::user()->id)
+            ->first()
+            ->estates()
+            ->get();
+
+        foreach ($estates as $estate) {
+            foreach ($estate->crops as $crop) {
+                $crop = ucfirst(trans($crop->acres));
+
+                $Product = Products::where(
+                    'id',
+                    $request->products_id
+                )
+                    ->first();
+
+                $usage = $Product->rate;
+                $usageRate = $usage * $crop;
+                $requested = $request->quantity;
+
+                if ($requested > $usageRate) {
+
+                    return back()
+                        ->with('request-denied', true);
+                }
+            }
+        }
+
+
+        //CHECK STOCK AVAILABILITY
         $data = $request->all();
 
         $requestedQuantity = $request->quantity;
         $product = $request->products_id;
 
         $stokQuantity = Stock::where('name', $product)
-                    ->first()
-                    ->quantity;
+            ->first()
+            ->quantity;
 
-        if($requestedQuantity > $stokQuantity){
+        if ($requestedQuantity > $stokQuantity) {
+            $data['status'] = 'pending';
+            Requests::create($data);
             return back()
-            ->with('quantity-error','error');
+                ->with('quantity-error', 'info');
+        } else {
+            $data['status'] = 'Accepted ';
         }
 
-        $data['status'] = 'pending';
+
+
+
+        // Update the status of the request to "Accepted" if the stock quantity
+        // is updated and is now more than the quantity requested
+        // $updatedStockQuantity = Stock::where('name', $product)
+        //     ->first()
+        //     ->quantity;
+
+        // if ($updatedStockQuantity > $requestedQuantity) {
+        //     $request = Requests::where('products_id', $product)
+        //         ->where('status', 'pending')
+        //         ->first();
+
+        //     if ($request) {
+        //         $request->update(['status' => 'Accepted']);
+        //     }
+        // }
+
+
+        // CHECK CROP AVAILABILITY
 
         $estates = User::where('id', Auth::user()->id)
             ->first()
@@ -112,6 +167,12 @@ class requestController extends Controller
             }
         }
     }
+
+
+
+
+
+
 
     /**
      * Display the specified resource.
