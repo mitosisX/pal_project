@@ -121,7 +121,7 @@
         <div class="col-md-12">
             <div class="col-lg-12">
                 <div class="card fw-bold text-muted border-0 o-hidden shadow-lg my-5">
-                    <h3 class="card-header bg-info text-white">Estate Requets</h3>
+                    <h3 class="card-header bg-info text-white">Goods Release Notes</h3>
                     <div class="card-body">
                         <div class="tables-responsive shadow-4 ">
 
@@ -131,9 +131,14 @@
                                         
                                         
                                         <th>Request Date</th>
+                                        <th>Product</th>
+                                        <th>Type</th>
+                                        <th>Unit</th>
                                         <th>Requesting Estate</th>
                                         <th>Request Description</th>
                                         <th>Quantity</th>
+                                        <th>Priority</th>
+                                        <th>Status</th>
                                         
                                     </tr>
                                 </thead>
@@ -142,9 +147,32 @@
                                         <tr>
                                             
                                             <td>{{$req->created_at}}</td>
+                                            <td>{{$req->product->name}}</td>
+                                             <td>{{$req->productType->name}}</td>
+                                             <td>{{$req->unit->name}}</td>
                                             <td>{{$req->estate->name}}</td>
                                             <td>{{$req->description}}</td>
                                             <td>{{$req->quantity}}</td>
+
+                                            <td>
+
+                                                @if ($req->category->name === 'Emergency')
+                                                    <button type="button" class="btn btn-outline-danger ">Emergency Request </button>
+                                                @else
+                                                    <button type="button"
+                                                        class="btn btn-outline-info ">Normal Request</button>
+                                                @endif
+
+                                            <td>
+
+                                            <td>
+                                                 @if ($req->status === 'pending')
+                                                    <button type="button" class="btn btn-outline-warning ">Pending</button>
+                                                @else
+                                                    <button type="button"
+                                                        class="btn btn-outline-success ">Accepted</button>
+                                                @endif
+                                            </td>
                                             
                                         </tr>
                                     @endforeach

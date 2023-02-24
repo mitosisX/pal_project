@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use SebastianBergmann\CodeCoverage\Report\Xml\Unit;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Requests extends Model
 {
@@ -38,5 +39,11 @@ class Requests extends Model
     public function unit()
     {
         return $this->hasOne(productUnit::class, 'id', 'unit_id');
+    }
+
+
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'id', 'request_category_id');
     }
 }

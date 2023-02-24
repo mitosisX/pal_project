@@ -12,6 +12,7 @@ class inventoryController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
     // public function index()
     // {
@@ -20,9 +21,9 @@ class inventoryController extends Controller
 
     public function tabledata()
     {
-        $stocks=Stock::all();
+        $stocks = Stock::all();
 
-        $request =Requests::all();
+        $request = Requests::all();
 
         // $data = Stock::get(['quantity', 'unit_price']);
 
